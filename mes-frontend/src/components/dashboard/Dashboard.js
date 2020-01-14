@@ -13,7 +13,7 @@ class Dashboard extends Component {
 
         <div className="row container-fluid">
           <div className="col-md-2">
-            <h3>Dashboard</h3>
+            <h4>Dashboard</h4>
             <hr/>
             <Sidecard />
           </div>
