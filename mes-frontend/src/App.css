@@ -1,0 +1,20 @@
+.navbar{
+  background-color: #558834;
+  height: 55px;
+}
+
+#logo{
+  height: 40px;
+  width: 80px;
+  margin-bottom: 6px;
+}
+
+#app_name{
+  margin-top: 3px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav-flex-icons{
+  margin-right: 15px;
+}
