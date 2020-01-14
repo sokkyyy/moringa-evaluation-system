@@ -1,6 +1,5 @@
 .navbar{
   background-color: #558834;
-  /* height: 55px; */
 }
 
 #logo{
@@ -11,11 +10,11 @@
 
 #app_name{
   margin-top: 3px;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
 }
 
-.nav-flex-icons{
+/* .nav-flex-icons{
   margin-right: 15px;
-}
+} */
 
