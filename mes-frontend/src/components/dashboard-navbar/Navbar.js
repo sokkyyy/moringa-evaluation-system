@@ -54,10 +54,10 @@ const Navbar = () => {
               </div>
             </li>
 
-            <li className="nav-item">
-              <a className="nav-link" href="#">Sign Out</a>
-            </li>
+            
           </ul>
+
+          <a className="nav-link btn btn-warning" href="#">Sign Out</a>
 
         </div>
       </nav>

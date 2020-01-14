@@ -1,6 +1,6 @@
 .navbar{
   background-color: #558834;
-  height: 55px;
+  /* height: 55px; */
 }
 
 #logo{
@@ -18,3 +18,4 @@
 .nav-flex-icons{
   margin-right: 15px;
 }
+
