@@ -14,7 +14,23 @@
   font-weight: bold;
 }
 
-/* .nav-flex-icons{
-  margin-right: 15px;
-} */
+.container-fluid{
+  margin-top: 20px; 
+}
+
+#user-dp{
+  margin-top: 10px;
+}
+
+.col-md-2{
+  font-size: 11px;
+  text-align: center;
+}
+
+#signout-button{
+  background-color: #ED6219;
+  color: #ffffff;
+}
+
+
 

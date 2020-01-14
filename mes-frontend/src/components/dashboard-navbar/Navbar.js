@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.png'
 
+
 const Navbar = () => {
   return (
 
     <div>
+
 
       <nav className="mb-1 navbar navbar-expand-lg navbar-dark">
 
@@ -50,14 +52,15 @@ const Navbar = () => {
               </a>
               <div className="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                 <a className="dropdown-item" href="#">Take Assessment</a>
-                <a className="dropdown-item" href="#">Schedule Assessment</a>               
+                <a className="dropdown-item" href="#">Schedule Assessment</a> 
+                <a className="dropdown-item" href="#">In-Meeting Assessment</a>                
               </div>
             </li>
 
             
           </ul>
 
-          <a className="nav-link btn btn-warning" href="#">Sign Out</a>
+          <a className="nav-link btn" id="signout-button" href="#">Sign Out</a>
 
         </div>
       </nav>
