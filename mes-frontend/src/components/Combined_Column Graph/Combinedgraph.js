@@ -6,19 +6,19 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 class CombinedLineGraph extends Component {
   constructor() {
 		super();
-		// this.toggleDataSeries = this.toggleDataSeries.bind(this);
+		this.toggleDataSeries = this.toggleDataSeries.bind(this);
 	
 	}
 
-	// toggleDataSeries(e){
-	// 	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-	// 		e.dataSeries.visible = false;
-	// 	}
-	// 	else{
-	// 		e.dataSeries.visible = true;
-	// 	}
-	// 	this.chart.render();
-	// }
+	toggleDataSeries(e){
+		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		}
+		else{
+			e.dataSeries.visible = true;
+		}
+		this.chart.render();
+	}
  
   render() { 
 
