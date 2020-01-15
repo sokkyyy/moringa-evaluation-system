@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db import models
 
 class Role(models.Model):
     '''Model for Staff Role in System'''
@@ -11,22 +13,4 @@ class Role(models.Model):
     def __str__(self):
         return self.role
 
-
-
-
-
-
-
-
-
-
-
-class  notifications(models.Model):
-    name = models.CharField(max_length = 30)
-    email = models.EmailField()
-    
-    
-    
-
-    
     
