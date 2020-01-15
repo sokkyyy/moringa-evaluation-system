@@ -7,7 +7,16 @@ class CombinedLineGraph extends Component {
   constructor() {
 		super();
 		this.toggleDataSeries = this.toggleDataSeries.bind(this);
+		this.addSymbols = this.addSymbols.bind(this);
 	
+	}
+	addSymbols(e) {
+		var suffixes = ["", "K", "M", "B",];
+		var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
+		if (order > suffixes.length - 1)
+			order = suffixes.length - 1;
+		var suffix = suffixes[order];
+		return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
 	}
 
 	toggleDataSeries(e){
@@ -24,10 +33,10 @@ class CombinedLineGraph extends Component {
 
     const options = {
 			animationEnabled: true,
-			colorSet: "colorSet2",
+			colorSet: "colorSet1",
 
 			axisX: {
-				valueFormatString: "MMM"
+				interval: 1
 			},
 			
 		
@@ -39,28 +48,29 @@ class CombinedLineGraph extends Component {
 				itemclick: this.toggleDataSeries,
 				verticalAlign: "top"
 			},
-			data: [{
+			data: [
+				{
 				type: "column",
 				name: "Organization",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints: [
-					{ x: new Date(2017, 6), y: 38 },
-					{ x: new Date(2017, 12), y: 39 },
-					{ x: new Date(2018, 6), y: 78 },
-					{ x: new Date(2018, 12), y: 89 },				
+					{ y: 38, label: "First Quarter"},
+					{ y: 38, label: "Second Quarter"},
+					{ y: 78, label: "Third Quarter"},
+					{ y: 88, label: "Last Quarter"}				
 				]
-			},{
+			},
+			{
 				type: "column",
 				name: "Interpersonal Comm.",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints: [
-					{ x: new Date(2017, 6), y: 78 },
-					{ x: new Date(2017, 12), y: 39 },
-					{ x: new Date(2018, 6), y: 98 },
-					{ x: new Date(2018, 12), y: 100 },
-				
+					{ y: 78, label: "First Quarter"},
+					{ y: 38, label: "Second Quarter"},
+					{ y: 88, label: "Third Quarter"},
+					{ y: 100, label: "Last Quarter"}			
 				]
 			},
 			{
@@ -69,10 +79,10 @@ class CombinedLineGraph extends Component {
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints: [
-					{ x: new Date(2017, 6), y: 56 },
-					{ x: new Date(2017, 12), y: 69},
-					{ x: new Date(2018, 6), y: 55 },
-					{ x: new Date(2018, 12), y: 67 },				
+					{ y: 46, label: "First Quarter"},
+					{ y: 68, label: "Second Quarter"},
+					{ y: 44, label: "Third Quarter"},
+					{ y: 67, label: "Last Quarter"}				
 				]
       },
       {
@@ -81,10 +91,10 @@ class CombinedLineGraph extends Component {
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints: [
-					{ x: new Date(2017, 6), y: 53 },
-					{ x: new Date(2017, 12), y: 69},
-					{ x: new Date(2018, 6), y: 66 },
-					{ x: new Date(2018, 12), y: 64 },				
+					{ y: 43, label: "First Quarter"},
+					{ y: 68, label: "Second Quarter"},
+					{ y: 66, label: "Third Quarter"},
+					{ y: 64}				
 				]
       },
       {
@@ -93,10 +103,10 @@ class CombinedLineGraph extends Component {
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints: [
-					{ x: new Date(2017, 6), y: 80 },
-					{ x: new Date(2017, 12), y: 89},
-					{ x: new Date(2018, 6), y: 95 },
-					{ x: new Date(2018, 12), y: 92 },				
+					{ y: 80, label: "First Quarter"},
+					{ y: 88, label: "Second Quarter"},
+					{ y: 84, label: "Third Quarter"},
+					{ y: 81, label: "Last Quarter"}			
 				]
 			}
     ]

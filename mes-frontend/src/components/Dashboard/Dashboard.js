@@ -23,8 +23,8 @@ class Dashboard extends Component {
             
             <GraphCard />
           </div>
-          <div className="col-md-2">
-            <strong><h6>Notifications  <i class="fas fa-bell"></i></h6></strong>
+          <div className="col-md-2 text-center notifications">
+            <strong><h6>Notifications  <i class="far fa-bell"></i></h6></strong>
             <hr/>
             <NotificationsDiv />
             <hr/>       

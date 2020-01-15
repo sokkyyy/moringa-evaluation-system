@@ -15,7 +15,7 @@
 }
 
 .container-fluid{
-  margin-top: 20px; 
+  margin-top: 10px; 
 }
 
 #user-dp{
@@ -23,8 +23,11 @@
 }
 
 .col-md-2{
-  font-size: 11px;
-  text-align: center;
+  font-size: 11px;  
+}
+
+.card-body p{
+  font-size: 12px;
 }
 
 #signout-button{
@@ -40,24 +43,26 @@
   text-align: center;
 }
 
+.notifications{
+  margin-top: 15px;
+}
+
 .d-md-flex{
   width: 235px;
   max-height: 300px; 
-  /* border-style: solid;
-  border-width: 1px; */
-
-
+  text-align: center;
 }
 
 .single-notification{
-  padding: 10px;
+  padding: 10px; 
+  font-size: 11px;
 }
 
 .single-notification:hover{
-  background-color: #609D49;
+  background-color: #558834;
   color: #fff;
   border-radius: 5px;
-  font-weight: bold;
+
 }
 
 

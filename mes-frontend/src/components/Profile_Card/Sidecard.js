@@ -21,10 +21,14 @@ const Sidecard = () => {
      
       <div class="card-body">
        
-        <h4 class="card-title">Anna Doe</h4>
+        <h4 class="card-title text-center">Anna Doe</h4>
         <hr></hr>
+
+        <p><i class="far fa-envelope"></i> anna@email.com</p>
        
-        <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+        <p><i class="fas fa-user-tag"></i> HR Manager</p>
+
+        <p><i class="fa fa-cog"></i> <a href="">Edit Profile</a></p>
       </div>
     
     </div>
