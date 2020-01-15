@@ -10,15 +10,15 @@ class CountdownTimer extends Component {
     }    
   }  
 
-  // changeDeadline() {
-  //   this.setState({deadline: this.state.newDeadline})
-  // }
+  changeDeadline() {
+    this.setState({deadline: this.state.newDeadline})
+  }
   
   render() { 
     return ( 
       <div className="timer">
         <div className="timer-title">
-          
+
           {/* Countdown to {this.state.deadline} */}
 
           Evaluation Deadline
@@ -30,10 +30,10 @@ class CountdownTimer extends Component {
 
        
 
-          {/* <Clock
+          <Clock
           deadline = {this.state.deadline} />
 
-           */}
+          
         </div>        
  
        
