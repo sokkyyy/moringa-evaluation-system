@@ -25,9 +25,9 @@ class Dashboard extends Component {
             <GraphCard />
           </div>
           <div className="col-md-2 text-center notifications">
-            {/* <div className="timer">
+            <div className="timer">
                < CountdownTimer />
-            </div> */}
+            </div>
             <br/>
             <hr/>
             <div className="notifications">
