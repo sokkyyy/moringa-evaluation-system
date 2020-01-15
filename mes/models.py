@@ -30,3 +30,26 @@ class JobGrade(models.Model):
     def __str__(self):
         return self.grade
     
+class Department(models.Model):
+    '''Model for Moringa Departments'''
+    department_names_choices = [
+        ('system_admin','System Admin'), #ONLY FOR SYSTEM ADMIN
+        # ('director', 'Director'),
+        ('finance','Finance'),
+        ('hr', 'Human Resource'),
+        ('people','People'),
+        ('classroom','Classroom'),
+    ]
+    name = models.CharField(max_length=30,choices=department_names_choices)
+    manager = models.OneToOneField(User, on_delete=models.CASCADE,related_name='department_manager')
+    line_manager = models.OneToOneField(User, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+    
+class MoringaStaff(models.Model):
+    ''' Model for All Moringa Staff Members '''
+    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
+    job_grade = models.ForeignKey(JobGrade, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department,on_delete=models.CASCADE)
+    system_role = models.ForeignKey(Role,on_delete=models.CASCADE)
+
