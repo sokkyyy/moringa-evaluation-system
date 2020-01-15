@@ -38,14 +38,16 @@ class Clock extends Component {
       const days = Math.floor(time/(1000*60*60*24));  
      
       this.setState({days, hours, minutes, seconds});
-    }
-
-    const seconds = 0;
-    const minutes = 0;
-    const hours = 0;
-    const days = 0;
+    }else{
+      const seconds = 0;
+      const minutes = 0;
+      const hours = 0;
+      const days = 0;
 
     this.setState({days, hours, minutes, seconds});
+    }
+
+    
 
 
 
