@@ -20,7 +20,7 @@ class Dashboard extends Component {
           </div>
           <div className="col-md-7">
             
-            {/* <GraphCard /> */}
+            <GraphCard />
           </div>
         </div>
        
