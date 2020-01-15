@@ -20,12 +20,12 @@ class Clock extends Component {
     setInterval(() => this.getTimeUntil(this.props.deadline), 1000);
   }
 
-  leading0(num){
-    if(num < 10){
-      return '0' + num;
-    }
-    return num;
-  }
+  // leading0(num){
+  //   if(num < 10){
+  //     return '0' + num;
+  //   }
+  //   return num;
+  // }
 
   getTimeUntil(deadline) {
     const time = Date.parse(deadline) - Date.parse(new Date());
@@ -41,7 +41,7 @@ class Clock extends Component {
     this.setState({days, hours, minutes, seconds});
   }
  
-  render() { 
+  render() {  
     
 
     return ( 
