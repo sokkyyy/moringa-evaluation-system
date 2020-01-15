@@ -32,7 +32,7 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto nav-flex-icons">
 
             <li className="nav-item">
-              <a className="nav-link" href="#">Dashboard</a>
+              <a className="nav-link" href="#">Notifications <i class="fas fa-bell"> </i> </a>
             </li>
 
             <li className="nav-item dropdown">

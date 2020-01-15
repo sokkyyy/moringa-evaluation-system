@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from '../dashboard-navbar/Navbar';
-import Sidecard from '../Side-card/Sidecard';
+import Navbar from '../Dashboard_NavBar/Navbar';
+import Sidecard from '../Profile_Card/Sidecard';
+import GraphCard from '../Graph_Card/Graphcard';
 
 class Dashboard extends Component {
   state = {  }
@@ -16,6 +17,10 @@ class Dashboard extends Component {
             <h4>Dashboard</h4>
             <hr/>
             <Sidecard />
+          </div>
+          <div className="col-md-7">
+            
+            {/* <GraphCard /> */}
           </div>
         </div>
        
