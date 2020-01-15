@@ -10,16 +10,16 @@ def home(request):
     return render(request,'index.html', {'title':title,})
 
 
-def todays_report(request):
-    if request.method == 'POST':
-        form = ReportForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['your_name']
-            email = form.cleaned_data['email']
-            recipient = NewsLetterRecipients(name = name,email =email)
-            recipient.save()
-            send_welcome_email(name,email)
-            HttpResponseRedirect('')
-    else:
-        form = ReportForm()
-    return render(request, 'report.html', {"letterForm":form})
+# def todays_report(request):
+#     if request.method == 'POST':
+#         form = ReportForm(request.POST)
+#         if form.is_valid():
+#             name = form.cleaned_data['your_name']
+#             email = form.cleaned_data['email']
+#             recipient = NewsLetterRecipients(name = name,email =email)
+#             recipient.save()
+#             send_welcome_email(name,email)
+#             HttpResponseRedirect('')
+#     else:
+#         form = ReportForm()
+#     return render(request, 'report.html', {"letterForm":form})
