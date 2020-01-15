@@ -40,5 +40,23 @@
   text-align: center;
 }
 
+.d-md-flex{
+  width: 235px;
+  max-height: 300px; 
+  /* border-style: solid;
+  border-width: 1px; */
+
+
+}
+
+.single-notification:hover{
+  background-color: #609D49;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+
 
 

@@ -25,6 +25,10 @@ class CombinedLineGraph extends Component {
     const options = {
 			animationEnabled: true,
 			colorSet: "colorSet2",
+
+			axisX: {
+				valueFormatString: "MMM"
+			},
 			
 		
 			toolTip: {
