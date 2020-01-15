@@ -24,7 +24,7 @@ class Dashboard extends Component {
             <GraphCard />
           </div>
           <div className="col-md-2">
-            <h6>Notifications</h6>
+            <strong><h6>Notifications  <i class="fas fa-bell"></i></h6></strong>
             <hr/>
             <NotificationsDiv />
             <hr/>       

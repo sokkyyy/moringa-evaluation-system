@@ -31,9 +31,9 @@ const Navbar = () => {
 
           <ul className="navbar-nav ml-auto nav-flex-icons">
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#">Notifications <i class="fas fa-bell"> </i> </a>
-            </li>
+            </li> */}
 
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"

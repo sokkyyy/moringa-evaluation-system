@@ -49,11 +49,14 @@
 
 }
 
+.single-notification{
+  padding: 10px;
+}
+
 .single-notification:hover{
   background-color: #609D49;
-  color: #ffffff;
+  color: #fff;
   border-radius: 5px;
-  padding: 10px;
   font-weight: bold;
 }
 

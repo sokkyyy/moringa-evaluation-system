@@ -8,8 +8,7 @@ class NotificationsDiv extends Component {
       <div className="overflow-auto p-3 mb-3 mb-md-0 mr-md-3">
 
         <div className="single-notification">
-          <strong>This is an example of using <code>.overflow-auto</code> on an element with set width and height dimensions. By
-          design, this content will vertically scroll.</strong>
+          You have an Evaluation Scheduled for 23, January, 2020. 
          
         </div>
         <hr/>
@@ -30,7 +29,7 @@ class NotificationsDiv extends Component {
           design, this content will vertically scroll.
           
         </div>
-        <hr/>
+
  
        
       </div>     
