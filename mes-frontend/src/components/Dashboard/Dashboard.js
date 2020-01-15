@@ -31,8 +31,7 @@ class Dashboard extends Component {
             <br/>
             <hr/>
             <div className="notifications">
-              <strong><h6>Notifications  <i class="far fa-bell"></i></h6></strong>
-              <strong><hr/></strong>
+              <strong><h6>Notifications  <i class="far fa-bell"></i></h6></strong>              
               <NotificationsDiv />
               <hr/> 
             </div>
