@@ -53,3 +53,25 @@ class MoringaStaff(models.Model):
     department = models.ForeignKey(Department,on_delete=models.CASCADE)
     system_role = models.ForeignKey(Role,on_delete=models.CASCADE)
 
+class Notification(models.Model):
+    email = models.EmailField()
+    staff_name = models.ForeignKey(User)
+    """(Status choice)"""
+    Active_Status = 1
+    Inactive_Status = 0
+    STATUS_CHOICES = (
+        (Active_Status, 'Active'),
+        (Inactive_Status, 'Inactive'),
+    )
+    status = models.IntegerField(choices=STATUS_CHOICES, default=Active_Status)
+    """(type choice)"""
+    Manager_meeting = 1
+    No_meeting = 2
+    Schedule_meeting = 0
+    TYPE_CHOICES = (
+        (Manager_meeting, '1'),
+        (No_meeting, '2'),
+        (Manager_meeting, '0'),
+    )
+    status = models.IntegerField(choices=STATUS_CHOICES, default=2)
+    
