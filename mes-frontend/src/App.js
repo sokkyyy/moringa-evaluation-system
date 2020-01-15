@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MainAssessment from './components/MainAssessment'
 
-function App() {
-  return (
-    <div className="App">
-    rrr
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <MainAssessment />
+    );
+  }
 }
 
 export default App;
