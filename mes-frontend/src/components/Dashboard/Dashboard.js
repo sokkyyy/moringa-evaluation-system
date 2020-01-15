@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../Dashboard_NavBar/Navbar';
+import Navbar from '../Navbar/Navbar';
 import Sidecard from '../Profile_Card/Sidecard';
 import GraphCard from '../Graph_Card/Graphcard';
 import NotificationsDiv from '../Notifications_Div/NotificationsDiv';

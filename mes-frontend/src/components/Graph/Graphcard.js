@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CombinedLineGraph from '../Graph/Combinedgraph'
+import CombinedLineGraph from './Combinedgraph'
 
 class GraphCard extends Component {
   state = {  }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from './logo.png'
 
 class AdminNavbar extends Component {
   state = {  }

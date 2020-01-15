@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import AdminNavbar from '../Navbar/AdminNavbar';
 
 class AdminDashboard extends Component {
   state = {  }
   render() { 
-    return ( 
-      <div></div>
-     );
+    return (
+      <body>
+        <div>
+          <AdminNavbar />
+        </div>
+      </body>
+    );
   }
 }
  
