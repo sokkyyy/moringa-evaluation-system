@@ -22,81 +22,81 @@ class CombinedLineGraph extends Component {
  
   render() { 
 
-    // const options = {
-		// 	animationEnabled: true,
-		// 	colorSet: "colorSet2",
+    const options = {
+			animationEnabled: true,
+			colorSet: "colorSet2",
 			
 		
-		// 	toolTip: {
-		// 		shared: true
-		// 	},
-		// 	legend: {
-		// 		cursor: "pointer",
-		// 		itemclick: this.toggleDataSeries,
-		// 		verticalAlign: "top"
-		// 	},
-		// 	data: [{
-		// 		type: "column",
-		// 		name: "Organization",
-		// 		showInLegend: true,
-		// 		yValueFormatString: "#,##0",
-		// 		dataPoints: [
-		// 			{ x: new Date(2017, 6), y: 38 },
-		// 			{ x: new Date(2017, 12), y: 39 },
-		// 			{ x: new Date(2018, 6), y: 78 },
-		// 			{ x: new Date(2018, 12), y: 89 },				
-		// 		]
-		// 	},{
-		// 		type: "column",
-		// 		name: "Interpersonal Comm.",
-		// 		showInLegend: true,
-		// 		yValueFormatString: "#,##0",
-		// 		dataPoints: [
-		// 			{ x: new Date(2017, 6), y: 78 },
-		// 			{ x: new Date(2017, 12), y: 39 },
-		// 			{ x: new Date(2018, 6), y: 98 },
-		// 			{ x: new Date(2018, 12), y: 100 },
+			toolTip: {
+				shared: true
+			},
+			legend: {
+				cursor: "pointer",
+				itemclick: this.toggleDataSeries,
+				verticalAlign: "top"
+			},
+			data: [{
+				type: "column",
+				name: "Organization",
+				showInLegend: true,
+				yValueFormatString: "#,##0",
+				dataPoints: [
+					{ x: new Date(2017, 6), y: 38 },
+					{ x: new Date(2017, 12), y: 39 },
+					{ x: new Date(2018, 6), y: 78 },
+					{ x: new Date(2018, 12), y: 89 },				
+				]
+			},{
+				type: "column",
+				name: "Interpersonal Comm.",
+				showInLegend: true,
+				yValueFormatString: "#,##0",
+				dataPoints: [
+					{ x: new Date(2017, 6), y: 78 },
+					{ x: new Date(2017, 12), y: 39 },
+					{ x: new Date(2018, 6), y: 98 },
+					{ x: new Date(2018, 12), y: 100 },
 				
-		// 		]
-		// 	},
-		// 	{
-		// 		type: "column",
-		// 		name: "Innovation",
-		// 		showInLegend: true,
-		// 		yValueFormatString: "#,##0",
-		// 		dataPoints: [
-		// 			{ x: new Date(2017, 6), y: 56 },
-		// 			{ x: new Date(2017, 12), y: 69},
-		// 			{ x: new Date(2018, 6), y: 55 },
-		// 			{ x: new Date(2018, 12), y: 67 },				
-		// 		]
-    //   },
-    //   {
-		// 		type: "column",
-		// 		name: "Building & Managing Relat.",
-		// 		showInLegend: true,
-		// 		yValueFormatString: "#,##0",
-		// 		dataPoints: [
-		// 			{ x: new Date(2017, 6), y: 53 },
-		// 			{ x: new Date(2017, 12), y: 69},
-		// 			{ x: new Date(2018, 6), y: 66 },
-		// 			{ x: new Date(2018, 12), y: 64 },				
-		// 		]
-    //   },
-    //   {
-		// 		type: "column",
-		// 		name: "Critical Thinking",
-		// 		showInLegend: true,
-		// 		yValueFormatString: "#,##0",
-		// 		dataPoints: [
-		// 			{ x: new Date(2017, 6), y: 80 },
-		// 			{ x: new Date(2017, 12), y: 89},
-		// 			{ x: new Date(2018, 6), y: 95 },
-		// 			{ x: new Date(2018, 12), y: 92 },				
-		// 		]
-		// 	}
-    // ]
-		// }
+				]
+			},
+			{
+				type: "column",
+				name: "Innovation",
+				showInLegend: true,
+				yValueFormatString: "#,##0",
+				dataPoints: [
+					{ x: new Date(2017, 6), y: 56 },
+					{ x: new Date(2017, 12), y: 69},
+					{ x: new Date(2018, 6), y: 55 },
+					{ x: new Date(2018, 12), y: 67 },				
+				]
+      },
+      {
+				type: "column",
+				name: "Building & Managing Relat.",
+				showInLegend: true,
+				yValueFormatString: "#,##0",
+				dataPoints: [
+					{ x: new Date(2017, 6), y: 53 },
+					{ x: new Date(2017, 12), y: 69},
+					{ x: new Date(2018, 6), y: 66 },
+					{ x: new Date(2018, 12), y: 64 },				
+				]
+      },
+      {
+				type: "column",
+				name: "Critical Thinking",
+				showInLegend: true,
+				yValueFormatString: "#,##0",
+				dataPoints: [
+					{ x: new Date(2017, 6), y: 80 },
+					{ x: new Date(2017, 12), y: 89},
+					{ x: new Date(2018, 6), y: 95 },
+					{ x: new Date(2018, 12), y: 92 },				
+				]
+			}
+    ]
+		}
     return ( 
 
     //   <div>
