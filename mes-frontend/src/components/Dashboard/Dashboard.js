@@ -3,6 +3,7 @@ import Navbar from '../Dashboard_NavBar/Navbar';
 import Sidecard from '../Profile_Card/Sidecard';
 import GraphCard from '../Graph_Card/Graphcard';
 import NotificationsDiv from '../Notifications_Div/NotificationsDiv';
+import CountdownTimer from '../Countdown_Timer/CountdownTimer';
 
 class Dashboard extends Component {
   state = {  }
@@ -24,11 +25,21 @@ class Dashboard extends Component {
             <GraphCard />
           </div>
           <div className="col-md-2 text-center notifications">
-            <strong><h6>Notifications  <i class="far fa-bell"></i></h6></strong>
+            {/* <div className="timer">
+               < CountdownTimer />
+            </div> */}
+            <br/>
             <hr/>
-            <NotificationsDiv />
-            <hr/>       
+            <div className="notifications">
+              <strong><h6>Notifications  <i class="far fa-bell"></i></h6></strong>
+              <strong><hr/></strong>
+              <NotificationsDiv />
+              <hr/> 
+            </div>
+            
+                  
           </div>
+          
         </div>
        
       </body>

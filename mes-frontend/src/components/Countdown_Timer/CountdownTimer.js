@@ -1,33 +1,42 @@
 import React, { Component } from 'react';
+import Clock from '../Clock/Clock'
 
 class CountdownTimer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      deadline: 'January, 17, 2020'
-    }
-  }
+      deadline: 'January 17, 2020',
+      newDeadline: ''
+    }    
+  }  
 
-  changeDeadline() {
-    this.setState({deadline: newDeadline})
-  }
+  // changeDeadline() {
+  //   this.setState({deadline: this.state.newDeadline})
+  // }
   
   render() { 
     return ( 
       <div className="timer">
         <div className="timer-title">
-          Countdown to {this.state.deadline}
+          
+          {/* Countdown to {this.state.deadline} */}
+
+          Evaluation Deadline
         </div>
+
+        <br/>
+
         <div>
-          <div className="clock-days">2 days</div>
-          <div className="clock-hours">12 hours</div>
-          <div className="clock-minutes">15 minutes</div>
-          <div className="clock-seconds">28 seconds</div>
-        </div>
-        <div>
-          <input placeholder="new date" onChange ={event => this.setState[{newDeadline: event.target.value}]}/>
-          <button onClick={() => this.changeDeadline()}>Submit</button>
-        </div>
+
+       
+
+          {/* <Clock
+          deadline = {this.state.deadline} />
+
+           */}
+        </div>        
+ 
+       
       </div>
       );
   }
