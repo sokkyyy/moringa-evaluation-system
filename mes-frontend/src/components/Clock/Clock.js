@@ -1,63 +1,63 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 
-// class Clock extends Component {
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//       days: 0,
-//       hours: 0,
-//       minutes: 0,
-//       seconds: 0
-//     }
+class Clock extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+    }
 
-//     console.log('this.props', this.props)
-//   }
-//   componentWillMount(){
-//     this.getTimeUntil(this.props.deadline);
-//   }
+    console.log('this.props', this.props)
+  }
+  componentWillMount(){
+    this.getTimeUntil(this.props.deadline);
+  }
 
-//   componentDidMount(){
-//     setInterval(() => this.getTimeUntil(this.props.deadline), 1000);
-//   }
+  componentDidMount(){
+    setInterval(() => this.getTimeUntil(this.props.deadline), 1000);
+  }
 
-//   leading0(num){
-//     if(num < 10){
-//       return '0' + num;
-//     }
-//     return num;
-//   }
+  leading0(num){
+    if(num < 10){
+      return '0' + num;
+    }
+    return num;
+  }
 
-//   getTimeUntil(deadline) {
-//     const time = Date.parse(deadline) - Date.parse(new Date());
+  getTimeUntil(deadline) {
+    const time = Date.parse(deadline) - Date.parse(new Date());
 
     
-//     const seconds = Math.floor((time/1000) % 60);
-//     const minutes = Math.floor((time/1000/60) % 60);
-//     const hours = Math.floor(time/(1000*60*60) % 24);
-//     const days = Math.floor(time/(1000*60*60*24));
+    const seconds = Math.floor((time/1000) % 60);
+    const minutes = Math.floor((time/1000/60) % 60);
+    const hours = Math.floor(time/(1000*60*60) % 24);
+    const days = Math.floor(time/(1000*60*60*24));
 
-//     console.log('days', days, 'hours', hours, 'minutes', minutes,'seconds', seconds)
+    console.log('days', days, 'hours', hours, 'minutes', minutes,'seconds', seconds)
 
-//     this.setState({days, hours, minutes, seconds});
-//   }
+    this.setState({days, hours, minutes, seconds});
+  }
  
-//   render() { 
+  render() { 
     
 
-//     return ( 
-//       <div>
-//         <div className="clock-days"><strong>{this.leading0(this.state.days)}</strong> d </div>
+    return ( 
+      <div>
+        <div className="clock-days"><strong>{this.leading0(this.state.days)}</strong> d </div>
 
-//         <div className="clock-hours"><strong>{this.leading0(this.state.hours)}</strong> h </div>
+        <div className="clock-hours"><strong>{this.leading0(this.state.hours)}</strong> h </div>
 
-//         <div className="clock-minutes"><strong>{this.leading0(this.state.minutes)}</strong> m </div>
+        <div className="clock-minutes"><strong>{this.leading0(this.state.minutes)}</strong> m </div>
 
-//         <div className="clock-seconds"><strong>{this.leading0(this.state.seconds)}</strong> s </div>
-//       </div>
+        <div className="clock-seconds"><strong>{this.leading0(this.state.seconds)}</strong> s </div>
+      </div>
       
-//      );
-//   }
-// }
+     );
+  }
+}
  
-// export default Clock
-// ;
+export default Clock
+;
