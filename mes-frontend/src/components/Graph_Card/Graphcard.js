@@ -1,39 +1,39 @@
-// import React, { Component } from 'react';
-// import CombinedLineGraph from '../Combined_Column Graph/Combinedgraph'
+import React, { Component } from 'react';
+import CombinedLineGraph from '../Combined_Column Graph/Combinedgraph'
 
-// class GraphCard extends Component {
-//   state = {  }
-//   render() { 
-//     return ( 
+class GraphCard extends Component {
+  state = {  }
+  render() { 
+    return ( 
        
 
 
 
-//       <div class="card card-cascade">
+      <div class="card card-cascade">
 
 
-//   <div class="view view-cascade gradient-card-header">
+  <div class="view view-cascade gradient-card-header">
 
 
-//     <h6 class="card-header-title mb-3"> <strong>My Growth Curve</strong> </h6>
+    <h6 class="card-header-title mb-3"> <strong>My Growth Curve</strong> </h6>
   
    
 
-//   </div>
+  </div>
 
  
-//   <div class="card-body card-body-cascade text-center">
+  <div class="card-body card-body-cascade text-center">
 
 
-//     <CombinedLineGraph />
+    <CombinedLineGraph />
 
-//     <hr/>
+    <hr/>
 
    
 
-//   </div>
+  </div>
 
-// </div>
+</div>
 
 
       
@@ -41,8 +41,8 @@
       
    
    
-//     );
-//   }
-// }
+    );
+  }
+}
  
-// export default GraphCard;
+export default GraphCard;
