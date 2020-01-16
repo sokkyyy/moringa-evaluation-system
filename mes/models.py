@@ -29,7 +29,7 @@ class JobGrade(models.Model):
     grade = models.CharField(max_length=10, choices=moringa_job_grade_choices,)
     def __str__(self):
         return self.grade
-    
+
 class Department(models.Model):
     '''Model for Moringa Departments'''
     department_names_choices = [
@@ -45,7 +45,7 @@ class Department(models.Model):
     line_manager = models.OneToOneField(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
-    
+
 class MoringaStaff(models.Model):
     ''' Model for All Moringa Staff Members '''
     user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
@@ -53,6 +53,71 @@ class MoringaStaff(models.Model):
     department = models.ForeignKey(Department,on_delete=models.CASCADE)
     system_role = models.ForeignKey(Role,on_delete=models.CASCADE)
 
+class Organization(models.Model):
+    """Model for Organization Competency Ratings """
+
+    planning = models.IntegerField()
+    execution = models.IntegerField()
+    prioritization = models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
+
+class Innovation(models.Model):
+    """Model for Innovation Competency Ratings """
+
+    vision_setting = models.IntegerField()
+    thinking = models.IntegerField() #thinking_out_of_the_box
+    adaptability = models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
+
+
+class InterpersonalCommunication(models.Model):
+    """Model for Interpersonal Communication Competency Ratings """
+
+    investment_building = models.IntegerField()
+    effective_communication = models.IntegerField()
+    delivery = models.IntegerField() #delivering the message(method + structure)
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
+
+
+class CriticalThinking(models.Model):
+    """Model for Critical Thinking Competency Ratings """
+
+
+    data_compilation = models.IntegerField()
+    data_analysis = models.IntegerField()
+    problem_solving = models.IntegerField()
+    continual_improvement= models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
+
+
+class Relationships(models.Model): #Building and Managing Relationships
+    """Model for Relationships Competency Ratings """
+
+
+    team_work = models.IntegerField()
+    stakeholder_management = models.IntegerField()
+    conflict_management = models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
+
+class CompetencyResults(models.Model):
+    '''Model to Consolidate Competency Ratings'''
+
+    evaluation_type_choices = [
+        ('self', 'Self'),
+        ('manager', 'Manager'),
+        ('final','Final'),
+    ]
+    type = models.CharField(max_length=30, choices=evaluation_type_choices)
+    staff = models.ForeignKey(MoringaStaff, on_delete=models.CASCADE)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    innovation = models.ForeignKey(Innovation, on_delete=models.CASCADE)
+    interpersonal_communication = models.ForeignKey(InterpersonalCommunication, on_delete=models.CASCADE)
+    critical_thinking = models.ForeignKey(CriticalThinking, on_delete=models.CASCADE)
+    relationships = models.ForeignKey(Relationships, on_delete=models.CASCADE)
+    last_modified = models.DateField(auto_now=True) #changes on every update
+    date_created = models.DateField(auto_now_add=True)
+
+    
 class Notification(models.Model):
     email = models.EmailField()
     staff_name = models.ForeignKey(User)
@@ -74,4 +139,3 @@ class Notification(models.Model):
         (Manager_meeting, '0'),
     )
     status = models.IntegerField(choices=STATUS_CHOICES, default=2)
-    

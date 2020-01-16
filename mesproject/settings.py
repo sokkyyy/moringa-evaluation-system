@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-            "mes",
+    "mes",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mes',
-        'USER': 'fatuma',
-        'PASSWORD':'qwerty12',
+        'USER': '',
+        'PASSWORD':'',
     }
 }
 
