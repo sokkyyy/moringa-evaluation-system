@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Landing from './components/Landing/Landing'
 
 function App() {
   return (
-    <div className="App">
-    rrr
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route path='/' component={Landing}/>
+        </Switch>      
+      </div>
+    </BrowserRouter>
   );
 }
-
 export default App;
