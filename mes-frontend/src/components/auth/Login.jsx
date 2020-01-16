@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import UserService from '.../services/UserService';
+import UserService from '../../services/UserService';
 
 const userService = new UserService();
 
@@ -31,7 +31,8 @@ export default class Login extends Component{
             localStorage.setItem('refresh', response.data.refresh);
             this.props.history.push('/home'); //CHANGE TO DASHBOARD
         })
-        .catch(() => {
+        .catch((errors) => {
+            console.log(errors);
             this.setState({errors:true});
         })
     }

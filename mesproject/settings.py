@@ -60,6 +60,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
 
+
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'mesproject.utils.my_jwt_response_handler'
 }
@@ -76,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'mesproject.urls'
