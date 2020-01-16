@@ -61,8 +61,22 @@ class Organization(models.Model):
     prioritization = models.IntegerField()
     score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
 
+class Innovation(models.Model):
+    """Model for Innovation Competency Ratings """
+
+    vision_setting = models.IntegerField()
+    thinking = models.IntegerField() #thinking_out_of_the_box
+    adaptability = models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
 
 
+class InterpersonalCommunication(models.Model):
+    """Model for Interpersonal Communication Competency Ratings """
+
+    investment_building = models.IntegerField()
+    effective_communication = models.IntegerField()
+    delivery = models.IntegerField() #delivering the message(method + structure)
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
 
 
 
