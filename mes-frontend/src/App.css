@@ -1,5 +1,5 @@
 .navbar{
-  background-color: #558834;
+  background-color: #689241;
 }
 
 #logo{
@@ -30,14 +30,20 @@
   font-size: 12px;
 }
 
-#signout-button{
-  background-color: #ED6219;
+#signout-button{  
+  background-color: #E87E02;
   color: #ffffff;
+
+}#signout-button:hover{
+  
+  background-color: #FF8900;
 }
+
+
 
 .gradient-card-header{
   padding-top: 14px;
-  background-color: #558834;
+  background-color: #689241;
   color: #ffffff;
   border-radius: 4px;
   text-align: center;
@@ -63,7 +69,7 @@
 }
 
 .single-notification:hover{
-  background-color: #558834;
+  background-color: #689241;
   color: #fff;
   border-radius: 5px;
 
@@ -88,7 +94,18 @@
   font-size: 20px;
 }
 
-
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}
 
 
 
