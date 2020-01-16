@@ -99,7 +99,25 @@ class Relationships(models.Model): #Building and Managing Relationships
     conflict_management = models.IntegerField()
     score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
 
+class CompetencyResults(models.Model):
+    '''Model to Consolidate Competency Ratings'''
 
+    evaluation_type_choices = [
+        ('self', 'Self'),
+        ('manager', 'Manager'),
+        ('final','Final'),
+    ]
+    type = models.CharField(max_length=30, choices=evaluation_type_choices)
+    staff = models.ForeignKey(MoringaStaff, on_delete=models.CASCADE)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+    innovation = models.ForeignKey(Innovation, on_delete=models.CASCADE)
+    interpersonal_communication = models.ForeignKey(InterpersonalCommunication, on_delete=models.CASCADE)
+    critical_thinking = models.ForeignKey(CriticalThinking, on_delete=models.CASCADE)
+    relationships = models.ForeignKey(Relationships, on_delete=models.CASCADE)
+    last_modified = models.DateField(auto_now=True) #changes on every update
+    date_created = models.DateField(auto_now_add=True)
+
+    
 class Notification(models.Model):
     email = models.EmailField()
     staff_name = models.ForeignKey(User)
