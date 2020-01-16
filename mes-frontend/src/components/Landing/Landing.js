@@ -1,5 +1,47 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+
+class DemoCarousel extends Component {
+  render() {
+      return (
+          <Carousel
+          showThumbs={false}
+          autoPlay={true}
+          infiniteLoop={true}
+          showArrows={false}
+          showStatus={false}
+          showIndicators={false}
+          dynamicHeight={true}
+          >
+            
+              <div>
+                  <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"style={{height:630}} />
+                  <div className="caption">
+                    <h2>Moringa</h2>
+                      <p>Ready Set Code</p>
+                  </div>
+              </div>
+              <div>
+                  <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"style={{height:630}}  />
+                  <div className="caption">
+                    <h2>Moringa</h2>
+                      <p>Ready Set Code</p>
+                  </div>
+              </div>
+              <div>
+                  <img src="https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"style={{height:630}}  />
+                  <div className="caption">
+                    <h2>Moringa</h2>
+                      <p>Ready Set Code</p>
+                  </div>
+              </div>
+          </Carousel>
+      );
+  }
+}
 
 class Landing extends Component {
     state = {  }
@@ -42,8 +84,7 @@ class Landing extends Component {
     </ul>
   </div>
 </nav>
-{/* <div className="eazy">
-<DemoCarousel /> */}
+<DemoCarousel /> 
 </div>
 
 
