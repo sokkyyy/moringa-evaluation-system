@@ -29,7 +29,7 @@ class JobGrade(models.Model):
     grade = models.CharField(max_length=10, choices=moringa_job_grade_choices,)
     def __str__(self):
         return self.grade
-    
+
 class Department(models.Model):
     '''Model for Moringa Departments'''
     department_names_choices = [
@@ -45,13 +45,28 @@ class Department(models.Model):
     line_manager = models.OneToOneField(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
-    
+
 class MoringaStaff(models.Model):
     ''' Model for All Moringa Staff Members '''
     user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     job_grade = models.ForeignKey(JobGrade, on_delete=models.CASCADE)
     department = models.ForeignKey(Department,on_delete=models.CASCADE)
     system_role = models.ForeignKey(Role,on_delete=models.CASCADE)
+
+class Organization(models.Model):
+    """Model for Organization Competency Ratings """
+
+    planning = models.IntegerField()
+    execution = models.IntegerField()
+    prioritization = models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
+
+
+
+
+
+
+
 
 class Notification(models.Model):
     email = models.EmailField()
@@ -74,4 +89,3 @@ class Notification(models.Model):
         (Manager_meeting, '0'),
     )
     status = models.IntegerField(choices=STATUS_CHOICES, default=2)
-    
