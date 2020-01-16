@@ -79,7 +79,25 @@ class InterpersonalCommunication(models.Model):
     score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
 
 
+class CriticalThinking(models.Model):
+    """Model for Critical Thinking Competency Ratings """
 
+
+    data_compilation = models.IntegerField()
+    data_analysis = models.IntegerField()
+    problem_solving = models.IntegerField()
+    continual_improvement= models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
+
+
+class Relationships(models.Model): #Building and Managing Relationships
+    """Model for Relationships Competency Ratings """
+
+
+    team_work = models.IntegerField()
+    stakeholder_management = models.IntegerField()
+    conflict_management = models.IntegerField()
+    score = models.DecimalField(max_digits=4, decimal_places=2,default=0.00)
 
 
 class Notification(models.Model):
