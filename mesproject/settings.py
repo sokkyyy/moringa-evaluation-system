@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -104,9 +105,9 @@ WSGI_APPLICATION = 'mesproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mes',
-        'USER': '',
-        'PASSWORD':'',
+        'NAME': 'dbtest',
+        'USER': 'samurai',
+        'PASSWORD':'superman7577',
     }
 }
 
