@@ -20,7 +20,7 @@ class CountdownTimer extends Component {
       <div className="timer">
         <div className="timer-title">
           {/* Countdown to {this.state.deadline} */}
-          Evaluation Deadline
+          <strong><h6>Evaluation Deadline</h6></strong> 
         </div>
 
         <br />
