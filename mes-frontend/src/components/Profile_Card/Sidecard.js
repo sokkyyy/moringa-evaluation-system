@@ -15,11 +15,15 @@ const Sidecard = () => {
         <hr></hr>
 
         <p>
-          <i class="far fa-envelope"></i> anna@email.com
+          <i class="far fa-envelope"></i>  anna@email.com
         </p>
 
         <p>
-          <i class="fas fa-user-tag"></i> HR Manager
+          <i class="fas fa-user-tag"></i>  HR Manager
+        </p>
+
+        <p>
+          <i class="fas fa-location-arrow"></i>  Nairobi Campus
         </p>
 
         <p>

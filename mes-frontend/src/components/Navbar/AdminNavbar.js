@@ -30,7 +30,7 @@ class AdminNavbar extends Component {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link" href="#" id="app_name">
-                  mes
+                  Admin
                   <span className="sr-only">(current)</span>
                 </a>
               </li>
@@ -51,20 +51,17 @@ class AdminNavbar extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Reports
+                  Job Grades
                 </a>
                 <div
                   className="dropdown-menu dropdown-default"
                   aria-labelledby="navbarDropdownMenuLink-333"
                 >
                   <a className="dropdown-item" href="#">
-                    My Reports
+                    Job Grades
                   </a>
                   <a className="dropdown-item" href="#">
-                    Team Reports
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Company Reports
+                    Add Job Grade
                   </a>
                 </div>
               </li>
@@ -77,20 +74,40 @@ class AdminNavbar extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Assessment
+                  Staff
                 </a>
                 <div
                   className="dropdown-menu dropdown-default"
                   aria-labelledby="navbarDropdownMenuLink-333"
                 >
                   <a className="dropdown-item" href="#">
-                    Take Assessment
+                    Staff
                   </a>
                   <a className="dropdown-item" href="#">
-                    Schedule Assessment
+                    Add Staff
+                  </a>
+                </div>
+              </li>
+
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  id="navbarDropdownMenuLink-333"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Departments
+                </a>
+                <div
+                  className="dropdown-menu dropdown-default"
+                  aria-labelledby="navbarDropdownMenuLink-333"
+                >
+                  <a className="dropdown-item" href="#">
+                    Departments
                   </a>
                   <a className="dropdown-item" href="#">
-                    In-Meeting Assessment
+                    Add Department
                   </a>
                 </div>
               </li>
