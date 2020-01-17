@@ -12,6 +12,8 @@ class CriticalThinking extends Component {
     this.props.prevStep();
   };
 
+
+
   render() {
     return (
       <div className="container-fluid">
@@ -105,6 +107,28 @@ class CriticalThinking extends Component {
                 consistently
               </label>
             </div>
+
+
+            <div className="custom-control custom-radio">
+              <label>
+                <input type="radio" name="option" value="1" />
+                Struggles to identify the most strategic options
+              </label>
+            </div>
+            <div className="custom-control custom-radio">
+              <label>
+                <input type="radio" name="option" value="2" />
+                identifies the most strategic options effectively and
+                consistently
+              </label>
+            </div>
+            <div className="custom-control custom-radio">
+              <label>
+                <input type="radio" name="option" value="3" />
+                Excels at identifying the most strategic options effectively and
+                consistently
+              </label>
+            </div>
           </div>
         </Form>
 
@@ -141,6 +165,7 @@ class CriticalThinking extends Component {
 
         <Button onClick={this.back}>Back</Button>
         <Button onClick={this.saveAndContinue}>Continue </Button>
+        <br/><br/><br/>
       </div>
     );
   }
