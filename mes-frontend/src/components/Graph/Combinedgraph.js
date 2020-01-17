@@ -68,7 +68,7 @@ class CombinedLineGraph extends Component {
 				yValueFormatString: "#,##0",
 				dataPoints: [
 					{ y: 78, label: "First Quarter"},
-					{ y: 38, label: "Second Quarter"},
+					{ y: 48, label: "Second Quarter"},
 					{ y: 88, label: "Third Quarter"},
 					{ y: 100, label: "Last Quarter"}			
 				]
@@ -92,9 +92,9 @@ class CombinedLineGraph extends Component {
 				yValueFormatString: "#,##0",
 				dataPoints: [
 					{ y: 43, label: "First Quarter"},
-					{ y: 68, label: "Second Quarter"},
+					{ y: 65, label: "Second Quarter"},
 					{ y: 66, label: "Third Quarter"},
-					{ y: 64}				
+					{ y: 64, label: "Last Quarter"}				
 				]
       },
       {
