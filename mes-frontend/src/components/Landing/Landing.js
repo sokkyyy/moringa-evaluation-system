@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+import { render } from "react-dom";
+
 
 
 class DemoCarousel extends Component {
@@ -38,6 +40,7 @@ class DemoCarousel extends Component {
                       <p>Ready Set Code</p>
                   </div>
               </div>
+              
           </Carousel>
       );
   }
@@ -48,46 +51,52 @@ class Landing extends Component {
     render() { 
         return ( 
 <div>
-<nav className="mb-1 navbar navbar-expand-lg navbar-dark fixed-top" style={{backgroundColor: '#689241'}}>
-  <a className="navbar-brand" href="#">MES</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="navbarSupportedContent-333">
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-        <a className="nav-link" href="#">Home
-          <span className="sr-only">(current)</span>
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Features</a>
-      </li>
-     
-      
-    </ul>
-    <ul className="navbar-nav ml-auto nav-flex-icons">
-    <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Dropdown
-        </a>
-        <div className="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-          <a className="dropdown-item" href="#">Action</a>
-          <a className="dropdown-item" href="#">Another action</a>
-          <a className="dropdown-item" href="#">Something else here</a>
+<section className="container-fill">
+      <div className="row mx-0 my-0">
+        <div className="col-md-6" style={{width: '100%'}}>
+        <DemoCarousel />
         </div>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Log In</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<DemoCarousel /> 
-</div>
-
-
+        <div className="col-md-6">
+    <div className="card">
+    
+        <h5 className="card-header info-color white-text text-center py-4">
+            <strong>Sign in</strong>
+        </h5>
+    
+        <div className="card-body px-lg-5 pt-0">
+    
+            <form className="md-form" style={{color: '#757575'}}>
+    
+              <input type="email" id="materialLoginFormEmail" className="form-control"/>
+              <label for="materialLoginFormEmail">E-mail</label>
+    
+    
+              <input type="password" id="materialLoginFormPassword" className="form-control"/>
+                <label for="materialLoginFormPassword">Password</label>
+    
+    
+                <div className="d-flex align-items-center justify-content-between">
+                    <div className="form-check">
+                        <input type="checkbox" className="form-check-input" id="materialLoginFormRemember"/>
+                        <label className="form-check-label" for="materialLoginFormRemember">Remember me</label>
+                    </div>
+                    <div>
+                        <a href="">Forgot password?</a>
+                    </div>
+                </div>
+    
+    
+                <button className="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+    
+              
+            </form>
+        </div>
+    </div>
+ 
+        </div>
+      </div>
+      </section>
+    </div>
          );
     }
 }
