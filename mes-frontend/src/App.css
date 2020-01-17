@@ -37,7 +37,7 @@
 
 .gradient-card-header{
   padding-top: 14px;
-  background-color: #609D49   ;
+  background-color: #558834;
   color: #ffffff;
   border-radius: 4px;
   text-align: center;
@@ -53,7 +53,7 @@
 
 .d-md-flex{
   width: 235px;
-  max-height: 200px; 
+  max-height: 300px; 
   text-align: center;
 }
 
@@ -88,10 +88,7 @@
   font-size: 20px;
 }
 
-.timer-title{
-  font-size: 15px;
-  font-weight: bold;
-}
+
 
 
 
