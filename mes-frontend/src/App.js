@@ -1,22 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import logo from './logo.svg';
+import {BrowserRouter, Route} from 'react-router-dom';
+
 import './App.css';
-import Dashboard from './components/Dashboard/Dashboard';
-import AdminDashboard from './components/Dashboard/AdminDashboard';
+import Login from './components/auth/Login';
+import Home from './components/Home';
+
+
 
 function App() {
   return (
-
     <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route path='/' component={Dashboard}/>
-        </Switch>      
-      </div>
+      <Route path='/login' exact component={Login}></Route>
+      <Route path='/home' exact component={Home}></Route>
     </BrowserRouter>
-    // <div className="App">
-    // rrr
-    // </div>
+
   );
 }
 

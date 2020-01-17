@@ -14,8 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
+from mes import views
+from django.urls import path, include
+from mes.views import  current_user, UserList,CustomJWTSerializer
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    re_path('^api/current_user/$', current_user),
+    re_path('^api/register/$', UserList.as_view()),
+    re_path('^api/departments/$', views.departments),
+    re_path('^api/competency-results/$', views.competency_results),
+    re_path('^api/moringa-staff/$', views.moringa_staff),
+    re_path('^api/token_auth/$',TokenObtainPairView.as_view(serializer_class=CustomJWTSerializer)),
+    re_path('^api/refresh_token/$', TokenRefreshView.as_view()),
+    re_path('^api/post/results/$',views.CompetencyResultsPost.as_view()),
 ]
