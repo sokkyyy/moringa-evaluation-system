@@ -10,8 +10,10 @@ class Role(models.Model):
         ('user', 'System User'),
     ]
     role = models.CharField(max_length=20,choices=role_choices)
+    
     def __str__(self):
         return self.role
+
 class JobGrade(models.Model):
     '''Model for Job Grades'''
     moringa_job_grade_choices = [

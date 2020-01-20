@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'mesproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbtest',
+        'NAME': 'mes',
         'USER': 'samurai',
         'PASSWORD':'superman7577',
     }

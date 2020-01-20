@@ -29,7 +29,7 @@ export default class Login extends Component{
             console.log(response.data);
             localStorage.setItem('access', response.data.access);
             localStorage.setItem('refresh', response.data.refresh);
-            this.props.history.push('/home'); //CHANGE TO DASHBOARD
+            this.props.history.push('/dashboard'); //CHANGE TO DASHBOARD
         })
         .catch((errors) => {
             console.log(errors);
