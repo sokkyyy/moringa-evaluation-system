@@ -1,0 +1,94 @@
+.navbar{
+  background-color: #558834;
+}
+
+#logo{
+  height: 40px;
+  width: 80px;
+  margin-bottom: 6px;
+}
+
+#app_name{
+  margin-top: 3px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.container-fluid{
+  margin-top: 10px; 
+}
+
+#user-dp{
+  margin-top: 10px;
+}
+
+.col-md-2{
+  font-size: 11px;  
+}
+
+.card-body p{
+  font-size: 12px;
+}
+
+#signout-button{
+  background-color: #ED6219;
+  color: #ffffff;
+}
+
+.gradient-card-header{
+  padding-top: 14px;
+  background-color: #558834;
+  color: #ffffff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.notifications{
+  margin-top: 15px;
+}
+
+.notifications h6{
+  font-weight: bold;
+}
+
+.d-md-flex{
+  width: 235px;
+  max-height: 300px; 
+  text-align: center;
+}
+
+.single-notification{
+  padding: 5px; 
+  font-size: 12px;
+}
+
+.single-notification:hover{
+  background-color: #558834;
+  color: #fff;
+  border-radius: 5px;
+
+}
+
+.clock-days{
+  display: inline;
+  font-size: 20px;
+}
+.clock-hours{
+  display: inline;
+  font-size: 20px;  
+}
+
+.clock-minutes{
+  display: inline;
+  font-size: 20px;
+}
+
+.clock-seconds{
+  display: inline;
+  font-size: 20px;
+}
+
+
+
+
+
