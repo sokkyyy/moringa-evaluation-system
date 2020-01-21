@@ -111,6 +111,7 @@ DATABASES = {
         'NAME': 'mes',
         'USER': 'baraka',
         'PASSWORD':'fRankline',
+
     }
 }
 

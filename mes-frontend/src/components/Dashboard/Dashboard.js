@@ -1,14 +1,35 @@
 import React, { Component } from 'react';
-import Navbar from '../Navbar/Navbar';
-import Sidecard from '../Profile_Card/Sidecard';
-import GraphCard from '../Graph_Card/Graphcard';
-import NotificationsDiv from '../Notifications_Div/NotificationsDiv';
 import CountdownTimer from '../Countdown_Timer/CountdownTimer';
+import GraphCard from '../Graph_Card/Graphcard';
+import Navbar from '../Navbar/Navbar';
+import NotificationsDiv from '../Notifications_Div/NotificationsDiv';
 import user from './user.svg'
+import Sidecard from '../Profile_Card/Sidecard';
+import UserService from '../../services/UserService';
+
+
+
+const userService = new UserService();
+
 
 class Dashboard extends Component {
-  state = {  }
-  render() { 
+  constructor(props){
+    super(props);
+
+  }
+
+  componentDidMount(){
+    userService.getUser()
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(() =>{
+
+        this.props.history.push('/login');
+    })
+}
+  render() {
+
     return (
       <body>
         <div>
@@ -55,6 +76,7 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className="col-md-8">
+
             <GraphCard />
           </div>
           <div className="col-md-2 text-center notifications">
@@ -64,6 +86,7 @@ class Dashboard extends Component {
             <br />
             <hr />
             <div className="notifications">
+
               <strong>
                 <h6>
                   Notifications <i class="far fa-bell"></i>
@@ -75,9 +98,11 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
+
+              
       </body>
     );
   }
 }
- 
+
 export default Dashboard;
