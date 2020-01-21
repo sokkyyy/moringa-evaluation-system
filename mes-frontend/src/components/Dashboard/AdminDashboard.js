@@ -22,6 +22,7 @@ import DepartmentTable from '../tables/DepartmentTable';
 import RoleTable from '../tables/RoleTable';
 import GradeTable from '../tables/GradeTable';
 import './Dashboard.css'
+import StaffForm from '../Forms/StaffForm'
 
 
 
@@ -104,10 +105,10 @@ export default function PersistentDrawerLeft() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar       
+      <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
+          [classes.appBarShift]: open
         })}
       >
         <Toolbar>
@@ -122,7 +123,6 @@ export default function PersistentDrawerLeft() {
           </IconButton>
           <Typography variant="h6" noWrap>
             Admin
-            
           </Typography>
         </Toolbar>
       </AppBar>
@@ -132,54 +132,80 @@ export default function PersistentDrawerLeft() {
         anchor="left"
         open={open}
         classes={{
-          paper: classes.drawerPaper,
+          paper: classes.drawerPaper
         }}
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {['Profile','Traffic','Notifications', 'Reports'].map((text, index) => (
-            <ListItem button key={text}>
-              
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {["Profile", "Traffic", "Notifications", "Reports"].map(
+            (text, index) => (
+              <ListItem button key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            )
+          )}
         </List>
-        <Divider />        
+        <Divider />
       </Drawer>
       <main
         className={clsx(classes.content, {
-          [classes.contentShift]: open,
+          [classes.contentShift]: open
         })}
       >
-       
         <div className={classes.drawerHeader} />
+
+        <div
+          className="modal fade"
+          id="add-staff"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header bg-green">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Add Staff
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <StaffForm />
+              </div>
+            </div>
+          </div>
+        </div>
 
         <StaffTable />
 
-
         <div className="row other">
           <div className="col-md-4">
-
             <DepartmentTable />
-          
           </div>
           <div className="col-md-4">
-
             <RoleTable />
-        
           </div>
           <div className="col-md-4">
-
             <GradeTable />
-         
           </div>
         </div>
-        
       </main>
     </div>
   );

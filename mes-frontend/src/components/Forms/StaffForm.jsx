@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './app.css'
+
 
 class StaffForm extends Component {
   state = {  }
   render() { 
     return (
       <form className="text-center border border-light p-5" action="#!">
-        <p className="h4 mb-4">Add Staff</p>
+       
 
         <input
           type="text"

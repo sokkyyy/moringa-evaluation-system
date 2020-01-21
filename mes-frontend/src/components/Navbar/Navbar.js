@@ -85,8 +85,12 @@ const Navbar = () => {
                 <a className="dropdown-item" href="#">
                   Take Assessment
                 </a>
-                <a className="dropdown-item" href="#" data-toggle="modal"
-              data-target="#scheduleassessment">
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#scheduleassessment"
+                >
                   Schedule Assessment
                 </a>
                 <a className="dropdown-item" href="#">
@@ -94,12 +98,6 @@ const Navbar = () => {
                 </a>
               </div>
             </li>
-
-            {/* <li className="nav-item ssn">
-              <a className="nav-link btn" id="signout-button" href="#">
-                Sign Out
-              </a>
-            </li> */}
           </ul>
 
           <a className="nav-link btn" id="signout-button" href="#">

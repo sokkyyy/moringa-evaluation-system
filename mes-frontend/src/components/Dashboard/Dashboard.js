@@ -72,10 +72,10 @@ class Dashboard extends Component {
                   </div>
                   <div className="modal-body">
                     <ScheduleAssessmentForm />
-                  </div>
-                 
+                  </div>                 
                 </div>
               </div>
+
             </div>
           </div>
           <div className="col-md-2 text-center notifications">
