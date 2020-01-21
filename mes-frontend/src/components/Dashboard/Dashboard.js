@@ -15,10 +15,11 @@ const userService = new UserService();
 class Dashboard extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       staff: {},
       load:true,
-    }
+    };
 
   }
 
@@ -32,7 +33,8 @@ class Dashboard extends Component {
     .catch(() =>{
         this.props.history.push('/login');
     })
-}
+  }
+  
   render() {
     return (
       <div>
@@ -55,7 +57,7 @@ class Dashboard extends Component {
           </div>
           <div className="col-md-2 text-center notifications">
             <div className="timer">
-               < CountdownTimer />
+               <CountdownTimer />
             </div>
             <br/>
             <hr/>

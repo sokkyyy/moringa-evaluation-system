@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.png'
+import {Link} from 'react-router-dom';
 
 
 function Navbar(props){
@@ -42,9 +43,9 @@ function Navbar(props){
 
           <ul className="navbar-nav ml-auto nav-flex-icons">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to='/dashboard' className="nav-link" href="#">
                 Dashboard
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item dropdown">
@@ -64,12 +65,16 @@ function Navbar(props){
                 <a className="dropdown-item" href="#">
                   My Reports
                 </a>
-                <a className="dropdown-item" href="#">
-                  Team Reports
-                </a>
-                <a className="dropdown-item" href="#">
-                  Company Reports
-                </a>
+                {(props.role === 'user')? '' : (
+                  <div>
+                    <a className="dropdown-item" href="#">
+                      Team Reports
+                    </a>
+                    <a className="dropdown-item" href="#">
+                      Company Reports
+                    </a>
+                  </div>
+                )}
               </div>
             </li>
 
@@ -87,11 +92,11 @@ function Navbar(props){
                 className="dropdown-menu dropdown-default"
                 aria-labelledby="navbarDropdownMenuLink-333"
               >
-                <a className="dropdown-item" href="#">
+                <Link to='/assessment' className="dropdown-item">
                   Take Assessment
-                </a>
-                
-                {/* HIDE  Schedule Assessment AND In-Meeting Assessment */}
+                </Link>
+
+                {/* HIDE  Schedule Assessment AND In-Meeting Assessment from SYSTEM USERS*/}
                 {(props.role === 'user')? '' : (
                   <div>
                     <a className="dropdown-item" href="#">
@@ -100,6 +105,7 @@ function Navbar(props){
                     <a className="dropdown-item" href="#">
                       In-Meeting Assessment
                     </a>
+
                   </div>
                 )}
               </div>
