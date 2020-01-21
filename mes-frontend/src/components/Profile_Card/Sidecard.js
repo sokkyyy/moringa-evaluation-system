@@ -3,14 +3,14 @@ import user from './user.svg'
 
 const Sidecard = () => {
   return (
-    <div class="card testimonial-card">
+    <div class="card testimonial-card profile">
       <div class="card-up red lighten-1"></div>
 
       <div class="avatar mx-auto white">
         <img src={user} id="user-dp" alt="user-dp" heigh="80px" width="80px" />
       </div>
 
-      <div class="card-body">
+      <div class="card-body text-center">
         <h4 class="card-title text-center">Anna Doe</h4>
         <hr></hr>
 

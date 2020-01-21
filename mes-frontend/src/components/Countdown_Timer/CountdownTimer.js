@@ -6,7 +6,7 @@ class CountdownTimer extends Component {
     super(props);
     this.state = {
       // deadline: new Date(),
-      deadline: 'Jan 25, 2020',
+      deadline: 'Jan 24, 2020',
       newDeadline: ''
     }    
   }  

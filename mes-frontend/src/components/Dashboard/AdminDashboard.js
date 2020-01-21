@@ -1,162 +1,243 @@
-import React, { Component } from "react";
-import AdminNavbar from "../Navbar/AdminNavbar";
-import Sidecard from '../Profile_Card/Sidecard'
 
 
-const $ = require('jquery')
-$.DataTable = require('datatables.net')
+import React, { Component } from 'react';
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBInput, MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
+import { MDBDataTable } from 'mdbreact';
+import AdminNavbar from '../Navbar/AdminNavbar'
 
 class AdminDashboard extends Component {
+  state = {  }
+  render() { 
 
-  componentDidMount(){
-    // $(document).ready(function () {
-    //   $('#dtBasicExample').DataTable();
-    //   // $('.dataTables_length').addClass('bs-select');
-    //   });
-  }
-  componentWillUnmount(){
-
-    }
-
-  state = {};
-  render() {
+  const data = {
+    columns: [
+      
+      {
+        // 'label': 'Name',
+        'field': 'name',
+        'sort': 'asc'
+      },
+      {
+        // 'label': 'Job Grade',
+        'field': 'job_grade',
+        'sort': 'asc'
+      },
+      {
+        // 'label': 'Department',
+        'field': 'department',
+        'sort': 'asc'
+      },
+      {
+        // 'label': 'Role',
+        'field': 'role',
+        'sort': 'asc'
+      },
+      {
+        // 'label': 'Edit',
+        'field': 'edit',
+        'sort': 'asc'
+      },
+      {
+        // 'label': 'Delete',
+        'field': 'delete',
+        'sort': 'asc'
+      },
+    ],
+    rows: [
+      {
+        
+        'name': 'Otto',
+        'job_grade': '1',
+        'department': 'Finance',
+        'role': 'Admin',      
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Jake',
+        'job_grade': 'TM - Level 2',
+        'department': 'Finance',
+        'role': 'Super Admin',        
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Esther',
+        'job_grade': '3',
+        'department': 'Classroom',
+        'role': 'System User',
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+        
+        
+      },
+      {
+        
+        'name': 'Joel',
+        'job_grade': '4',
+        'department': 'Classroom',
+        'role': 'Admin',
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Jacob',
+        'job_grade': '8',
+        'department': 'System Admin',
+        'role': 'Super Admin',        
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Anita',
+        'job_grade': '12',
+        'department': 'Classroom',
+        'role': 'System User',
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+        
+        
+      },
+      {
+        
+        'name': 'Joe',
+        'job_grade': '12',
+        'department': 'Finance',
+        'role': 'Admin',
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Mark',
+        'job_grade': '5',
+        'department': 'Finance',
+        'role': 'Super Admin',       
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Alexis',
+        'job_grade': '6',
+        'department': 'Classroom',
+        'role': 'System User',       
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+        
+        
+      },
+      {
+        
+        'name': 'Heaton',
+        'job_grade': '7',
+        'department': 'Classroom',
+        'role': 'System User',      
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+        
+        
+      },
+      {
+        
+        'name': 'Onell',
+        'job_grade': '9',
+        'department': 'Finance',
+        'role': 'Admin',
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Lottin',
+        'job_grade': '5',
+        'department': 'Finance',
+        'role': 'Super Admin', 
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+      },
+      {
+        
+        'name': 'Alphonse',
+        'job_grade': '3',
+        'department': 'Classroom',
+        'role': 'System User',        
+        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
+        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
+        
+        
+      }
+      
+    ]
+  };
     return (
       <body>
-        <div>
-          <AdminNavbar />
-        </div>
-        <div className="container">
-          {/* <div classNameName="col-md-2">
-            <h4>Dashboard</h4>
-            <hr />
-            <Sidecard />
-          </div> */}
+        {/* <div>
+        <AdminNavbar />
+      </div> */}
+        <div className="row">
+          <div className="col-md-2 admin-bar">
 
+          </div>
           <div className="col-md-10">
-            <div className="row staff">
-              <table
-                id="dtBasicExample"
-                className="table table-striped table-bordered table-sm"
-                cellspacing="0"
-                width="100%"
-              >
-                <thead>
-                  <tr>
-                    <th className="th-sm">Name</th>
-                    <th className="th-sm">Position</th>
-                    <th className="th-sm">Office</th>
-                    <th className="th-sm">Age</th>
-                    <th className="th-sm">Start date</th>
-                    <th className="th-sm">Salary</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                  </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                  </tr>
-                  <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td>$86,000</td>
-                  </tr>
-                  <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                  </tr>
-                  <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td>$162,700</td>
-                  </tr>
-                  <tr>
-                    <td>Brielle Williamson</td>
-                    <td>Integration Specialist</td>
-                    <td>New York</td>
-                    <td>61</td>
-                    <td>2012/12/02</td>
-                    <td>$372,000</td>
-                  </tr>
-                  <tr>
-                    <td>Herrod Chandler</td>
-                    <td>Sales Assistant</td>
-                    <td>San Francisco</td>
-                    <td>59</td>
-                    <td>2012/08/06</td>
-                    <td>$137,500</td>
-                  </tr>                
-                  <tr>
-                    <td>Rhona Davidson</td>
-                    <td>Integration Specialist</td>
-                    <td>Tokyo</td>
-                    <td>55</td>
-                    <td>2010/10/14</td>
-                    <td>$327,900</td>
-                  </tr>                 
-                  <tr>
-                    <td>Sakura Yamamoto</td>
-                    <td>Support Engineer</td>
-                    <td>Tokyo</td>
-                    <td>37</td>
-                    <td>2009/08/19</td>
-                    <td>$139,575</td>
-                  </tr>
-                 
-                  <tr>
-                    <td>Zorita Serrano</td>
-                    <td>Software Engineer</td>
-                    <td>San Francisco</td>
-                    <td>56</td>
-                    <td>2012/06/01</td>
-                    <td>$115,000</td>
-                  </tr>
-                  <tr>
-                    <td>Jennifer Acosta</td>
-                    <td>Junior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>43</td>
-                    <td>2013/02/01</td>
-                    <td>$75,650</td>
-                  </tr>
-                  
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
 
-            <div className="row departments"></div>
-            <div className="row job-grades"></div>
+            <h4>Dashboard</h4>
+
+            <hr/>
+            
+            <MDBCard narrow>
+              {/* <MDBCardHeader className="view view-cascade green gradient-card-header d-flex justify-content-between align-items-center py-2 mx-4 mb-3"> */}
+                <div>
+                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
+      <i className="fa fa-th-large mt-0"></i>
+    </MDBBtn> */}
+                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
+      <i className="fa fa-columns mt-0"></i>
+    </MDBBtn> */}
+                {/* </div>
+                <a href="#" className="white-text mx-3">
+                  Staff
+                </a>
+                <div> */}
+                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
+      <i className="fas fa-pencil-alt mt-0"></i>
+    </MDBBtn> */}
+                  {/* <MDBBtn
+                    outline
+                    rounded
+                    size="sm"
+                    color="white"
+                    className="px-2"
+                  >
+                    <i className="fas fa-times mt-0"></i>
+                  </MDBBtn> */}
+                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
+      <i className="fa fa-info-circle mt-0"></i>
+    </MDBBtn> */}
+                </div>
+              {/* </MDBCardHeader> */}
+              <MDBCardBody cascade>
+                <MDBDataTable
+                  scrollY
+                  maxHeight="200px"
+                  striped
+                  small
+                  data={data}
+                />
+                {/* <MDBTable btn fixed>
+    <MDBTableHead columns={data_panel.columns} />
+    <MDBTableBody rows={data_panel.rows} />
+  </MDBTable> */}
+
+                <MDBBtn rounded size="m" color="green" className="px-2">
+                  Add Staff
+                </MDBBtn>
+              </MDBCardBody>
+            </MDBCard>
           </div>
         </div>
       </body>
@@ -165,3 +246,5 @@ class AdminDashboard extends Component {
 }
 
 export default AdminDashboard;
+
+

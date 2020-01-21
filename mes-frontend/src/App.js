@@ -1,22 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import {BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
-import Dashboard from './components/Dashboard/Dashboard';
-import AdminDashboard from './components/Dashboard/AdminDashboard';
+import Login from './components/auth/Login';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard/Dashboard'
+import Item from './components/Dashboard/AdminDashboard'
 
 function App() {
   return (
-
     <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route path='/' component={AdminDashboard}/>
-        </Switch>      
-      </div>
+      <Route path="/" exact component={Login}></Route>
+      <Route path="/home" exact component={Home}></Route>
+      <Route path="/dashboard" exact component={Dashboard}></Route>
+      <Route path="/admindashboard" exact component={Item}></Route>
+      
+
     </BrowserRouter>
-    // <div className="App">
-    // rrr
-    // </div>
   );
 }
 

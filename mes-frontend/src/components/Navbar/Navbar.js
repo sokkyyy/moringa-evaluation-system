@@ -93,6 +93,12 @@ const Navbar = () => {
                 </a>
               </div>
             </li>
+
+            {/* <li className="nav-item ssn">
+              <a className="nav-link btn" id="signout-button" href="#">
+                Sign Out
+              </a>
+            </li> */}
           </ul>
 
           <a className="nav-link btn" id="signout-button" href="#">
