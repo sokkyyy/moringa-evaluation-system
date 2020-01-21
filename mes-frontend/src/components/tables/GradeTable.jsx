@@ -86,7 +86,7 @@ class GradeTable extends Component {
   </MDBTable> */}
 
                 <MDBBtn rounded size="m" color="green" className="px-2"
-                //  data-toggle="modal" data-target="#add-grade"
+                 data-toggle="modal" data-target="#add-grade"
                  >
                   Add Grade
                 </MDBBtn>
