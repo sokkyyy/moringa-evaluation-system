@@ -15,16 +15,18 @@ const userService = new UserService();
 class Dashboard extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      staff: {},
+    }
 
   }
 
   componentDidMount(){
     userService.getUser()
     .then(response => {
-        console.log(response.data);
+        this.setState({staff: response.data});
     })
     .catch(() =>{
-
         this.props.history.push('/login');
     })
 }
@@ -39,7 +41,7 @@ class Dashboard extends Component {
           <div className="col-md-2">
             <h4>Dashboard</h4>
             <hr/>
-            <Sidecard />
+            <Sidecard staff={this.state.staff} />
           </div>
           <div className="col-md-8">
 

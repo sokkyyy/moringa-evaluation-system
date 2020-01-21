@@ -1,7 +1,7 @@
 import React from 'react';
 import user from './user.svg'
 
-const Sidecard = () => {
+function Sidecard(props){
   return (
     <div class="card testimonial-card">
       <div class="card-up red lighten-1"></div>
@@ -32,7 +32,7 @@ const Sidecard = () => {
       </div>
     </div>
   );
-   
+
 
 
 }
