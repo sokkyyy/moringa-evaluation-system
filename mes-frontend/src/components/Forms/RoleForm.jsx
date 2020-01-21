@@ -5,7 +5,7 @@ class RoleForm extends Component {
   render() { 
     return (
       <form className="text-center border border-light p-5" action="#!">
-        <p className="h4 mb-4">Add Role</p>
+      
 
         <input
           type="text"
