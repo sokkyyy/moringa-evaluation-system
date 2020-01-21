@@ -18,6 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import StaffTable from '../tables/StaffTable';
+import DepartmentTable from '../tables/DepartmentTable';
 
 
 
@@ -160,6 +161,8 @@ export default function PersistentDrawerLeft() {
 
         <div className="row">
           <div className="col-md-4">
+
+            <DepartmentTable />
           
           </div>
           <div className="col-md-4">
