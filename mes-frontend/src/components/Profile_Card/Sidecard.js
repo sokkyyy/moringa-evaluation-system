@@ -10,7 +10,7 @@ const Sidecard = () => {
         <img src={user} id="user-dp" alt="user-dp" heigh="80px" width="80px" />
       </div>
 
-      <div class="card-body text-center">
+      <div class="card-body">
         <h4 class="card-title text-center">Anna Doe</h4>
         <hr></hr>
 
@@ -32,9 +32,6 @@ const Sidecard = () => {
       </div>
     </div>
   );
-   
-
-
 }
 
 export default Sidecard
