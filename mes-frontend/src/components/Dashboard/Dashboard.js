@@ -26,15 +26,19 @@ class Dashboard extends Component {
   componentDidMount(){
     userService.getUser()
     .then(response => {
-        this.setState({staff: response.data});
-        this.setState({load:false});
-        console.log(this.state);
+        if(response.data.system_role == 'super_admin'){
+          window.location.href = '/admin/dashboard';
+        }else{
+          this.setState({staff: response.data});
+          this.setState({load:false});
+          console.log(response.data.system_role);
+        }
     })
     .catch(() =>{
         this.props.history.push('/login');
     })
   }
-  
+
   render() {
     return (
       <div>
