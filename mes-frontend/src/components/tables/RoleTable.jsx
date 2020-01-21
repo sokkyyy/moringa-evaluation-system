@@ -86,7 +86,7 @@ class RoleTable extends Component {
     <MDBTableBody rows={data_panel.rows} />
   </MDBTable> */}
 
-                <MDBBtn rounded size="m" color="green" className="px-2">
+                <MDBBtn rounded size="m" color="green" className="px-2" data-toggle="modal" data-target="#add-role">
                   Add Role
                 </MDBBtn>
               </MDBCardBody>
