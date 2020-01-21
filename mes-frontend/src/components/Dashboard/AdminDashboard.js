@@ -25,6 +25,7 @@ import './Dashboard.css'
 import StaffForm from '../Forms/StaffForm'
 import DepartmentForm from '../Forms/DepartmentForm'
 import GradeForm from '../Forms/GradeForm'
+import RoleForm from '../Forms/RoleForm'
 
 
 
@@ -254,6 +255,37 @@ export default function PersistentDrawerLeft() {
             </div>
           </div>
         </div>
+
+        <div
+          className="modal fade"
+          id="add-role"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header bg-green">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Add Role
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <RoleForm />
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         <StaffTable />
 
