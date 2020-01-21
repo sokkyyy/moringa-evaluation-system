@@ -2,8 +2,13 @@ import React from 'react';
 import logo from './logo.png'
 
 
-const Navbar = () => {
-  return (
+function Navbar(props){
+  const handleSignOut = (()=>{
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    window.location.href = '/login';
+  });
+  return(
     <div>
       <nav className="mb-1 navbar navbar-expand-lg navbar-dark">
         <a className="navbar-brand" href="#">
@@ -95,9 +100,9 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <a className="nav-link btn" id="signout-button" href="#">
+          <button className="nav-link btn" id="signout-button" onClick={handleSignOut}>
             Sign Out
-          </a>
+          </button>
         </div>
       </nav>
     </div>
