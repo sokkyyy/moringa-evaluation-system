@@ -193,6 +193,36 @@ export default function PersistentDrawerLeft() {
           </div>
         </div>
 
+        <div
+          className="modal fade"
+          id="add-department"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header bg-green">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Add Staff
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <DepartmentForm />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <StaffTable />
 
         <div className="row other">
