@@ -38,19 +38,35 @@ class UserSerializerWithToken(serializers.ModelSerializer):
 
 class MoringaStaffSerializer(serializers.ModelSerializer):
     '''API serializer for Moringa Staff Member'''
+    user = serializers.SerializerMethodField()
     job_grade = serializers.SerializerMethodField()
     department = serializers.SerializerMethodField()
     system_role = serializers.SerializerMethodField()
+
+    def get_user(self, moringa_staff):
+        user = {
+
+            'first_name':moringa_staff.user.first_name,
+            'last_name':moringa_staff.user.last_name,
+            'email':moringa_staff.user.email,
+            'username':moringa_staff.user.username,
+        }
+        return user
 
     def get_job_grade(self, moringa_staff):
         return moringa_staff.job_grade.grade
 
     def get_department(self,moringa_staff):
-        return moringa_staff.department.name
+        dpt = {
+            'name':moringa_staff.department.name,
+            'manager':moringa_staff.department.manager.username,
+            'line_manager':moringa_staff.department.line_manager.username,
+        }
+        return dpt
 
     def get_system_role(self,moringa_staff):
         return moringa_staff.system_role.role
 
     class Meta:
         model = MoringaStaff
-        fields = ['pk','job_grade','department','system_role']
+        fields = ['pk','user','job_grade','department','system_role']
