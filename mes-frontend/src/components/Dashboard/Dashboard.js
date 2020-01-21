@@ -17,6 +17,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       staff: {},
+      load:true,
     }
 
   }
@@ -25,6 +26,8 @@ class Dashboard extends Component {
     userService.getUser()
     .then(response => {
         this.setState({staff: response.data});
+        this.setState({load:false});
+        console.log(this.state);
     })
     .catch(() =>{
         this.props.history.push('/login');
@@ -32,9 +35,12 @@ class Dashboard extends Component {
 }
   render() {
     return (
-      <body>
+      <div>
+      {this.state.load ? ' ' : (
+      <div>
+
         <div>
-          <Navbar />
+          <Navbar role={this.state.staff.system_role} />
         </div>
 
         <div className="row container-fluid">
@@ -64,8 +70,9 @@ class Dashboard extends Component {
           </div>
 
         </div>
-
-      </body>
+      </div>
+      )}
+    </div>
      );
   }
 }

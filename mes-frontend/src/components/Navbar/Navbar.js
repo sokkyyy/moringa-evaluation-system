@@ -90,12 +90,18 @@ function Navbar(props){
                 <a className="dropdown-item" href="#">
                   Take Assessment
                 </a>
-                <a className="dropdown-item" href="#">
-                  Schedule Assessment
-                </a>
-                <a className="dropdown-item" href="#">
-                  In-Meeting Assessment
-                </a>
+                
+                {/* HIDE  Schedule Assessment AND In-Meeting Assessment */}
+                {(props.role === 'user')? '' : (
+                  <div>
+                    <a className="dropdown-item" href="#">
+                      Schedule Assessment
+                    </a>
+                    <a className="dropdown-item" href="#">
+                      In-Meeting Assessment
+                    </a>
+                  </div>
+                )}
               </div>
             </li>
           </ul>
