@@ -162,7 +162,7 @@ export default function PersistentDrawerLeft() {
         <StaffTable />
 
 
-        <div className="row">
+        <div className="row other">
           <div className="col-md-4">
 
             <DepartmentTable />

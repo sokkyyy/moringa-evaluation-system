@@ -15,7 +15,7 @@ function App() {
 
     <BrowserRouter history={history}>
       <Switch>
-        <Route path='/dashboard' exact component={AdminDashboard}></Route>
+        <Route path='/dashboard' exact component={Dashboard}></Route>
         <Route path='/' component={Landing} />
       </Switch>
 

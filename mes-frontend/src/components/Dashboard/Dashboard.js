@@ -6,6 +6,8 @@ import NotificationsDiv from '../Notifications_Div/NotificationsDiv';
 import user from './user.svg'
 import Sidecard from '../Profile_Card/Sidecard';
 import UserService from '../../services/UserService';
+import ScheduleAssessmentForm from '../Forms/ScheduleAssessmentForm';
+
 
 
 
@@ -69,7 +71,7 @@ class Dashboard extends Component {
                     </button>
                   </div>
                   <div className="modal-body">
-                    <ScheduleForm />
+                    <ScheduleAssessmentForm />
                   </div>
                  
                 </div>
