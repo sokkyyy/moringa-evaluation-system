@@ -23,6 +23,7 @@ import RoleTable from '../tables/RoleTable';
 import GradeTable from '../tables/GradeTable';
 import './Dashboard.css'
 import StaffForm from '../Forms/StaffForm'
+import DepartmentForm from '../Forms/DepartmentForm'
 
 
 
@@ -205,7 +206,7 @@ export default function PersistentDrawerLeft() {
             <div className="modal-content">
               <div className="modal-header bg-green">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Add Staff
+                  Add Department
                 </h5>
                 <button
                   type="button"
