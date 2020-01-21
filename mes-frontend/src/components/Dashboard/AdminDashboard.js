@@ -1,250 +1,173 @@
+import React from 'react';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
 
-import React, { Component } from 'react';
-import { MDBCard, MDBCardBody, MDBCardHeader, MDBInput, MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
-import { MDBDataTable } from 'mdbreact';
-import AdminNavbar from '../Navbar/AdminNavbar'
 
-class AdminDashboard extends Component {
-  state = {  }
-  render() { 
 
-  const data = {
-    columns: [
-      
-      {
-        // 'label': 'Name',
-        'field': 'name',
-        'sort': 'asc'
-      },
-      {
-        // 'label': 'Job Grade',
-        'field': 'job_grade',
-        'sort': 'asc'
-      },
-      {
-        // 'label': 'Department',
-        'field': 'department',
-        'sort': 'asc'
-      },
-      {
-        // 'label': 'Role',
-        'field': 'role',
-        'sort': 'asc'
-      },
-      {
-        // 'label': 'Edit',
-        'field': 'edit',
-        'sort': 'asc'
-      },
-      {
-        // 'label': 'Delete',
-        'field': 'delete',
-        'sort': 'asc'
-      },
-    ],
-    rows: [
-      {
-        
-        'name': 'Otto',
-        'job_grade': '1',
-        'department': 'Finance',
-        'role': 'Admin',      
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Jake',
-        'job_grade': 'TM - Level 2',
-        'department': 'Finance',
-        'role': 'Super Admin',        
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Esther',
-        'job_grade': '3',
-        'department': 'Classroom',
-        'role': 'System User',
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-        
-        
-      },
-      {
-        
-        'name': 'Joel',
-        'job_grade': '4',
-        'department': 'Classroom',
-        'role': 'Admin',
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Jacob',
-        'job_grade': '8',
-        'department': 'System Admin',
-        'role': 'Super Admin',        
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Anita',
-        'job_grade': '12',
-        'department': 'Classroom',
-        'role': 'System User',
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-        
-        
-      },
-      {
-        
-        'name': 'Joe',
-        'job_grade': '12',
-        'department': 'Finance',
-        'role': 'Admin',
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Mark',
-        'job_grade': '5',
-        'department': 'Finance',
-        'role': 'Super Admin',       
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Alexis',
-        'job_grade': '6',
-        'department': 'Classroom',
-        'role': 'System User',       
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-        
-        
-      },
-      {
-        
-        'name': 'Heaton',
-        'job_grade': '7',
-        'department': 'Classroom',
-        'role': 'System User',      
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-        
-        
-      },
-      {
-        
-        'name': 'Onell',
-        'job_grade': '9',
-        'department': 'Finance',
-        'role': 'Admin',
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Lottin',
-        'job_grade': '5',
-        'department': 'Finance',
-        'role': 'Super Admin', 
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-      },
-      {
-        
-        'name': 'Alphonse',
-        'job_grade': '3',
-        'department': 'Classroom',
-        'role': 'System User',        
-        'edit': [<i key="cell1" className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-        'delete': [<i key="cell1" className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
-        
-        
-      }
-      
-    ]
+const drawerWidth = 240;
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+  },
+  appBar: {
+    backgroundColor: "green",
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
+  },
+  drawer: {  
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
+  ChevronLeftIcon: {
+    backgroundColor: 'white'
+  },
+}));
+
+export default function PersistentDrawerLeft() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
   };
-    return (
-      <body>
-        {/* <div>
-        <AdminNavbar />
-      </div> */}
-        <div className="row">
-          <div className="col-md-2 admin-bar">
 
-          </div>
-          <div className="col-md-10">
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
-            <h4>Dashboard</h4>
-
-            <hr/>
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar       
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, open && classes.hide)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap>
+            Admin
             
-            <MDBCard narrow>
-              {/* <MDBCardHeader className="view view-cascade green gradient-card-header d-flex justify-content-between align-items-center py-2 mx-4 mb-3"> */}
-                <div>
-                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
-      <i className="fa fa-th-large mt-0"></i>
-    </MDBBtn> */}
-                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
-      <i className="fa fa-columns mt-0"></i>
-    </MDBBtn> */}
-                {/* </div>
-                <a href="#" className="white-text mx-3">
-                  Staff
-                </a>
-                <div> */}
-                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
-      <i className="fas fa-pencil-alt mt-0"></i>
-    </MDBBtn> */}
-                  {/* <MDBBtn
-                    outline
-                    rounded
-                    size="sm"
-                    color="white"
-                    className="px-2"
-                  >
-                    <i className="fas fa-times mt-0"></i>
-                  </MDBBtn> */}
-                  {/* <MDBBtn outline rounded size="sm" color="white" className="px-2">
-      <i className="fa fa-info-circle mt-0"></i>
-    </MDBBtn> */}
-                </div>
-              {/* </MDBCardHeader> */}
-              <MDBCardBody cascade>
-                <MDBDataTable
-                  scrollY
-                  maxHeight="200px"
-                  striped
-                  small
-                  data={data}
-                />
-                {/* <MDBTable btn fixed>
-    <MDBTableHead columns={data_panel.columns} />
-    <MDBTableBody rows={data_panel.rows} />
-  </MDBTable> */}
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        className={classes.drawer}
+        variant="persistent"
+        anchor="left"
+        open={open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {['Profile','Traffic','Notifications', 'Reports'].map((text, index) => (
+            <ListItem button key={text}>
+              
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />        
+      </Drawer>
+      <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: open,
+        })}
+      >
+       
+        <div className={classes.drawerHeader} />
 
-                <MDBBtn rounded size="m" color="green" className="px-2">
-                  Add Staff
-                </MDBBtn>
-              </MDBCardBody>
-            </MDBCard>
+
+        <div className="row">
+          <div className="col-md-4">
+          
+          </div>
+          <div className="col-md-4">
+        
+          </div>
+          <div className="col-md-4">
+         
           </div>
         </div>
-      </body>
-    );
-  }
+        
+      </main>
+    </div>
+  );
 }
-
-export default AdminDashboard;
-
-
