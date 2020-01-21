@@ -21,6 +21,7 @@ import StaffTable from '../tables/StaffTable';
 import DepartmentTable from '../tables/DepartmentTable';
 import RoleTable from '../tables/RoleTable';
 import GradeTable from '../tables/GradeTable';
+import './Dashboard.css'
 
 
 
