@@ -43,8 +43,38 @@ class Dashboard extends Component {
             <Sidecard />
           </div>
           <div className="col-md-8">
-
             <GraphCard />
+
+            <div
+              className="modal fade"
+              id="scheduleassessment"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-header bg-green">
+                    <h5 className="modal-title" id="exampleModalLabel">
+                      Schedule Assessment
+                    </h5>
+                    <button
+                      type="button"
+                      className="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                    <ScheduleForm />
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
           </div>
           <div className="col-md-2 text-center notifications">
             <div className="timer">
@@ -53,7 +83,6 @@ class Dashboard extends Component {
             <br />
             <hr />
             <div className="notifications">
-
               <strong>
                 <h6>
                   Notifications <i class="far fa-bell"></i>
@@ -65,8 +94,6 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-
-              
       </body>
     );
   }
