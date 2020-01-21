@@ -225,7 +225,7 @@ export default function PersistentDrawerLeft() {
           </div>
         </div>
 
-        {/* <div
+        <div
           className="modal fade"
           id="add-grade"
           tabindex="-1"
@@ -253,7 +253,7 @@ export default function PersistentDrawerLeft() {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
         <StaffTable />
 
