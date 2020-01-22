@@ -1,7 +1,7 @@
 import React from 'react';
 import user from './user.svg'
 
-const Sidecard = () => {
+function Sidecard(props){
   return (
     <div class="card testimonial-card profile">
       <div class="card-up red lighten-1"></div>
@@ -11,15 +11,15 @@ const Sidecard = () => {
       </div>
 
       <div class="card-body">
-        <h4 class="card-title text-center">Anna Doe</h4>
+        <h4 class="card-title" style={{fontSize:17}}>{props.staff.user.first_name} {props.staff.user.last_name}</h4>
         <hr></hr>
 
         <p>
-          <i class="far fa-envelope"></i>  anna@email.com
+          <i class="far fa-envelope"></i> {props.staff.user.email}
         </p>
 
         <p>
-          <i class="fas fa-user-tag"></i>  HR Manager
+          <i class="fas fa-user-tag"></i>  {props.staff.department.name}
         </p>
 
         <p>
@@ -32,6 +32,7 @@ const Sidecard = () => {
       </div>
     </div>
   );
+
 }
 
 export default Sidecard

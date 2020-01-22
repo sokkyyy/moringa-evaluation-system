@@ -1,3 +1,5 @@
+
+import UserService from '../../services/UserService';
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -30,6 +32,7 @@ import RoleForm from '../Forms/RoleForm'
 
 
 
+const userService = new UserService();
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -92,10 +95,33 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
+
+
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [load, setLoad] = React.useState(true); //for page load
+  
+  React.useEffect(()=>{
+    handleAdminLogin();
+  })
+  
+  const handleAdminLogin = () => {
+    userService.getUser()
+    .then(response => {
+        if(response.data.system_role !== 'super_admin'){
+          window.location.href = '/dashboard';
+        }else{
+          // this.setState({staff: response.data});
+          console.log(response.data);
+        }
+    })
+    .catch(() =>{
+        this.props.history.push('/login');
+    })
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);

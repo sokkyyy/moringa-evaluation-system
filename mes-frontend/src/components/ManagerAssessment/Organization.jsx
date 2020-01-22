@@ -16,23 +16,17 @@ class Organization extends Component {
   handleChange(event){
     this.props.handleChange(event);
   }
-  back = e => {
-    e.preventDefault();
-    this.props.prevStep();
-  };
 
   render() {
     return (
-      <div className="container-fluid ">
-        <fieldset>
-          <div>
-            <Form>
-              <h1 className="text-center">Organization</h1>
-              <p className="text-center">
-                The ability to maximize your productivity, manage your work, and
-                create high quality,error-free final product by planning,
-                executing, and prioritizing effectively and consistently.
-              </p>
+      <div className="container-fluid">
+        <Form>
+          <h1 className="text-center">Organization</h1>
+          <p className="text-center">
+            The ability to maximize your productivity, manage your work, and
+            create high quality,error-free final product by planning, executing,
+            and prioritizing effectively and consistently.
+          </p>
 
           <div className="planning1">
             <h3>Planning</h3>
@@ -109,15 +103,10 @@ class Organization extends Component {
                 Excels at prioritizing effectively and consistently
               </label>
             </div>
-          </Form>
+          </div>
+        </Form>
 
-          <Button onClick={this.back} className="previous">
-            Back
-          </Button>
-          <Button onClick={this.saveAndContinue} className="next">
-            Continue{" "}
-          </Button>
-        </fieldset>
+        <Button onClick={this.saveAndContinue}>Continue </Button>
       </div>
     );
   }
