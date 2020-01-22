@@ -85,7 +85,12 @@ const Navbar = () => {
                 <a className="dropdown-item" href="#">
                   Take Assessment
                 </a>
-                <a className="dropdown-item" href="#">
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#scheduleassessment"
+                >
                   Schedule Assessment
                 </a>
                 <a className="dropdown-item" href="#">

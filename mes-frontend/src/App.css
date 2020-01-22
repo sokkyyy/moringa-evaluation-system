@@ -1,5 +1,26 @@
 .navbar{
-  background-color: #558834;
+  background-color: #689241;
+  /* background-color: #45482D; */
+  /* height: 65px; */
+}
+
+@media (min-width: 1200px) {
+  
+  .navbar{
+    /* background-color: #45482D; */
+    background-color: #689241;
+    height: 63px;
+  }
+  .profile{
+    width: 215px;   
+  }
+}
+
+@media (max-width: 780px) {
+  
+  .notifications{
+    text-align: center;
+  }
 }
 
 #logo{
@@ -15,7 +36,7 @@
 }
 
 .container-fluid{
-  margin-top: 10px; 
+  margin-top: 4px; 
 }
 
 #user-dp{
@@ -24,20 +45,38 @@
 
 .col-md-2{
   font-size: 11px;  
+  margin-bottom: 10px;
 }
-
 .card-body p{
   font-size: 12px;
 }
 
-#signout-button{
-  background-color: #ED6219;
-  color: #ffffff;
+/* .ssn{
+  display: none;
 }
 
+.dropdown-item:hover{
+  background-color: #E87E02;
+  color: #ffffff;
+} */
+
+
+
+#signout-button{  
+  background-color: #E87E02;
+  color: #ffffff;
+
+}#signout-button:hover{  
+  background-color: #FF8900;
+}
+
+.col-md-8{
+  padding-left: 20px;
+}
 .gradient-card-header{
   padding-top: 14px;
-  background-color: #558834;
+  background-color: #689241;
+  /* background-color: #45482D; */
   color: #ffffff;
   border-radius: 4px;
   text-align: center;
@@ -62,8 +101,15 @@
   font-size: 12px;
 }
 
+.gradient-card-header{
+  background-color: #689241;
+  
+  /* background-color: #45482D; */
+}
+
 .single-notification:hover{
-  background-color: #558834;
+  /* background-color: #689241; */
+  background-color: #45482D;
   color: #fff;
   border-radius: 5px;
 
@@ -87,6 +133,16 @@
   display: inline;
   font-size: 20px;
 }
+
+.admin-bar{
+  background-color: #689241;
+  width: 50px;
+}
+
+.modal{
+  margin-top: 50px;
+}
+
 
 
 
