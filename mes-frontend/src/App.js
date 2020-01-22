@@ -2,7 +2,11 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home';
 import React from 'react';
 import './App.css';
-import MainAssessment from './components/Assessment/MainAssessment';
+import MainAssessment from './components/Assessment/MainAssessment'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+// import Landing from './components/Landing/Landing'
+import Footer from './components/Footer/Footer'
+
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
@@ -13,10 +17,12 @@ import AdminDashboard from './components/Dashboard/AdminDashboard';
 function App() {
   return (
 
+
     <BrowserRouter history={history}>
       <Switch>
-        <Route path='/dashboard' exact component={AdminDashboard}></Route>
-        <Route path='/' component={Dashboard} />
+        <Route path='/dashboard' exact component={Dashboard}></Route>
+        <Route path='/' component={Landing} />
+        <Route path='/' component={MainAssessment}/>
       </Switch>
 
     </BrowserRouter>
