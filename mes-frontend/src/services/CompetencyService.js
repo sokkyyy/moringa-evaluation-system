@@ -17,4 +17,11 @@ export default class CompetencyService {
       headers:{Authorization: authToken}
     });
   }
+
+  getUserAssessments(){
+    const url = `${APIURL}final/results/`;
+    return axios.get(url,{
+      headers:{Authorization: authToken}
+    });
+  }
 }

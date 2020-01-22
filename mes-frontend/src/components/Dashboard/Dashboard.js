@@ -31,7 +31,7 @@ class Dashboard extends Component {
         }else{
           this.setState({staff: response.data});
           this.setState({load:false});
-          console.log(response.data.system_role);
+          console.log(response.data);
         }
     })
     .catch(() =>{
@@ -57,7 +57,7 @@ class Dashboard extends Component {
           </div>
           <div className="col-md-8">
 
-            <GraphCard />
+            <GraphCard staff={this.state.staff.pk} />
           </div>
           <div className="col-md-2 text-center notifications">
             <div className="timer">

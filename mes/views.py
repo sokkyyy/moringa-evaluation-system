@@ -119,7 +119,7 @@ class CompetencyResultsPost(APIView): #FOR SELF ASSESSMENT
 
 class ManagerCompetencyResultsPost(APIView): #FOR MANAGER ASSESSMENT
     ''' API endpoint for Posting MANAGER Competency Results  '''
-    
+
     permission_classes = (permissions.AllowAny,)
 
     def post(self,request, format=None):
@@ -147,3 +147,14 @@ class ManagerCompetencyResultsPost(APIView): #FOR MANAGER ASSESSMENT
 
             return Response(serializers_innovation.data, status=status.HTTP_201_CREATED)
         return Response(serializers_innovation.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+@api_view(['GET'])
+def finalResults(request):
+    ''' API endpoint for Staff final competency'''
+
+    staff = MoringaStaff.objects.get(user=request.user)
+    final_results = CompetencyResults.objects.filter(type='final',staff=staff)
+    serializers = CompetencyResultsSerializer(final_results, many=True)
+    return Response(serializers.data)

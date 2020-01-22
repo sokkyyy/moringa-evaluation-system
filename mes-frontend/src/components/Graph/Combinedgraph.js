@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
 import CanvasJSReact from '../../assets/canvasjs.react';
+import CompetencyService from '../../services/CompetencyService';
+
+
+
+const competencyService = new CompetencyService();
+
+
+
+
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 var CanvasJS = CanvasJSReact.CanvasJS;
 
 class CombinedLineGraph extends Component {
-  constructor() {
-		super();
+  constructor(props) {
+		super(props);
+
+
 		this.toggleDataSeries = this.toggleDataSeries.bind(this);
 		this.addSymbols = this.addSymbols.bind(this);
-	
+
 	}
+
+
+
 	addSymbols(e) {
 		var suffixes = ["", "K", "M", "B",];
 		var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
@@ -28,8 +42,34 @@ class CombinedLineGraph extends Component {
 		}
 		this.chart.render();
 	}
- 
-  render() { 
+
+  render() {
+    const label = ['First Quarter','Second Quarter','Third Quarter', 'Fourth Quarter'];
+
+    const organizationDataPoints = this.props.results.map((quater, index) => (
+       {'y':quater.results.organization, 'label':label[index] }
+    ));
+
+    const innovationDataPoints = this.props.results.map((quater, index) => (
+       {'y':quater.results.innovation, 'label':label[index] }
+    ));
+
+    const ctDataPoints = this.props.results.map((quater, index) => (
+       {'y':quater.results.critical_thinking, 'label':label[index] }
+    ));
+
+    const ipPoints = this.props.results.map((quater, index) => (
+       {'y':quater.results.interpersonal_communication, 'label':label[index] }
+    ));
+
+    const relDataPoints = this.props.results.map((quater, index) => (
+       {'y':quater.results.relationships, 'label':label[index] }
+    ));
+
+
+
+
+
 
     const options = {
 			animationEnabled: true,
@@ -38,8 +78,8 @@ class CombinedLineGraph extends Component {
 			axisX: {
 				interval: 1
 			},
-			
-		
+
+
 			toolTip: {
 				shared: true
 			},
@@ -54,75 +94,50 @@ class CombinedLineGraph extends Component {
 				name: "Organization",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
-				dataPoints: [
-					{ y: 38, label: "First Quarter"},
-					{ y: 38, label: "Second Quarter"},
-					{ y: 78, label: "Third Quarter"},
-					{ y: 88, label: "Last Quarter"}				
-				]
+				dataPoints: organizationDataPoints,
 			},
 			{
 				type: "column",
 				name: "Interpersonal Comm.",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
-				dataPoints: [
-					{ y: 78, label: "First Quarter"},
-					{ y: 48, label: "Second Quarter"},
-					{ y: 88, label: "Third Quarter"},
-					{ y: 100, label: "Last Quarter"}			
-				]
+				dataPoints:ipPoints,
 			},
 			{
 				type: "column",
 				name: "Innovation",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
-				dataPoints: [
-					{ y: 46, label: "First Quarter"},
-					{ y: 68, label: "Second Quarter"},
-					{ y: 44, label: "Third Quarter"},
-					{ y: 67, label: "Last Quarter"}				
-				]
+				dataPoints:innovationDataPoints,
       },
       {
 				type: "column",
 				name: "Building & Managing Relat.",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
-				dataPoints: [
-					{ y: 43, label: "First Quarter"},
-					{ y: 65, label: "Second Quarter"},
-					{ y: 66, label: "Third Quarter"},
-					{ y: 64, label: "Last Quarter"}				
-				]
+				dataPoints: relDataPoints,
       },
       {
 				type: "column",
 				name: "Critical Thinking",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
-				dataPoints: [
-					{ y: 80, label: "First Quarter"},
-					{ y: 88, label: "Second Quarter"},
-					{ y: 84, label: "Third Quarter"},
-					{ y: 81, label: "Last Quarter"}			
-				]
+				dataPoints: ctDataPoints,
 			}
     ]
 		}
-    return ( 
+    return (
 
       <div>
-			
-			<CanvasJSChart options = {options} 
+
+			<CanvasJSChart options = {options}
 				onRef={ref => this.chart = ref}
 			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
+
+    </div>
 
      );
   }
 }
- 
+
 export default CombinedLineGraph;
