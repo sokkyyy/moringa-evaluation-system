@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
 
+
 class Communication extends Component {
   saveAndContinue = e => {
     e.preventDefault();
@@ -17,14 +18,15 @@ class Communication extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <Form>
-          <h1 className="text-center">Interpersonal Communication</h1>
-          <p className="text-center">
-            The ability to communicate effectively - both verbally and in
-            writing, build relationships and achieve desired outcomes by
-            building investment, articulating and crafting a clear, engaging
-            message
-          </p>
+        <fieldset>
+          <Form>
+            <h1 className="text-center">Interpersonal Communication</h1>
+            <p className="text-center">
+              The ability to communicate effectively - both verbally and in
+              writing, build relationships and achieve desired outcomes by
+              building investment, articulating and crafting a clear, engaging
+              message
+            </p>
 
           <div className="investment1">
             <h3>Investment Building</h3>
@@ -103,12 +105,13 @@ class Communication extends Component {
                 <input type="radio" name="interpersonal_communication.delivery" value="3" onChange={this.handleChange} />
                 Excels at delivering clear message effectively and consistently
               </label>
-            </div>
-          </div>
-        </Form>
 
-        <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Continue </Button>
+            </div>
+          </Form>
+
+          <Button onClick={this.back} className="previous">Back</Button>
+          <Button onClick={this.saveAndContinue} className="next">Continue </Button>
+        </fieldset>
       </div>
     );
   }

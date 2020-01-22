@@ -19,13 +19,14 @@ class CriticalThinking extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <Form>
-          <h1 className="text-center">Critical Thinking</h1>
-          <p className="text-center">
-            The ability to use logic and data to analyze a situation, generate
-            strategic options, and continuously reflect on past successes and
-            failures to improve future outcomes.
-          </p>
+        <fieldset>
+          <Form>
+            <h1 className="text-center">Critical Thinking</h1>
+            <p className="text-center">
+              The ability to use logic and data to analyze a situation, generate
+              strategic options, and continuously reflect on past successes and
+              failures to improve future outcomes.
+            </p>
 
           <div className="compilation1">
             <h3>Data Compilation</h3>
@@ -78,11 +79,11 @@ class CriticalThinking extends Component {
                 <input type="radio" name="critical_thinking.data_analysis" value="3" onChange={this.handleChange} />
                 Excels at analyzing data effectively and consistently
               </label>
-            </div>
-          </div>
-        </Form>
 
-        <Form>
+            </div>
+          </Form>
+
+         <Form>
           <div className="solving1">
             <h3>Problem Solving</h3>
             <h5>
@@ -140,14 +141,13 @@ class CriticalThinking extends Component {
                 failures effectively and consistently
               </label>
             </div>
-          </div>
-        </Form>
+          </Form>
 
-        <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Continue </Button>
-        <br />
-        <br />
-        <br />
+          <Button onClick={this.back} className="previous">Back</Button>
+          <Button onClick={this.saveAndContinue} className="next">Continue </Button>
+          <br />
+          <br />
+        </fieldset>
       </div>
     );
   }

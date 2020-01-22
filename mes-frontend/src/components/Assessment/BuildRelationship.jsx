@@ -21,15 +21,15 @@ class BuildRelationship extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <Form>
-          <h1 className="text-center">Building and Managing Relationships</h1>
-          <p className="text-center">
-            The ability to collaborate, support each other, and engage external
-            stakeholders in beneficial ways to all. In addition to maintaining
-            productivity and a collegiate environment by engaging with others
-            when inter-personal challenges arise.
-          </p>
-
+        <fieldset>
+          <Form>
+            <h1 className="text-center">Building and Managing Relationships</h1>
+            <p className="text-center">
+              The ability to collaborate, support each other, and engage
+              external stakeholders in beneficial ways to all. In addition to
+              maintaining productivity and a collegiate environment by engaging
+              with others when inter-personal challenges arise.
+            </p>
           <div className="teamwork1">
             <h3>Teamwork</h3>
             <h5>Collaborates on key team activities when required</h5>
@@ -110,11 +110,11 @@ class BuildRelationship extends Component {
                 effectively and consistently
               </label>
             </div>
-          </div>
-        </Form>
+          </Form>
 
-        <Button onClick={this.back}>Back</Button>
-        <Button onClick={this.saveAndContinue}>Continue </Button>
+          <Button onClick={this.back} className="previous">Back</Button>
+          <Button onClick={this.saveAndContinue} className="next">Continue </Button>
+        </fieldset>
       </div>
     );
   }

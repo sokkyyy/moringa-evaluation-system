@@ -3,7 +3,7 @@ import user from './user.svg'
 
 function Sidecard(props){
   return (
-    <div class="card testimonial-card">
+    <div class="card testimonial-card profile">
       <div class="card-up red lighten-1"></div>
 
       <div class="avatar mx-auto white">
@@ -32,8 +32,6 @@ function Sidecard(props){
       </div>
     </div>
   );
-
-
 
 }
 

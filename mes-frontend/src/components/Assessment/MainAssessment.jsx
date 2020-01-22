@@ -5,11 +5,11 @@ import Communication from "./Communication";
 import CriticalThinking from "./CriticalThinking";
 import BuildRelationship from "./BuildRelationship";
 import Success from "./Success";
-import ProgressBar from "./ProgressBar";
 import UserService from '../../services/UserService';
 import Navbar from '../Navbar/Navbar';
 import CompetencyService from '../../services/CompetencyService';
-
+import ProgressBar from "./ProgressBar/ProgressBar";
+import StartAssessment from "./StartAssessment";
 
 
 const userService = new UserService();
@@ -60,6 +60,7 @@ class MainAssessment extends Component {
         conflict_management:0,
         score:0,
       },
+
   };
 }
 
@@ -79,6 +80,11 @@ class MainAssessment extends Component {
     })
   }
 
+
+  styles = {
+    marginTop: 30,
+    paddingBottom: 30
+  };
 
   nextStep = () => {
     const { step } = this.state;
@@ -151,13 +157,24 @@ class MainAssessment extends Component {
 
 
     switch (step) {
+      case 0:
+        return (
+          <StartAssessment
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+
       case 1:
         return (
           <Organization
             nextStep={this.nextStep}
+            prevStep={this.prevStep}
             handleChange={this.handleChange}
           />
         );
+
       case 2:
         return (
           <Innovation
@@ -166,6 +183,7 @@ class MainAssessment extends Component {
             handleChange={this.handleChange}
           />
         );
+
       case 3:
         return (
           <Communication
@@ -174,6 +192,7 @@ class MainAssessment extends Component {
             handleChange={this.handleChange}
           />
         );
+
       case 4:
         return (
           <CriticalThinking
@@ -182,6 +201,7 @@ class MainAssessment extends Component {
             handleChange={this.handleChange}
           />
         );
+
       case 5:
         return (
           <BuildRelationship
@@ -203,13 +223,14 @@ class MainAssessment extends Component {
       <div>
         <Navbar role={this.state.staff.system_role} />
 
+        <div className="card" style={this.styles}>
         {load ? '' : (
           <div>
             <ProgressBar />
             {this.renderSwitch(step)}
           </div>
         )}
-
+        </div>
       </div>
     );
   }
