@@ -81,6 +81,7 @@ class CriticalThinking extends Component {
               </label>
 
             </div>
+          </div>
           </Form>
 
          <Form>
@@ -141,6 +142,7 @@ class CriticalThinking extends Component {
                 failures effectively and consistently
               </label>
             </div>
+          </div>
           </Form>
 
           <Button onClick={this.back} className="previous">Back</Button>

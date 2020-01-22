@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-   
+
 ]
 
 REST_FRAMEWORK = {
@@ -109,8 +109,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mes',
-        'USER': 'baraka',
-        'PASSWORD':'fRankline',
+        'USER': 'samurai',
+        'PASSWORD':'superman7577',
 
     }
 }

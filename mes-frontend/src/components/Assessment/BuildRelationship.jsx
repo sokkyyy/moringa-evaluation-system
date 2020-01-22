@@ -110,6 +110,7 @@ class BuildRelationship extends Component {
                 effectively and consistently
               </label>
             </div>
+          </div>
           </Form>
 
           <Button onClick={this.back} className="previous">Back</Button>

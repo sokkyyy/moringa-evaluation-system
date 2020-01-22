@@ -162,7 +162,6 @@ class MainAssessment extends Component {
           <StartAssessment
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            values={values}
           />
         );
 

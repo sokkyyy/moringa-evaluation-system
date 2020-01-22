@@ -15,7 +15,7 @@ class Innovation extends Component {
   handleChange = (event) => {
     this.props.handleChange(event);
   };
-  
+
   render() {
     return (
       <div className="container-fluid">
@@ -103,7 +103,7 @@ class Innovation extends Component {
                 <input type="radio" name="innovation.adaptability" value="3" onChange={this.handleChange} />
                 Excels at adjusting workstreams effectively and consistently
               </label>
-
+            </div>
             </div>
           </Form>
 
