@@ -11,7 +11,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Footer from './components/Footer/Footer';
 import history from './history';
-import AdminDashboard from './components/Dashboard/AdminDashboard';
 
 function App() {
   return (

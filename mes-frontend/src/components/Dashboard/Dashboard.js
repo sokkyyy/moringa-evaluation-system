@@ -88,7 +88,7 @@ class Dashboard extends Component {
                   </div>
                   <div className="modal-body">
                     <ScheduleAssessmentForm />
-                  </div>                 
+                  </div>
                 </div>
               </div>
 
@@ -112,7 +112,6 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-      </div>
       )}
     </div>
      );

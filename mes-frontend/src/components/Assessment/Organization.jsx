@@ -109,6 +109,7 @@ class Organization extends Component {
                 Excels at prioritizing effectively and consistently
               </label>
             </div>
+          </div>
           </Form>
 
           <Button onClick={this.back} className="previous">
@@ -117,6 +118,7 @@ class Organization extends Component {
           <Button onClick={this.saveAndContinue} className="next">
             Continue{" "}
           </Button>
+        </div>
         </fieldset>
       </div>
     );

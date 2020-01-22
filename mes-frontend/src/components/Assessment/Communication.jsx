@@ -105,7 +105,7 @@ class Communication extends Component {
                 <input type="radio" name="interpersonal_communication.delivery" value="3" onChange={this.handleChange} />
                 Excels at delivering clear message effectively and consistently
               </label>
-
+            </div>
             </div>
           </Form>
 
