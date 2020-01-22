@@ -4,12 +4,18 @@ import { Form, Button } from "semantic-ui-react";
 class BuildRelationship extends Component {
   saveAndContinue = e => {
     e.preventDefault();
+    this.props.handleSubmit();
     this.props.nextStep();
+
   };
 
   back = e => {
     e.preventDefault();
     this.props.prevStep();
+  };
+
+  handleChange = (event) => {
+    this.props.handleChange(event);
   };
 
   render() {
@@ -29,19 +35,19 @@ class BuildRelationship extends Component {
             <h5>Collaborates on key team activities when required</h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="relationships.team_work" value="1" onChange={this.handleChange} />
                 Struggles to collaborate on key team activities
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="relationships.team_work" value="2" onChange={this.handleChange} />
                 Collaborates on key team activities effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="relationships.team_work" value="2" onChange={this.handleChange} />
                 Excels at collaborating effectively and consistently
               </label>
             </div>
@@ -57,19 +63,19 @@ class BuildRelationship extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="relationships.stakeholder_management" value="1" onChange={this.handleChange} />
                 Struggles to maximize partnerships and networks
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="relationships.stakeholder_management" value="2" onChange={this.handleChange} />
                 Maximizes partnerships and networks effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="relationships.stakeholder_management" value="3" onChange={this.handleChange} />
                 Excels at maximizing partnerships and networks effectively and
                 consistently
               </label>
@@ -86,20 +92,20 @@ class BuildRelationship extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="relationships.conflict_management" value="1" onChange={this.handleChange} />
                 Struggles to move situations of conflict toward resolution
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="relationships.conflict_management" value="2" onChange={this.handleChange} />
                 Moves situations of conflict toward resolution effectively and
                 consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="relationships.conflict_management" value="3" onChange={this.handleChange} />
                 Excels at moving situations of conflict toward resolution
                 effectively and consistently
               </label>

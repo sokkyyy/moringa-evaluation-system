@@ -12,6 +12,10 @@ class Innovation extends Component {
     this.props.prevStep();
   };
 
+  handleChange = (event) => {
+    this.props.handleChange(event);
+  };
+  
   render() {
     return (
       <div className="container-fluid">
@@ -29,19 +33,19 @@ class Innovation extends Component {
             <h5>Set and communicate a clear vision for your work</h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="innovation.vision_setting" value="1" onChange={this.handleChange} />
                 Struggles to set a clear vision for work
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="innovation.vision_setting" value="2" onChange={this.handleChange} />
                 Sets a clear vision for work effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="innovation.vision_setting" value="2" onChange={this.handleChange} />
                 Excels at setting a clear vision for work effectively and
                 consistently
               </label>
@@ -55,19 +59,19 @@ class Innovation extends Component {
             <h5>Generate new ideas to improve your own performance</h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="innovation.thinking" value="1" onChange={this.handleChange} />
                 Struggles to generate new ideas
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="innovation.thinking" value="2" onChange={this.handleChange} />
                 Generates new ideas effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="innovation.thinking" value="3" onChange={this.handleChange} />
                 Excels at generating new ideas effectively and consistently
               </label>
             </div>
@@ -83,19 +87,19 @@ class Innovation extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="innovation.adaptability" value="1" onChange={this.handleChange} />
                 Struggles to adjust workstreams
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="innovation.adaptability" value="2" onChange={this.handleChange} />
                 Adjusts workstreams effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="innovation.adaptability" value="3" onChange={this.handleChange} />
                 Excels at adjusting workstreams effectively and consistently
               </label>
             </div>

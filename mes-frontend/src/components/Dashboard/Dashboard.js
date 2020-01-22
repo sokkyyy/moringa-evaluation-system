@@ -35,7 +35,7 @@ class Dashboard extends Component {
         }
     })
     .catch(() =>{
-        this.props.history.push('/login');
+        this.props.history.push('/');
     })
   }
 

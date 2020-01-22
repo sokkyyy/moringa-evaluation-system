@@ -12,6 +12,10 @@ class CriticalThinking extends Component {
     this.props.prevStep();
   };
 
+  handleChange = (event) => {
+    this.props.handleChange(event);
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -31,19 +35,19 @@ class CriticalThinking extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="critical_thinking.data_compilation" value="1" onChange={this.handleChange} />
                 Struggles to compile data
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="critical_thinking.data_compilation" value="2" onChange={this.handleChange} />
                 Compiles data effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="critical_thinking.data_compilation" value="2" onChange={this.handleChange} />
                 Excels at compiling data effectively and consistently
               </label>
             </div>
@@ -59,19 +63,19 @@ class CriticalThinking extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="critical_thinking.data_analysis" value="1" onChange={this.handleChange} />
                 Struggles to analyze data
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="critical_thinking.data_analysis" value="2" onChange={this.handleChange} />
                 Analyzes data effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="critical_thinking.data_analysis" value="3" onChange={this.handleChange} />
                 Excels at analyzing data effectively and consistently
               </label>
             </div>
@@ -87,20 +91,20 @@ class CriticalThinking extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="critical_thinking.problem_solving" value="1" onChange={this.handleChange} />
                 Struggles to identify the most strategic options
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="critical_thinking.problem_solving" value="2" onChange={this.handleChange} />
                 identifies the most strategic options effectively and
                 consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="critical_thinking.problem_solving" value="3" onChange={this.handleChange} />
                 Excels at identifying the most strategic options effectively and
                 consistently
               </label>
@@ -117,21 +121,21 @@ class CriticalThinking extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="critical_thinking.continual_improvement" value="1" onChange={this.handleChange} />
                 Struggles to reflect on lessons learned from successes and
                 failures
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="critical_thinking.continual_improvement" value="2" onChange={this.handleChange} />
                 Reflects on lessons learned from successes and failures
                 effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="critical_thinking.continual_improvement" value="3" onChange={this.handleChange} />
                 Excels at reflecting on lessons learned from successes and
                 failures effectively and consistently
               </label>

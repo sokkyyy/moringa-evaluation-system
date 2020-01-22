@@ -11,7 +11,9 @@ class Communication extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
-
+  handleChange = (event) => {
+    this.props.handleChange(event);
+  };
   render() {
     return (
       <div className="container-fluid">
@@ -29,19 +31,19 @@ class Communication extends Component {
             <h5>Gain buy-in from those whom you directly impact</h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="interpersonal_communication.investment_building" value="1" onChange={this.handleChange} />
                 Struggles to gain the buy-in from others
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="interpersonal_communication.investment_building" value="2" onChange={this.handleChange} />
                 Gains buy-in from others effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="interpersonal_communication.investment_building" value="2" onChange={this.handleChange} />
                 Excels at gaining buy-in from others effectively and
                 consistently
               </label>
@@ -58,19 +60,19 @@ class Communication extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="interpersonal_communication.effective_communication" value="1" onChange={this.handleChange} />
                 Struggles to develop content
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="interpersonal_communication.effective_communication" value="2" onChange={this.handleChange} />
                 Develops content effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="interpersonal_communication.effective_communication" value="3" onChange={this.handleChange} />
                 Excels at developing content effectively and consistently
               </label>
             </div>
@@ -86,19 +88,19 @@ class Communication extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="interpersonal_communication.delivery" value="1" onChange={this.handleChange} />
                 Struggles to deliver a clear message
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="interpersonal_communication.delivery" value="2" onChange={this.handleChange} />
                 Delivers clear message effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="interpersonal_communication.delivery" value="3" onChange={this.handleChange} />
                 Excels at delivering clear message effectively and consistently
               </label>
             </div>

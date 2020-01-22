@@ -2,10 +2,20 @@ import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
 
 class Organization extends Component {
+  constructor(props){
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
   saveAndContinue = e => {
     e.preventDefault();
     this.props.nextStep();
   };
+
+  handleChange(event){
+    this.props.handleChange(event);
+  }
 
   render() {
     return (
@@ -23,19 +33,19 @@ class Organization extends Component {
             <h5>Plan tasks effectively and consistently within a project</h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="organization.planning" value="1" onChange={this.handleChange} />
                 Struggles to plan effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="organization.planning" value="2" onChange={this.handleChange} />
                 Plans effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="organization.planning" value="2" onChange={this.handleChange} />
                 Excels at planning effectively and consistently
               </label>
             </div>
@@ -50,19 +60,19 @@ class Organization extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="organization.execution" value="1" onChange={this.handleChange} />
                 Struggles to execute effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="organization.execution" value="2" onChange={this.handleChange} />
                 Executes effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="organization.execution" value="3" onChange={this.handleChange} />
                 Excels at executing effectively and consistently
               </label>
             </div>
@@ -77,19 +87,19 @@ class Organization extends Component {
             </h5>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="1" />
+                <input type="radio" name="organization.prioritization" value="1" onChange={this.handleChange} />
                 Struggles to prioritize effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="2" />
+                <input type="radio" name="organization.prioritization" value="2" onChange={this.handleChange} />
                 Prioritizes effectively and consistently
               </label>
             </div>
             <div className="custom-control custom-radio">
               <label>
-                <input type="radio" name="option" value="3" />
+                <input type="radio" name="organization.prioritization" value="3" onChange={this.handleChange} />
                 Excels at prioritizing effectively and consistently
               </label>
             </div>

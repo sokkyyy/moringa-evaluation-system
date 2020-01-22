@@ -92,7 +92,7 @@ function Navbar(props){
                 className="dropdown-menu dropdown-default"
                 aria-labelledby="navbarDropdownMenuLink-333"
               >
-                <Link to='/assessment' className="dropdown-item">
+                <Link to='/assessment' className="dropdown-item" activeStyle={{backgroundColor: 'red'}}>
                   Take Assessment
                 </Link>
 
