@@ -33,4 +33,5 @@ urlpatterns = [
     re_path('^api/token_auth/$',TokenObtainPairView.as_view(serializer_class=CustomJWTSerializer)),
     re_path('^api/refresh_token/$', TokenRefreshView.as_view()),
     re_path('^api/post/results/$',views.CompetencyResultsPost.as_view()),
+    re_path('^api/post/manager/results/$',views.ManagerCompetencyResultsPost.as_view()),
 ]

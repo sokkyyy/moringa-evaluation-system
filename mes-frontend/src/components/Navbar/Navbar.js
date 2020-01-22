@@ -102,9 +102,9 @@ function Navbar(props){
                     <a className="dropdown-item" href="#">
                       Schedule Assessment
                     </a>
-                    <a className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to='/manager/assessment'>
                       In-Meeting Assessment
-                    </a>
+                    </Link>
 
                   </div>
                 )}
