@@ -5,11 +5,12 @@ import Communication from "./Communication";
 import CriticalThinking from "./CriticalThinking";
 import BuildRelationship from "./BuildRelationship";
 import Success from "./Success";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "./ProgressBar/ProgressBar";
+import StartAssessment from "./StartAssessment";
 
 class MainAssessment extends Component {
   state = {
-    step: 1,
+    step: 0,
     planning: "",
     execution: "",
     prioritization: "",
@@ -26,6 +27,11 @@ class MainAssessment extends Component {
     teamwork: "",
     stakeholder: "",
     conflicts: ""
+  };
+
+  styles = {
+    marginTop: 30,
+    paddingBottom: 30
   };
 
   nextStep = () => {
@@ -86,14 +92,25 @@ class MainAssessment extends Component {
     };
 
     switch (step) {
-      case 1:
+      case 0:
         return (
-          <Organization
+          <StartAssessment
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
           />
         );
+
+      case 1:
+        return (
+          <Organization
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+
       case 2:
         return (
           <Innovation
@@ -103,6 +120,7 @@ class MainAssessment extends Component {
             values={values}
           />
         );
+
       case 3:
         return (
           <Communication
@@ -112,6 +130,7 @@ class MainAssessment extends Component {
             values={values}
           />
         );
+
       case 4:
         return (
           <CriticalThinking
@@ -121,6 +140,7 @@ class MainAssessment extends Component {
             values={values}
           />
         );
+
       case 5:
         return (
           <BuildRelationship
@@ -139,7 +159,7 @@ class MainAssessment extends Component {
   render() {
     const { step } = this.state;
     return (
-      <div>
+      <div className="card" style={this.styles}>
         <ProgressBar />
         {this.renderSwitch(step)}
       </div>
