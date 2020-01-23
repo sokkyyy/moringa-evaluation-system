@@ -104,7 +104,7 @@ class Innovation extends Component {
                 Excels at adjusting workstreams effectively and consistently
               </label>
             </div>
-            </div>
+          </div>
           </Form>
 
           <Button onClick={this.back} className="previous">Back</Button>
