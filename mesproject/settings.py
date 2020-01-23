@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+
 ]
 
 REST_FRAMEWORK = {
@@ -110,6 +111,7 @@ DATABASES = {
         'NAME': 'mes',
         'USER': 'samurai',
         'PASSWORD':'superman7577',
+
     }
 }
 

@@ -43,74 +43,26 @@ class AdminNavbar extends Component {
                 </a>
               </li>
 
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  id="navbarDropdownMenuLink-333"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Job Grades
                 </a>
-                <div
-                  className="dropdown-menu dropdown-default"
-                  aria-labelledby="navbarDropdownMenuLink-333"
-                >
-                  <a className="dropdown-item" href="#">
-                    Job Grades
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Add Job Grade
-                  </a>
-                </div>
               </li>
 
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  id="navbarDropdownMenuLink-333"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Staff
-                </a>
-                <div
-                  className="dropdown-menu dropdown-default"
-                  aria-labelledby="navbarDropdownMenuLink-333"
-                >
-                  <a className="dropdown-item" href="#">
-                    Staff
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Add Staff
-                  </a>
-                </div>
-              </li>
-
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  id="navbarDropdownMenuLink-333"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Departments
                 </a>
-                <div
-                  className="dropdown-menu dropdown-default"
-                  aria-labelledby="navbarDropdownMenuLink-333"
-                >
-                  <a className="dropdown-item" href="#">
-                    Departments
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Add Department
-                  </a>
-                </div>
               </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Staff
+                </a>
+              </li>
+              
+
+             
             </ul>
 
             <a className="nav-link btn" id="signout-button" href="#">

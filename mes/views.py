@@ -4,7 +4,7 @@ from rest_framework import status,permissions
 from .models import *
 from django.contrib.auth.models import User
 
-from .serializers.departments import DepartmentSerializer
+from .serializers.departments import DepartmentSerializer, DepartmentNameSerializer
 from django.http import HttpResponseRedirect
 from rest_framework.views import APIView
 from .serializers.competencies import *
@@ -62,9 +62,9 @@ class UserList(APIView):
 @api_view(['GET'])
 def departments(request):
     '''API endpoint for Moringa Departments'''
-
-    departments = Department.objects.all()
-    serializers = DepartmentSerializer(departments, many=True)
+    logged_in_staff = MoringaStaff.objects.get(user=request.user)
+    department = Department.objects.get(name=logged_in_staff.department.name)
+    serializers = DepartmentSerializer(department)
     return Response(serializers.data)
 
 @api_view(['GET'])
@@ -86,8 +86,8 @@ def moringa_staff(request):
 
 
 
-class CompetencyResultsPost(APIView):
-    ''' API endpoint for Posting Competency Results  '''
+class CompetencyResultsPost(APIView): #FOR SELF ASSESSMENT
+    ''' API endpoint for Posting SELF Competency Results  '''
     permission_classes = (permissions.AllowAny,)
 
     def post(self,request, format=None):
@@ -115,3 +115,55 @@ class CompetencyResultsPost(APIView):
 
             return Response(serializers_innovation.data, status=status.HTTP_201_CREATED)
         return Response(serializers_innovation.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ManagerCompetencyResultsPost(APIView): #FOR MANAGER ASSESSMENT
+    ''' API endpoint for Posting MANAGER Competency Results  '''
+
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self,request, format=None):
+        serializers_organization = OrganizationSerializer(data=request.data.get('organization')) #Organization
+        serializers_innovation = InnovationSerializer(data=request.data.get('innovation'))
+        serializers_critical_thinking = CriticalThinkingSerializer(data=request.data.get('critical_thinking'))
+        serializers_interpersonal_communication = InterpersonalCommunicationSerializer(data=request.data.get('interpersonal_communication'))
+        serializers_relationships = RelationshipsSerializer(data=request.data.get('relationships'))
+
+
+
+        if serializers_organization.is_valid() and serializers_innovation.is_valid() and serializers_critical_thinking.is_valid() and serializers_interpersonal_communication.is_valid() and serializers_relationships.is_valid():
+            org = serializers_organization.save() #Organization Instance
+            inn = serializers_innovation.save()# InterpersonalCommunication Instance
+            ct = serializers_critical_thinking.save() #CriticalThinking Instance
+            ic = serializers_interpersonal_communication.save() #InterpersonalCommunication Instance
+            rel = serializers_relationships.save() # Relationships Instance
+
+            user_assessed = User.objects.get(pk=request.data.get('assessed_user'))
+            staff = MoringaStaff.objects.get(user=user_assessed)
+
+            # CHANGE THE 'type' to receive from request :'self','man','final'
+            competency_results = CompetencyResults(type='final',staff=staff,organization=org,innovation=inn,interpersonal_communication=ic, critical_thinking=ct,relationships=rel)
+            competency_results.save()
+
+            return Response(serializers_innovation.data, status=status.HTTP_201_CREATED)
+        return Response(serializers_innovation.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+@api_view(['GET'])
+def finalResults(request):
+    ''' API endpoint for Staff final competency'''
+
+    staff = MoringaStaff.objects.get(user=request.user)
+    final_results = CompetencyResults.objects.filter(type='final',staff=staff)
+    serializers = CompetencyResultsSerializer(final_results, many=True)
+    return Response(serializers.data)
+
+
+@api_view(['GET'])
+def dept_names(request):
+    ''' API endpoint for Department Names '''
+
+    dpts = Department.objects.all()
+    serializers = DepartmentNameSerializer(dpts, many=True)
+    return Response(serializers.data)
