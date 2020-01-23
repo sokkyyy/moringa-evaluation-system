@@ -44,8 +44,12 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
+  IconButton: {
+    color: 'white'
+  },
   appBar: {
-    backgroundColor: "#689241",
+    color: "black",
+    backgroundColor: "#ffffff",
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -61,6 +65,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: 'black'
   },
   hide: {
     display: 'none',
@@ -71,7 +76,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: 'grey',
+    backgroundColor: '#689241',
     color: 'white',
   },
   drawerHeader: {
@@ -173,8 +178,8 @@ export default function PersistentDrawerLeft(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Admin
+          <Typography  variant="h5" noWrap>
+            System Admin
           </Typography>
         </Toolbar>
       </AppBar>
@@ -190,9 +195,9 @@ export default function PersistentDrawerLeft(props) {
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
-              <ChevronLeftIcon color="action"/>
+              <ChevronLeftIcon />
             ) : (
-              <ChevronRightIcon color="action"/>
+              <ChevronRightIcon />
             )}
           </IconButton>
         </div>
@@ -211,7 +216,7 @@ export default function PersistentDrawerLeft(props) {
         {["Sign Out"].map(
             (text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <PowerSettingsNewIcon  color="action"/> : <PowerSettingsNewIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <PowerSettingsNewIcon  /> : <PowerSettingsNewIcon />}</ListItemIcon>
                 <ListItemText primary={text} />                
               </ListItem>
             )
