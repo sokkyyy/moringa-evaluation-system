@@ -4,8 +4,7 @@ class Success extends Component {
   state = {};
 
   styles = {
-    paddingTop:200,
-    paddingBottom:200
+    paddingTop:200
   };
 
   render() {

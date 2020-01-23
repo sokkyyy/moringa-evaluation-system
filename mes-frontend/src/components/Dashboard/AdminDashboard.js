@@ -1,3 +1,5 @@
+
+import UserService from '../../services/UserService';
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -27,8 +29,13 @@ import StaffForm from '../Forms/StaffForm'
 import DepartmentForm from '../Forms/DepartmentForm'
 import GradeForm from '../Forms/GradeForm'
 import RoleForm from '../Forms/RoleForm'
+import AdminServices from '../../services/AdminServices';
 
 
+
+
+const userService = new UserService();
+const adminServices = new AdminServices();
 
 
 const drawerWidth = 240;
@@ -58,7 +65,7 @@ const useStyles = makeStyles(theme => ({
   hide: {
     display: 'none',
   },
-  drawer: {  
+  drawer: {
     width: drawerWidth,
     flexShrink: 0,
   },
@@ -95,10 +102,49 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
+
+
+
+export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [load, setLoad] = React.useState(true); //for page load
+  const [staff, setStaff] = React.useState([]);
+
+
+  React.useEffect(()=>{
+    handleAdminLogin();
+    handleGetAllStaff();
+  },[]);
+
+  const handleAdminLogin = () => {
+    userService.getUser()
+    .then(response => {
+        if(response.data.system_role === 'super_admin'){ //change to !==
+          window.location.href = '/dashboard';
+        }else{
+          // this.setState({staff: response.data});
+          console.log(response.data);
+        }
+    })
+    .catch(() =>{
+        props.history.push('/');
+    })
+  };
+
+  const handleGetAllStaff = () => {
+    adminServices.getAllStaff()
+    .then(response => {
+      handleSetStaff(response.data);
+    })
+    .catch((errors) => {
+        console.log(errors);
+    })
+  };
+  const handleSetStaff = (data) => {
+    setStaff(data);
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -300,7 +346,7 @@ export default function PersistentDrawerLeft() {
         </div>
 
 
-        <StaffTable />
+        <StaffTable staff={staff} />
 
         <div className="row other">
           <div className="col-md-4">
