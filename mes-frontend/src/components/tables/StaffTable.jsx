@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react';
 import { MDBCard, MDBCardBody, MDBCardHeader, MDBInput, MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
 import { MDBDataTable } from 'mdbreact';
@@ -101,7 +99,7 @@ class StaffTable extends Component {
                 <MDBBtn rounded size="m" color="green" className="px-2"
                 data-toggle="modal"
                   data-target="#add-staff"
-                  >
+                >
                   Add Staff
                 </MDBBtn>
               </MDBCardBody>

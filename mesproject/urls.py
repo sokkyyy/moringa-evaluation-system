@@ -35,4 +35,5 @@ urlpatterns = [
     re_path('^api/post/results/$',views.CompetencyResultsPost.as_view()),
     re_path('^api/post/manager/results/$',views.ManagerCompetencyResultsPost.as_view()),
     re_path('^api/final/results/$',views.finalResults),
+    re_path('^api/dept_names/$',views.dept_names),
 ]

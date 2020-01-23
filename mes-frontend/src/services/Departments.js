@@ -10,4 +10,14 @@ export default class DepartmentStaff {
       headers:{Authorization: authToken}
     });
   }
+
+  
+  getDeptNames(){
+
+    const url = `${APIURL}dept_names/`;
+
+    return axios.get(url,{
+      headers:{Authorization: authToken}
+    });
+  }
 }

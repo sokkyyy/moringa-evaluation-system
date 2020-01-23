@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
 
-
 class Communication extends Component {
   saveAndContinue = e => {
     e.preventDefault();
@@ -20,13 +19,14 @@ class Communication extends Component {
       <div className="container-fluid">
         <fieldset>
           <Form>
-            <h1 className="text-center">Interpersonal Communication</h1>
+            <h1 className="text-center head1">Interpersonal Communication</h1>
             <p className="text-center">
               The ability to communicate effectively - both verbally and in
               writing, build relationships and achieve desired outcomes by
               building investment, articulating and crafting a clear, engaging
               message
             </p>
+
 
           <div className="investment1">
             <h3>Investment Building</h3>
@@ -109,8 +109,14 @@ class Communication extends Component {
             </div>
           </Form>
 
-          <Button onClick={this.back} className="previous">Back</Button>
-          <Button onClick={this.saveAndContinue} className="next">Continue </Button>
+          <div className="text-center">
+            <Button onClick={this.back} className="previous">
+              Back
+            </Button>
+            <Button onClick={this.saveAndContinue} className="next">
+              Continue
+            </Button>
+          </div>
         </fieldset>
       </div>
     );

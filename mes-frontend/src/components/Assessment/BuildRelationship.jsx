@@ -23,7 +23,7 @@ class BuildRelationship extends Component {
       <div className="container-fluid">
         <fieldset>
           <Form>
-            <h1 className="text-center">Building and Managing Relationships</h1>
+            <h1 className="text-center head1">Building and Managing Relationships</h1>
             <p className="text-center">
               The ability to collaborate, support each other, and engage
               external stakeholders in beneficial ways to all. In addition to
@@ -113,8 +113,14 @@ class BuildRelationship extends Component {
           </div>
           </Form>
 
-          <Button onClick={this.back} className="previous">Back</Button>
-          <Button onClick={this.saveAndContinue} className="next">Continue </Button>
+          <div className="text-center">
+            <Button onClick={this.back} className="previous">
+              Back
+            </Button>
+            <Button onClick={this.saveAndContinue} className="next">
+              Continue
+            </Button>
+          </div>
         </fieldset>
       </div>
     );
