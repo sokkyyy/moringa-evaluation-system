@@ -120,7 +120,7 @@ class Organization extends Component {
               Continue
             </Button>
           </div>
-
+        </div>
         </fieldset>
       </div>
     );
