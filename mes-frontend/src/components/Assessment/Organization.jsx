@@ -108,6 +108,9 @@ class Organization extends Component {
           </div>
 
           <div className="text-center">
+            <Button onClick={this.back} className="previous">
+              Back
+            </Button>
             <Button onClick={this.saveAndContinue} className="next">
               Continue
             </Button>

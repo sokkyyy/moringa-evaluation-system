@@ -8,7 +8,9 @@ class StartAssessment extends Component {
   };
 
   styles = {
-    
+    marginTop: 30,
+    paddingTop: 30,
+    paddingBottom: 30
   };
 
   render() {

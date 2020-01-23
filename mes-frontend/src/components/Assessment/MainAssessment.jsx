@@ -160,11 +160,7 @@ class MainAssessment extends Component {
   render() {
     const { step } = this.state;
     if (this.state.step === 0) {
-      return (
-        <div style={this.styles}>
-          {this.renderSwitch(step)}
-        </div>
-      );
+      return <div style={this.styles}>{this.renderSwitch(step)}</div>;
     } else {
       return (
         <div className="card card1" style={this.styles}>
