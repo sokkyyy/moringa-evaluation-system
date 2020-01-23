@@ -33,7 +33,7 @@ class Dashboard extends Component {
   render() {
 
     return (
-      <body>
+      <div>
         <div>
           <Navbar />
         </div>
@@ -50,7 +50,7 @@ class Dashboard extends Component {
             <div
               className="modal fade"
               id="scheduleassessment"
-              tabindex="-1"
+              tabIndex="-1"
               role="dialog"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
@@ -85,9 +85,9 @@ class Dashboard extends Component {
             <br />
             <hr />
             <div className="notifications">
-              <strong>
+              <strong className="text-center">
                 <h6>
-                  Notifications <i class="far fa-bell"></i>
+                  Notifications <i className="far fa-bell"></i>
                 </h6>
               </strong>
               <br />
@@ -96,7 +96,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </div>
-      </body>
+      </div>
     );
   }
 }
