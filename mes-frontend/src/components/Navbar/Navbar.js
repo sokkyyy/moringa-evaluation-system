@@ -7,7 +7,7 @@ function Navbar(props){
   const handleSignOut = (()=>{
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
-    window.location.href = '/login';
+    window.location.href = '/';
   });
   return(
     <div>
@@ -108,7 +108,7 @@ function Navbar(props){
 
                   </div>
                 )}
-                
+
               </div>
             </li>
           </ul>
