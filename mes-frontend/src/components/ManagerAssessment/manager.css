@@ -1,0 +1,12 @@
+.manager-assessment {
+  display: flex;
+  flex-direction: row;
+}
+
+.assessment-form {
+  width: 800px;
+}
+
+.user-assessed {
+  width: 400px;
+}

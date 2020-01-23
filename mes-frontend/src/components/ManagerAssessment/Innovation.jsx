@@ -15,19 +15,18 @@ class Innovation extends Component {
   handleChange = (event) => {
     this.props.handleChange(event);
   };
-
+  
   render() {
     return (
       <div className="container-fluid">
-        <fieldset>
-          <Form>
-            <h1 className="text-center head1">Innovation</h1>
-            <p className="text-center">
-              The ability to set a vision and standard of excellence for your
-              work, to generate new ideas, devices, or methods that are
-              appropriate to the situation, to add product, and to adapt to
-              change in a purposeful manner.
-            </p>
+        <Form>
+          <h1 className="text-center">Innovation</h1>
+          <p className="text-center">
+            The ability to set a vision and standard of excellence for your
+            work, to generate new ideas, devices, or methods that are
+            appropriate to the situation, to add product, and to adapt to change
+            in a purposeful manner.
+          </p>
 
           <div className="visions1">
             <h3>Vision Setting</h3>
@@ -105,16 +104,10 @@ class Innovation extends Component {
               </label>
             </div>
           </div>
-          </Form>
-          <div className="text-center">
-            <Button onClick={this.back} className="previous">
-              Back
-            </Button>
-            <Button onClick={this.saveAndContinue} className="next">
-              Continue
-            </Button>
-          </div>
-        </fieldset>
+        </Form>
+
+        <Button onClick={this.back}>Back</Button>
+        <Button onClick={this.saveAndContinue}>Continue </Button>
       </div>
     );
   }
