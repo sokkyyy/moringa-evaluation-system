@@ -161,14 +161,14 @@ class MainAssessment extends Component {
     const { step } = this.state;
     if (this.state.step === 0) {
       return (
-        <div className="card" style={this.styles}>
+        <div style={this.styles}>
           {this.renderSwitch(step)}
         </div>
       );
     } else {
       return (
-        <div className="card" style={this.styles}>
-          <ProgressBar />
+        <div className="card card1" style={this.styles}>
+          {/* <ProgressBar /> */}
           {this.renderSwitch(step)}
         </div>
       );

@@ -17,7 +17,7 @@ class Innovation extends Component {
       <div className="container-fluid">
         <fieldset>
           <Form>
-            <h1 className="text-center">Innovation</h1>
+            <h1 className="text-center head1">Innovation</h1>
             <p className="text-center">
               The ability to set a vision and standard of excellence for your
               work, to generate new ideas, devices, or methods that are
@@ -102,9 +102,14 @@ class Innovation extends Component {
               </div>
             </div>
           </Form>
-
-          <Button onClick={this.back} className="previous">Back</Button>
-          <Button onClick={this.saveAndContinue} className="next">Continue </Button>
+          <div className="text-center">
+            <Button onClick={this.back} className="previous">
+              Back
+            </Button>
+            <Button onClick={this.saveAndContinue} className="next">
+              Continue
+            </Button>
+          </div>
         </fieldset>
       </div>
     );

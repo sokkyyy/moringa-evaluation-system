@@ -2,11 +2,24 @@ import React, { Component } from "react";
 import "./ProgressBar.css";
 
 class ProgressBar extends Component {
-  state = {};
+  state = {
+    stepCount: 0,
+    activeStep: this.props.activeStep || 0,
+  };
+
+  componentDidMount() {
+    this.setState({ stepCount: React.Children.count(this.props.children) });
+  }
+
+  getChildProps() {
+    return { ...this.props, ...this.state };
+  }
 
   styles = {
     paddingTop:20
   };
+
+  
 
   render() {
     return (
