@@ -1,11 +1,12 @@
-.card {
+.card1 {
   margin: 0 auto;
   width: 700px;
   float: none;
   display: block;
 }
 
-form {
+
+fieldset {
   margin: 0 auto;
   width: 600px;
   float: none;
@@ -22,7 +23,7 @@ form {
 #progressbar li {
   list-style-type: none;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 12px;
   width: 15.33%;
   float: left;
   position: relative;
@@ -51,7 +52,7 @@ form {
   position: absolute;
   top: 25px;
   left: -50%;
-  z-index: 1;
+  z-index:1;
 }
 
 #progressbar li:first-child:after {
@@ -68,6 +69,11 @@ form {
   color: white;
 }
 
-.next{
-	background: #558834;
+.next {
+  background: #558834;
+}
+
+.head1 {
+  color: #558834;
+  font-size: 30px;
 }
