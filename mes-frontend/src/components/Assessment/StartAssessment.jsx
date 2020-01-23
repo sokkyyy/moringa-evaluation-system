@@ -8,11 +8,12 @@ class StartAssessment extends Component {
   };
 
   styles = {
+    
   };
 
   render() {
     return (
-      <div>
+      <div className="text-center">
         <Button onClick={this.saveAndContinue} className="next">
           Take Assessment
         </Button>

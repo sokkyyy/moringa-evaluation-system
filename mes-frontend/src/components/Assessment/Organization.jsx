@@ -106,12 +106,9 @@ class Organization extends Component {
               </div>
             </Form>
           </div>
-
-          <Button onClick={this.back} className="previous">
-            Back
-          </Button>
+          
           <Button onClick={this.saveAndContinue} className="next">
-            Continue{" "}
+            Continue
           </Button>
         </fieldset>
       </div>

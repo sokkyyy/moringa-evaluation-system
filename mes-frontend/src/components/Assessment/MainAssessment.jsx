@@ -31,6 +31,7 @@ class MainAssessment extends Component {
 
   styles = {
     marginTop: 30,
+    paddingTop: 30,
     paddingBottom: 30
   };
 
@@ -158,12 +159,20 @@ class MainAssessment extends Component {
 
   render() {
     const { step } = this.state;
-    return (
-      <div className="card" style={this.styles}>
-        <ProgressBar />
-        {this.renderSwitch(step)}
-      </div>
-    );
+    if (this.state.step === 0) {
+      return (
+        <div className="card" style={this.styles}>
+          {this.renderSwitch(step)}
+        </div>
+      );
+    } else {
+      return (
+        <div className="card" style={this.styles}>
+          <ProgressBar />
+          {this.renderSwitch(step)}
+        </div>
+      );
+    }
   }
 }
 
