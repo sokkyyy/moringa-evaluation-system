@@ -13,6 +13,7 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 var CanvasJS = CanvasJSReact.CanvasJS;
 
 class CombinedLineGraph extends Component {
+
   constructor(props) {
 		super(props);
 
@@ -23,7 +24,6 @@ class CombinedLineGraph extends Component {
 	}
 
 
-
 	addSymbols(e) {
 		var suffixes = ["", "K", "M", "B",];
 		var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
@@ -31,6 +31,18 @@ class CombinedLineGraph extends Component {
 			order = suffixes.length - 1;
 		var suffix = suffixes[order];
 		return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
+	}
+
+	getRating(x){
+		if(x < 60){
+			return "Foundational"
+		}
+		else if(x < 90){
+			return "Profecient"
+		}
+		else{
+			return "Exemplary"
+		}
 	}
 
 	toggleDataSeries(e){
@@ -71,25 +83,32 @@ class CombinedLineGraph extends Component {
 
 
 
+		console.log("Rating", this.getRating(80))
+
     const options = {
 			animationEnabled: true,
 			colorSet: "colorSet1",
 
 			axisX: {
 				interval: 1
+		
 			},
 
 
 			toolTip: {
-				shared: true
+				shared: true,
+				animationEnabled: true ,
+				cornerRadius: 5,
 			},
 			legend: {
 				cursor: "pointer",
 				itemclick: this.toggleDataSeries,
-				verticalAlign: "top"
+				verticalAlign: "bottom"
 			},
 			data: [
 				{
+				
+				toolTipContent: "<strong>{name}:</strong> {y}  ({rating})",
 				type: "column",
 				name: "Organization",
 				showInLegend: true,
@@ -97,27 +116,32 @@ class CombinedLineGraph extends Component {
 				dataPoints: organizationDataPoints,
 			},
 			{
+				toolTipContent: "<strong>{name}:</strong> {y}  ({rating})",
 				type: "column",
-				name: "Interpersonal Comm.",
+				name: "Interpersonal Communication",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints:ipPoints,
 			},
 			{
+				toolTipContent: "<strong>{name}:</strong> {y}  ({rating}) ",
 				type: "column",
 				name: "Innovation",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
+
 				dataPoints:innovationDataPoints,
       },
       {
+				toolTipContent: "<strong>{name}:</strong> {y}  ({rating}) ",
 				type: "column",
-				name: "Building & Managing Relat.",
+				name: "Building & Managing Relations",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints: relDataPoints,
       },
       {
+				toolTipContent: "<strong>{name}:</strong> {y}  ({rating})",
 				type: "column",
 				name: "Critical Thinking",
 				showInLegend: true,
@@ -127,6 +151,8 @@ class CombinedLineGraph extends Component {
     ]
 		}
     return (
+
+			
 
       <div>
 

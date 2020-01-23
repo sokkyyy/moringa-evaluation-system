@@ -45,9 +45,9 @@ class Dashboard extends Component {
 
     return (
       <div>
+
       {this.state.load ? ' ' : (
       <div>
-
         <div>
           <Navbar role={this.state.staff.system_role} />
         </div>
@@ -66,7 +66,7 @@ class Dashboard extends Component {
             <div
               className="modal fade"
               id="scheduleassessment"
-              tabindex="-1"
+              tabIndex="-1"
               role="dialog"
               aria-labelledby="exampleModalLabel"
               aria-hidden="true"
@@ -101,9 +101,9 @@ class Dashboard extends Component {
             <br />
             <hr />
             <div className="notifications">
-              <strong>
+              <strong className="text-center">
                 <h6>
-                  Notifications <i class="far fa-bell"></i>
+                  Notifications <i className="far fa-bell"></i>
                 </h6>
               </strong>
               <br />

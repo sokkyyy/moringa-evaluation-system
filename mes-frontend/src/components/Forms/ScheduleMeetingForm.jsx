@@ -11,7 +11,7 @@ class ScheduleMeetingForm extends Component {
           className="browser-default custom-select form-control mb-4"
           id="department"
         >
-          <option selected>Employee</option>
+          <option defaultValue>Employee</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>

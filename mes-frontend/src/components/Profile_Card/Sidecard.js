@@ -3,10 +3,10 @@ import user from './user.svg'
 
 function Sidecard(props){
   return (
-    <div class="card testimonial-card profile">
-      <div class="card-up red lighten-1"></div>
+    <div className="card testimonial-card profile">
+      <div className="card-up red lighten-1"></div>
 
-      <div class="avatar mx-auto white">
+      <div className="avatar mx-auto white">
         <img src={user} id="user-dp" alt="user-dp" heigh="80px" width="80px" />
       </div>
 
@@ -23,11 +23,11 @@ function Sidecard(props){
         </p>
 
         <p>
-          <i class="fas fa-location-arrow"></i>  Nairobi Campus
+          <i className="fas fa-location-arrow"></i>  Nairobi Campus
         </p>
 
         <p>
-          <i class="fa fa-cog"></i> <a href="">Edit Profile</a>
+          <i className="fa fa-cog"></i> <a href="">Edit Profile</a>
         </p>
       </div>
     </div>

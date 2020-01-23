@@ -17,14 +17,14 @@ class DepartmentForm extends Component {
           className="browser-default custom-select form-control mb-4"
           id="manager"
         >
-          <option selected>Manager</option>
+          <option defaultValue>Manager</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
 
         <select className="browser-default custom-select form-control mb-4">
-          <option selected>Line Manager</option>
+          <option defaultValue>Line Manager</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>

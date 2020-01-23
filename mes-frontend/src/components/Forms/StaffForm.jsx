@@ -26,7 +26,7 @@ class StaffForm extends Component {
           className="browser-default custom-select form-control mb-4"
           id="grade"
         >
-          <option selected>Grade</option>
+          <option defaultValue>Grade</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
@@ -36,14 +36,14 @@ class StaffForm extends Component {
           className="browser-default custom-select form-control mb-4"
           id="department"
         >
-          <option selected>Department</option>
+          <option defaultValue>Department</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
 
         <select className="browser-default custom-select form-control mb-4">
-          <option selected>Role</option>
+          <option defaultValue>Role</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>

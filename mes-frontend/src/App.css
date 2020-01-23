@@ -19,7 +19,8 @@
 @media (max-width: 780px) {
   
   .notifications{
-    text-align: center;
+    display: inline-block;
+    width: 200px;
   }
 }
 
