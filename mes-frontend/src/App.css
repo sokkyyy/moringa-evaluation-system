@@ -4,6 +4,10 @@
   /* height: 65px; */
 }
 
+#dash-navbar{
+  height: 63px;
+}
+
 @media (min-width: 1200px) {
   
   .navbar{
@@ -19,8 +23,7 @@
 @media (max-width: 780px) {
   
   .notifications{
-    display: inline-block;
-    width: 200px;
+    text-align: center;
   }
 }
 
@@ -39,6 +42,8 @@
 .container-fluid{
   margin-top: 4px; 
 }
+
+
 
 #user-dp{
   margin-top: 10px;
@@ -137,7 +142,7 @@
 
 .admin-bar{
   background-color: #689241;
-  width: 50px;
+height: auto;
 }
 
 .modal{

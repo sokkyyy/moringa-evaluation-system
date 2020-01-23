@@ -129,7 +129,7 @@ export default function PersistentDrawerLeft(props) {
         }
     })
     .catch(() =>{
-        props.history.push('/');
+        // props.history.push('/');
     })
   };
 
@@ -349,15 +349,15 @@ export default function PersistentDrawerLeft(props) {
         <StaffTable staff={staff} />
 
         <div className="row other">
-          <div className="col-md-4">
+          <div className="col-md-12">
             <DepartmentTable />
           </div>
-          <div className="col-md-4">
+          {/* <div className="col-md-4">
             <RoleTable />
           </div>
           <div className="col-md-4">
             <GradeTable />
-          </div>
+          </div> */}
         </div>
       </main>
     </div>
