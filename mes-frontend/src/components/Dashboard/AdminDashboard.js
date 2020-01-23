@@ -19,6 +19,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import StaffTable from '../tables/StaffTable';
 import DepartmentTable from '../tables/DepartmentTable';
 import RoleTable from '../tables/RoleTable';
@@ -44,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   appBar: {
-    backgroundColor: "green",
+    backgroundColor: "#689241",
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -70,6 +71,8 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: 'grey',
+    color: 'white',
   },
   drawerHeader: {
     display: 'flex',
@@ -95,7 +98,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0,
   },
   ChevronLeftIcon: {
-    backgroundColor: 'white'
+    colorRendering: 'white'
   },
 }));
 
@@ -187,9 +190,9 @@ export default function PersistentDrawerLeft(props) {
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
+              <ChevronLeftIcon color="action"/>
             ) : (
-              <ChevronRightIcon />
+              <ChevronRightIcon color="action"/>
             )}
           </IconButton>
         </div>
@@ -204,6 +207,16 @@ export default function PersistentDrawerLeft(props) {
           )}
         </List>
         <Divider />
+        <List>
+        {["Sign Out"].map(
+            (text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>{index % 2 === 0 ? <PowerSettingsNewIcon  color="action"/> : <PowerSettingsNewIcon />}</ListItemIcon>
+                <ListItemText primary={text} />                
+              </ListItem>
+            )
+          )}
+        </List>
       </Drawer>
       <main
         className={clsx(classes.content, {
