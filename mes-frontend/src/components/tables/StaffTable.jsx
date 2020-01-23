@@ -94,10 +94,7 @@ class StaffTable extends Component {
                   small
                   data={data}
                 />
-                {/* <MDBTable btn fixed>
-    <MDBTableHead columns={data_panel.columns} />
-    <MDBTableBody rows={data_panel.rows} />
-  </MDBTable> */}
+
 
                 <MDBBtn rounded size="m" color="green" className="px-2"
                 data-toggle="modal"

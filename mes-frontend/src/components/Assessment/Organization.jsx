@@ -27,7 +27,7 @@ class Organization extends Component {
         <fieldset>
           <div>
             <Form>
-              <h1 className="text-center">Organization</h1>
+              <h1 className="text-center head1">Organization</h1>
               <p className="text-center">
                 The ability to maximize your productivity, manage your work, and
                 create high quality,error-free final product by planning,
@@ -112,13 +112,15 @@ class Organization extends Component {
           </div>
           </Form>
 
-          <Button onClick={this.back} className="previous">
-            Back
-          </Button>
-          <Button onClick={this.saveAndContinue} className="next">
-            Continue{" "}
-          </Button>
-        </div>
+          <div className="text-center">
+            <Button onClick={this.back} className="previous">
+              Back
+            </Button>
+            <Button onClick={this.saveAndContinue} className="next">
+              Continue
+            </Button>
+          </div>
+
         </fieldset>
       </div>
     );
