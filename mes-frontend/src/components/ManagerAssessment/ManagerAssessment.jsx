@@ -5,26 +5,28 @@ import Communication from "./Communication";
 import CriticalThinking from "./CriticalThinking";
 import BuildRelationship from "./BuildRelationship";
 import Success from "./Success";
+import ProgressBar from "./ProgressBar";
 import UserService from '../../services/UserService';
 import Navbar from '../Navbar/Navbar';
 import CompetencyService from '../../services/CompetencyService';
-import ProgressBar from "./ProgressBar/ProgressBar";
-import StartAssessment from "./StartAssessment";
-
+import './manager.css';
+import StaffInfo from './Staff';
 
 const userService = new UserService();
 const compService = new CompetencyService();
 
 
 
-class MainAssessment extends Component {
+class ManagerAssessment extends Component {
   constructor(props){
     super(props);
 
     this.state = {
       load:true,
       staff:{},
-      type: 'self',
+      type: 'manager',
+      assessed_user:null,
+
 
       step: 1,
 
@@ -60,7 +62,6 @@ class MainAssessment extends Component {
         conflict_management:0,
         score:0,
       },
-
   };
 }
 
@@ -80,11 +81,6 @@ class MainAssessment extends Component {
     })
   }
 
-
-  styles = {
-    marginTop: 30,
-    paddingBottom: 30
-  };
 
   nextStep = () => {
     const { step } = this.state;
@@ -116,6 +112,11 @@ class MainAssessment extends Component {
     this.calculateScore();
   };
 
+  handleAssessUser = (id) => {
+    console.log(id);
+    this.setState({assessed_user: id});
+  };
+
   calculateScore = () => {
     let {organization, innovation, interpersonal_communication, critical_thinking, relationships } = this.state;
 
@@ -144,9 +145,9 @@ class MainAssessment extends Component {
   };
 
   submitOrganization = () => {
-    let {organization, innovation, interpersonal_communication, critical_thinking, relationships } = this.state;
-    const testResults = {organization, innovation, interpersonal_communication, critical_thinking, relationships };
-    compService.orgTest(testResults)
+    let {assessed_user, organization, innovation, interpersonal_communication, critical_thinking, relationships } = this.state;
+    const testResults = {assessed_user, organization, innovation, interpersonal_communication, critical_thinking, relationships };
+    compService.manTest(testResults)
     .then(response =>{
       console.log(response.data);
     })
@@ -157,23 +158,13 @@ class MainAssessment extends Component {
 
 
     switch (step) {
-      case 0:
-        return (
-          <StartAssessment
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-          />
-        );
-
       case 1:
         return (
           <Organization
             nextStep={this.nextStep}
-            prevStep={this.prevStep}
             handleChange={this.handleChange}
           />
         );
-
       case 2:
         return (
           <Innovation
@@ -182,7 +173,6 @@ class MainAssessment extends Component {
             handleChange={this.handleChange}
           />
         );
-
       case 3:
         return (
           <Communication
@@ -191,7 +181,6 @@ class MainAssessment extends Component {
             handleChange={this.handleChange}
           />
         );
-
       case 4:
         return (
           <CriticalThinking
@@ -200,7 +189,6 @@ class MainAssessment extends Component {
             handleChange={this.handleChange}
           />
         );
-
       case 5:
         return (
           <BuildRelationship
@@ -222,17 +210,21 @@ class MainAssessment extends Component {
       <div>
         <Navbar role={this.state.staff.system_role} />
 
-        <div className="card" style={this.styles}>
         {load ? '' : (
-          <div>
-            <ProgressBar />
-            {this.renderSwitch(step)}
+          <div className='manager-assessment'>
+            <div className='assessment-form'>
+              {this.renderSwitch(step)}
+            </div>
+
+            <div className='user-assessed'>
+              <StaffInfo handleAssessUser={this.handleAssessUser} />
+            </div>
           </div>
         )}
-        </div>
+
       </div>
     );
   }
 }
 
-export default MainAssessment;
+export default ManagerAssessment;
