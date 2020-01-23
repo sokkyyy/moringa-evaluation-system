@@ -53,3 +53,8 @@ class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Department
         fields = ['pk','name','manager','line_manager','staff']
+
+class DepartmentNameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Department
+        fields = ['pk','name']

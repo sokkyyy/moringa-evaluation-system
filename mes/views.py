@@ -4,7 +4,7 @@ from rest_framework import status,permissions
 from .models import *
 from django.contrib.auth.models import User
 
-from .serializers.departments import DepartmentSerializer
+from .serializers.departments import DepartmentSerializer, DepartmentNameSerializer
 from django.http import HttpResponseRedirect
 from rest_framework.views import APIView
 from .serializers.competencies import *
@@ -157,4 +157,13 @@ def finalResults(request):
     staff = MoringaStaff.objects.get(user=request.user)
     final_results = CompetencyResults.objects.filter(type='final',staff=staff)
     serializers = CompetencyResultsSerializer(final_results, many=True)
+    return Response(serializers.data)
+
+
+@api_view(['GET'])
+def dept_names(request):
+    ''' API endpoint for Department Names '''
+
+    dpts = Department.objects.all()
+    serializers = DepartmentNameSerializer(dpts, many=True)
     return Response(serializers.data)
