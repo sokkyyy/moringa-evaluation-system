@@ -4,6 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { render } from "react-dom";
 import Login from '../auth/Login';
+import Footer from '../Footer/Footer';
+
 
 
 class DemoCarousel extends Component {
@@ -51,29 +53,43 @@ class Landing extends Component {
     render() {
         return (
 <div>
-<section className="container-fill">
-      <div className="row mx-0 my-0">
-        <div className="col-md-6" style={{width: '100%'}}>
-        <DemoCarousel />
-        </div>
-        <div className="col-md-6">
-    <div className="card">
-
-        <h5 className="card-header info-color white-text text-center py-4">
-            <strong>Sign in</strong>
-        </h5>
-
-        <div className="card-body px-lg-5 pt-0">
-          <Login />
-        </div>
-    </div>
-
-        </div>
-      </div>
+      <section className="login-block">
+    <div className="container">
+	<div className="row">
+		<div className="col-md-4 login-sec">
+		    <h2 className="text-center">Login</h2>
+		    <form className="login-form">
+  <div className="form-group">
+    <label for="exampleInputEmail1" className="text-uppercase">Email</label>
+    <input type="text" className="form-control" placeholder="example@gmail.com"/>
+    
+  </div>
+  <div className="form-group">
+    <label for="exampleInputPassword1" className="text-uppercase">Password</label>
+    <input type="password" className="form-control" placeholder="......"/>
+  </div>
+  
+  
+    <div className="form-check">
+    <label className="form-check-label">
+      <input type="checkbox" className="form-check-input"/>
+      <small>Remember Me</small>
+    </label>
+    <button type="submit" className="btn btn-login float-right" style={{background: '#ff8900',color: '#fff', fontSize: '13px'}}>Login</button>
+  </div>
+  
+</form>
+<div className="copy-text">Created with <i className="fa fa-heart"></i>by Origins</div>
+		</div>
+		 <div className="col-md-8 banner-sec">
+	</div> 
+</div>
+</div>
       </section>
-    </div>
+      </div>
          );
     }
 }
 
 export default Landing;
+
