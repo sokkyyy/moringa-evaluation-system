@@ -34,7 +34,7 @@ class CombinedLineGraph extends Component {
 	}
 
 	getRating(x){
-		if(x < 60){
+		if(x < '60'){
 			return "Foundational"
 		}
 		else if(x < 90){
@@ -46,6 +46,7 @@ class CombinedLineGraph extends Component {
 	}
 
 	toggleDataSeries(e){
+
 		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
 			e.dataSeries.visible = false;
 		}
@@ -59,31 +60,29 @@ class CombinedLineGraph extends Component {
     const label = ['First Quarter','Second Quarter','Third Quarter', 'Fourth Quarter'];
 
     const organizationDataPoints = this.props.results.map((quater, index) => (
-       {'y':quater.results.organization, 'label':label[index] }
+       {'y':quater.results.organization, 'label':label[index], 'score':this.getRating(quater.results.organization) }
     ));
 
     const innovationDataPoints = this.props.results.map((quater, index) => (
-       {'y':quater.results.innovation, 'label':label[index] }
+       {'y':quater.results.innovation, 'label':label[index], 'score':this.getRating(quater.results.innovation) }
     ));
 
     const ctDataPoints = this.props.results.map((quater, index) => (
-       {'y':quater.results.critical_thinking, 'label':label[index] }
+       {'y':quater.results.critical_thinking, 'label':label[index], 'score':this.getRating(quater.results.critical_thinking) }
     ));
 
     const ipPoints = this.props.results.map((quater, index) => (
-       {'y':quater.results.interpersonal_communication, 'label':label[index] }
+       {'y':quater.results.interpersonal_communication, 'label':label[index], 'score':this.getRating(quater.results.interpersonal_communication) }
     ));
 
     const relDataPoints = this.props.results.map((quater, index) => (
-       {'y':quater.results.relationships, 'label':label[index] }
+       {'y':quater.results.relationships, 'label':label[index], 'score':this.getRating(quater.results.relationships) }
     ));
 
 
 
 
 
-
-		console.log("Rating", this.getRating(80))
 
     const options = {
 			animationEnabled: true,
@@ -91,7 +90,7 @@ class CombinedLineGraph extends Component {
 
 			axisX: {
 				interval: 1
-		
+
 			},
 
 
@@ -107,8 +106,8 @@ class CombinedLineGraph extends Component {
 			},
 			data: [
 				{
-				
-				toolTipContent: "<strong>{name}:</strong> {y}  ({rating})",
+
+				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
 				name: "Organization",
 				showInLegend: true,
@@ -116,7 +115,7 @@ class CombinedLineGraph extends Component {
 				dataPoints: organizationDataPoints,
 			},
 			{
-				toolTipContent: "<strong>{name}:</strong> {y}  ({rating})",
+				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
 				name: "Interpersonal Communication",
 				showInLegend: true,
@@ -124,7 +123,7 @@ class CombinedLineGraph extends Component {
 				dataPoints:ipPoints,
 			},
 			{
-				toolTipContent: "<strong>{name}:</strong> {y}  ({rating}) ",
+				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
 				name: "Innovation",
 				showInLegend: true,
@@ -133,7 +132,7 @@ class CombinedLineGraph extends Component {
 				dataPoints:innovationDataPoints,
       },
       {
-				toolTipContent: "<strong>{name}:</strong> {y}  ({rating}) ",
+				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
 				name: "Building & Managing Relations",
 				showInLegend: true,
@@ -141,7 +140,7 @@ class CombinedLineGraph extends Component {
 				dataPoints: relDataPoints,
       },
       {
-				toolTipContent: "<strong>{name}:</strong> {y}  ({rating})",
+				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
 				name: "Critical Thinking",
 				showInLegend: true,
@@ -152,7 +151,7 @@ class CombinedLineGraph extends Component {
 		}
     return (
 
-			
+
 
       <div>
 

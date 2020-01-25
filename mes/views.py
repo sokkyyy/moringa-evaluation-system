@@ -52,11 +52,33 @@ class UserList(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format=None):
-        serializer = UserSerializerWithToken(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user = {
+            'first_name':request.data.get('first_name'),
+            'last_name':request.data.get('last_name'),
+            'username':request.data.get('username'),
+            'email':request.data.get('email'),
+            'password': 'moringastaff', #DEFAULT PASSWORD
+        }
+        jg = {
+            'grade':request.data.get('grade'),
+        }
+        rol = {
+            'role':request.data.get('role'),
+
+        }
+        job_grade_seializer = JobGradeSerializer(data=jg)
+        role_serializer =  RoleSerializer(data=rol)
+        user_serializer = UserSerializerWithToken(data=user)
+
+        if user_serializer.is_valid() and job_grade_seializer.is_valid() and role_serializer.is_valid():
+            user_staff = user_serializer.save()
+            user_job_grade = job_grade_seializer.save()
+            user_role = role_serializer.save()
+            user_department = Department.objects.get(pk=request.data.get('department'))
+            staff_reg = MoringaStaff(user = user_staff, job_grade = user_job_grade, system_role=user_role,department= user_department)
+            staff_reg.save()
+            return Response(user_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])

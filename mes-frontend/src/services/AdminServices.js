@@ -12,4 +12,12 @@ export default class AdminServices {
       headers:{Authorization: authToken}
     });
   }
+
+  registerStaff(data){
+    const url = `${APIURL}register/`;
+
+    return axios.post(url,data, {
+      headers:{Authorization: authToken}
+    });
+  }
 }

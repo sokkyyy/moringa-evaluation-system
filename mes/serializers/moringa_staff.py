@@ -70,3 +70,17 @@ class MoringaStaffSerializer(serializers.ModelSerializer):
     class Meta:
         model = MoringaStaff
         fields = ['pk','user','job_grade','department','system_role']
+
+class JobGradeSerializer(serializers.ModelSerializer):
+    '''API serializer for POSTING job grades for users on registration '''
+
+    class Meta:
+        model = JobGrade
+        fields = ['grade']
+
+class RoleSerializer(serializers.ModelSerializer):
+    '''API serializer for POSTING user roles on registration '''
+
+    class Meta:
+        model = Role
+        fields = ['role']
