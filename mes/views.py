@@ -80,6 +80,15 @@ class UserList(APIView):
             return Response(user_serializer.data, status=status.HTTP_201_CREATED)
         return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def delete(self, request, pk, format=None):
+        '''Delete User'''
+        # REFACTOR TO DELETE ALL USER COMPETENCY TESTS LATER!!
+        user = User.objects.get(pk=pk)
+        staff = MoringaStaff.objects.get(user=user)
+        staff.delete()
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 @api_view(['GET'])
 def departments(request):

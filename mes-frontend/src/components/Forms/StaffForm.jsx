@@ -48,6 +48,7 @@ class StaffForm extends Component {
     this.setState({department: dpt_id});
     console.log(this.state.department);
   };
+
   handleRoleClick = (role) => {
     this.setState({role:role});
   };
@@ -61,10 +62,13 @@ class StaffForm extends Component {
     adminServices.registerStaff(staffDetails)
     .then(response => {
       console.log(response.data);
+      window.location.href = '/admin/dashboard'
     })
     .catch((errors)=>{console.log(errors)});
 
   };
+
+
 
   render() {
     return (
@@ -141,7 +145,7 @@ class StaffForm extends Component {
         >
           <option defaultValue>DEPARTMENT</option>
           {this.state.department_names.map((dpt,i) => (
-            <option value={dpt.pk} onClick={() => this.handleDptClick(dpt.pk)}>{dpt.name}</option>
+            <option key={dpt.pk} value={dpt.pk} onClick={() => this.handleDptClick(dpt.pk)}>{dpt.name}</option>
           ))}
         </select>
 

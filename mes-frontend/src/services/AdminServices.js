@@ -20,4 +20,11 @@ export default class AdminServices {
       headers:{Authorization: authToken}
     });
   }
+  deleteUser(data){
+    const url = `${APIURL}delete/${data}`;
+
+    return axios.delete(url, {
+      headers:{Authorization: authToken}
+    });
+  }
 }

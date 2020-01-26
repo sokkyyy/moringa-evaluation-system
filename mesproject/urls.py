@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('^api/current_user/$', current_user),
     re_path('^api/register/$', UserList.as_view()),
+    re_path('^api/delete/(\d+)$', UserList.as_view()),
     re_path('^api/departments/$', views.departments),
     re_path('^api/competency-results/$', views.competency_results),
     re_path('^api/moringa-staff/$', views.moringa_staff),
