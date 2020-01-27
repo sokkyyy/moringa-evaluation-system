@@ -23,12 +23,12 @@ class Organization extends Component {
 
   render() {
     return (
-      <div className="container-fluid ">
+      <div className="container">
         <fieldset>
           <div>
             <Form>
-              <h1 className="text-center head1">Organization</h1>
-              <p className="text-center">
+              <h1 className="head1">Organization</h1>
+              <p >
                 The ability to maximize your productivity, manage your work, and
                 create high quality,error-free final product by planning,
                 executing, and prioritizing effectively and consistently.
@@ -120,7 +120,7 @@ class Organization extends Component {
               Continue
             </Button>
           </div>
-
+      </div>
         </fieldset>
       </div>
     );
