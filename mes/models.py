@@ -10,7 +10,7 @@ class Role(models.Model):
         ('user', 'System User'),
     ]
     role = models.CharField(max_length=20,choices=role_choices)
-    
+
     def __str__(self):
         return self.role
 
@@ -36,6 +36,7 @@ class Department(models.Model):
     '''Model for Moringa Departments'''
     department_names_choices = [
         ('system_admin','System Admin'), #ONLY FOR SYSTEM ADMIN
+        ('none','None'),
         # ('director', 'Director'),
         ('finance','Finance'),
         ('hr', 'Human Resource'),
@@ -43,8 +44,8 @@ class Department(models.Model):
         ('classroom','Classroom'),
     ]
     name = models.CharField(max_length=30,choices=department_names_choices)
-    manager = models.OneToOneField(User, on_delete=models.CASCADE,related_name='department_manager')
-    line_manager = models.OneToOneField(User, on_delete=models.CASCADE)
+    manager = models.OneToOneField(User, on_delete=models.CASCADE,related_name='department_manager', null=True)
+    line_manager = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     def __str__(self):
         return self.name
 

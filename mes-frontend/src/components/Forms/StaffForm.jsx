@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import DepartmentStaff from '../../services/Departments';
+import AdminServices from '../../services/AdminServices';
+
+
+
+const adminServices = new AdminServices();
 
 const departmentStaff = new DepartmentStaff();
 
@@ -12,7 +17,6 @@ class StaffForm extends Component {
       username:'',
       email:'',
       grade:'',
-
       department:null,
       role:'',
 
@@ -44,14 +48,27 @@ class StaffForm extends Component {
     this.setState({department: dpt_id});
     console.log(this.state.department);
   };
+
   handleRoleClick = (role) => {
     this.setState({role:role});
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+
+    const {first_name,last_name,username,email,grade,department,role} = this.state;
+    const staffDetails = {first_name,last_name,username,email,grade,department,role};
+
+    adminServices.registerStaff(staffDetails)
+    .then(response => {
+      console.log(response.data);
+      window.location.href = '/admin/dashboard'
+    })
+    .catch((errors)=>{console.log(errors)});
+
   };
+
+
 
   render() {
     return (
@@ -66,6 +83,7 @@ class StaffForm extends Component {
           onChange={this.handleChange}
           className="form-control mb-4"
           placeholder="First Name"
+          required
 
         />
 
@@ -77,6 +95,7 @@ class StaffForm extends Component {
           value={this.state.last_name}
           className="form-control mb-4"
           placeholder="Last Name"
+          required
         />
 
         <input
@@ -87,6 +106,7 @@ class StaffForm extends Component {
           onChange={this.handleChange}
           className="form-control mb-4"
           placeholder="Username"
+          required
         />
 
         <input
@@ -97,11 +117,13 @@ class StaffForm extends Component {
           onChange={this.handleChange}
           className="form-control mb-4"
           placeholder="E-mail"
+          required
         />
 
         <select
           className="browser-default custom-select form-control mb-4"
           id="grade"
+          required
         >
           <option defaultValue>JOB GRADE</option>
           <option value="1" onClick={() => this.handleGradeClick('1')}>1</option>
@@ -119,14 +141,15 @@ class StaffForm extends Component {
         <select
           className="browser-default custom-select form-control mb-4"
           id="department"
+          required
         >
           <option defaultValue>DEPARTMENT</option>
           {this.state.department_names.map((dpt,i) => (
-            <option value={dpt.pk} onClick={() => this.handleDptClick(dpt.pk)}>{dpt.name}</option>
+            <option key={dpt.pk} value={dpt.pk} onClick={() => this.handleDptClick(dpt.pk)}>{dpt.name}</option>
           ))}
         </select>
 
-        <select className="browser-default custom-select form-control mb-4">
+        <select className="browser-default custom-select form-control mb-4" required>
           <option defaultValue >ROLE</option>
           <option value="super_admin"  onClick={() => this.handleRoleClick('super_admin')}>Super Admin(MES admin)</option>
           <option value="admin"  onClick={() => this.handleRoleClick('admin')}>Admin(Department Managers & Line Managers)</option>

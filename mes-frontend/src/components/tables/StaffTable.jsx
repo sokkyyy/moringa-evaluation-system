@@ -8,6 +8,11 @@ class StaffTable extends Component {
     super(props);
 
   }
+  
+  handleDeleteStaff = (id) => {
+    this.props.deleteStaff(id);
+  }
+
   render() {
     const staff = this.props.staff.map((details) => (
             {'name':`${details.user.first_name} ${details.user.last_name}`,
@@ -17,7 +22,7 @@ class StaffTable extends Component {
               'department':details.department.name,
               'role':details.system_role,
               'edit': [<i key={details.pk} className="fas fa-pencil-alt mr-2 blue-text" aria-hidden="true"></i>],
-              'delete': [<i key={details.pk} className="fa fa-trash mr-2 red-text" aria-hidd0en="true"></i>]
+              'delete': [<i key={details.pk} onClick={()=>this.handleDeleteStaff(details.pk)} className="fa fa-trash mr-2 red-text" aria-hidden="true"></i>]
             }
     ));
 
