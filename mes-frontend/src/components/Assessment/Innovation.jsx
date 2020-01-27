@@ -106,10 +106,13 @@ class Innovation extends Component {
             </div>
           </div>
           </Form>
-          <div className="text-center">
+
+          <br/>
+          <div>
             <Button onClick={this.back} className="previous">
               Back
             </Button>
+            <span> </span>
             <Button onClick={this.saveAndContinue} className="next">
               Continue
             </Button>

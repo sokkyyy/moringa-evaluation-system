@@ -144,11 +144,13 @@ class CriticalThinking extends Component {
             </div>
           </div>
           </Form>
+          <br/>
 
-          <div className="text-center">
+          <div >
             <Button onClick={this.back} className="previous">
               Back
             </Button>
+            <span> </span>
             <Button onClick={this.saveAndContinue} className="next">
               Continue
             </Button>
