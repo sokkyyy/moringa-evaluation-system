@@ -40,7 +40,7 @@ def current_user(request):
     Determine the current user by their token, and return their data.
     """
     staff_data = MoringaStaff.objects.get(user=request.user.pk)
-    serializer = MoringaStaffSerializer(staff_data) 
+    serializer = MoringaStaffSerializer(staff_data)
     return Response(serializer.data)
 
 class UserList(APIView):
@@ -145,7 +145,13 @@ def moringa_staff(request):
     serializers = MoringaStaffSerializer(all_staff, many=True)
     return Response(serializers.data)
 
-
+@api_view(['PUT'])
+def profile_pic(request):
+    ''' API endpoint for staff information '''
+    staff = MoringaStaff.objects.get(user=request.user)
+    staff.profile_pic = request.data.get('image')
+    staff.save()
+    return Response(status=status.HTTP_201_CREATED)
 
 
 class CompetencyResultsPost(APIView): #FOR SELF ASSESSMENT

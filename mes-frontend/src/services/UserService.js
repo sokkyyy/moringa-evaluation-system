@@ -14,5 +14,14 @@ export default class UserService{
             headers:{Authorization: authToken}
         });
     }
+    changeProfilePic(data){
+      const url = `${APIURL}profile_pic/`;
+      return axios.put(url,data, {
+          headers:{
+            Authorization: authToken,
+            'content-type': 'multipart/form-data',
+          }
+      });
+    }
 
 }

@@ -26,9 +26,13 @@ class Dashboard extends Component {
   }
 
   componentDidMount(){
+    this.getUser();
+  }
+
+  getUser = () => {
     userService.getUser()
     .then(response => {
-        if(response.data.system_role == 'super_admin'){
+        if(response.data.system_role === 'super_admin'){
           window.location.href = '/admin/dashboard';
         }else{
           this.setState({staff: response.data});
@@ -41,10 +45,14 @@ class Dashboard extends Component {
     })
   }
 
+  handlePicChange = () => {
+    this.getUser();
+  }
+
   render() {
 
     return (
-  
+
         <div>
           {this.state.load ? (
             " "
@@ -58,7 +66,7 @@ class Dashboard extends Component {
                 <div className="col-md-2">
                   <h4>Dashboard</h4>
                   <hr />
-                  <Sidecard staff={this.state.staff} />
+                  <Sidecard staff={this.state.staff} handlePicChange={this.handlePicChange} />
                 </div>
                 <div className="col-md-8">
                   <GraphCard staff={this.state.staff.pk} />

@@ -22,6 +22,9 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,4 +42,7 @@ urlpatterns = [
     re_path('^api/post/manager/results/$',views.ManagerCompetencyResultsPost.as_view()),
     re_path('^api/final/results/$',views.finalResults),
     re_path('^api/dept_names/$',views.dept_names),
+    re_path('^api/profile_pic/$',views.profile_pic),
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
