@@ -148,7 +148,7 @@ export default function PersistentDrawerLeft(props) {
   };
   const handleSetStaff = (data) => {
     setStaff(data);
-  }
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -193,7 +193,7 @@ export default function PersistentDrawerLeft(props) {
       }
     });
     setStaff(allStaff);
-  }
+  };
 
   return (
     <div className={classes.root}>

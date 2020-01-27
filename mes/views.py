@@ -99,6 +99,14 @@ def departments(request):
     return Response(serializers.data)
 
 @api_view(['GET'])
+def all_departments(request):
+    '''API endpoint for Moringa Departments'''
+    departments = Department.objects.all()
+    serializers = DepartmentSerializer(departments, many=True)
+    return Response(serializers.data)
+
+
+@api_view(['GET'])
 def competency_results(request):
     '''API endpoint for staff competency results'''
 
