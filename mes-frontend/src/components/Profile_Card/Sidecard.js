@@ -11,7 +11,7 @@ function Sidecard(props){
       </div>
 
       <div class="card-body">
-        <h4 class="card-title" style={{fontSize:17}}>{props.staff.user.first_name} {props.staff.user.last_name}</h4>
+        <h4 class="card-title text-center" style={{fontSize:17}}>{props.staff.user.first_name} {props.staff.user.last_name}</h4>
         <hr></hr>
 
         <p>

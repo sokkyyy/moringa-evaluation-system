@@ -40,7 +40,7 @@ def current_user(request):
     Determine the current user by their token, and return their data.
     """
     staff_data = MoringaStaff.objects.get(user=request.user.pk)
-    serializer = MoringaStaffSerializer(staff_data)
+    serializer = MoringaStaffSerializer(staff_data) 
     return Response(serializer.data)
 
 class UserList(APIView):
