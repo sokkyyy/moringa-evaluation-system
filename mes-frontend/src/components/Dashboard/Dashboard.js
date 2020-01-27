@@ -37,7 +37,7 @@ class Dashboard extends Component {
         }
     })
     .catch(() =>{
-        // this.props.history.push('/');
+        this.props.history.push('/');
     })
   }
 
@@ -115,7 +115,7 @@ class Dashboard extends Component {
             </div>
           )}
         </div>
-     
+
     );
   }
 }

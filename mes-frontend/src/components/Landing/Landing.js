@@ -3,75 +3,87 @@ import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { render } from "react-dom";
-import Login from '../auth/Login';
+import Footer from '../Footer/Footer';
+import UserService from '../../services/UserService';
 
 
-class DemoCarousel extends Component {
-  render() {
-      return (
-          <Carousel
-          showThumbs={false}
-          autoPlay={true}
-          infiniteLoop={true}
-          showArrows={false}
-          showStatus={false}
-          showIndicators={false}
-          dynamicHeight={true}
-          >
 
-              <div>
-                  <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"style={{height:630}} />
-                  <div className="caption">
-                    <h2>Moringa</h2>
-                      <p>Ready Set Code</p>
-                  </div>
-              </div>
-              <div>
-                  <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"style={{height:630}}  />
-                  <div className="caption">
-                    <h2>Moringa</h2>
-                      <p>Ready Set Code</p>
-                  </div>
-              </div>
-              <div>
-                  <img src="https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"style={{height:630}}  />
-                  <div className="caption">
-                    <h2>Moringa</h2>
-                      <p>Ready Set Code</p>
-                  </div>
-              </div>
+const userService = new UserService();
 
-          </Carousel>
-      );
-  }
-}
+
 
 class Landing extends Component {
+  constructor(props){
+      super(props);
+      this.state = {
+          username:'',
+          password:'',
+          errors:false,
+      };
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event){
+      const value = event.target.value;
+      this.setState({
+          [event.target.name]:value,
+      });
 
+  }
+  handleSubmit(event){
+      event.preventDefault();
+
+      userService.loginUser(this.state)
+      .then(response =>{
+          console.log(response.data);
+          localStorage.setItem('access', response.data.access);
+          localStorage.setItem('refresh', response.data.refresh);
+          // this.props.history.push('/dashboard'); //CHANGE TO DASHBOARD
+          window.location.href = '/dashboard';
+      })
+      .catch((errors) => {
+          console.log(errors);
+          this.setState({errors:true});
+      })
+  }
     render() {
         return (
 <div>
-<section className="container-fill">
-      <div className="row mx-0 my-0">
-        <div className="col-md-6" style={{width: '100%'}}>
-        <DemoCarousel />
-        </div>
-        <div className="col-md-6">
-    <div className="card">
+      <section className="login-block">
+    <div className="container">
+	<div className="row">
+		<div className="col-md-4 login-sec">
+		    <h2 className="text-center">Login</h2>
+		    <form className="login-form" onSubmit={this.handleSubmit}>
+          {this.state.errors ? (<div>Invalid Credentials</div>):'' }
+  <div className="form-group">
+    <label for="exampleInputEmail1" className="text-uppercase">Email</label>
+    <input type="text" className="form-control" placeholder="example@gmail.com" name='username' value={this.state.username} onChange={this.handleChange} />
 
-        <h5 className="card-header info-color white-text text-center py-4">
-            <strong>Sign in</strong>
-        </h5>
+  </div>
+  <div className="form-group">
+    <label for="exampleInputPassword1" className="tLoginext-uppercase">Password</label>
+    <input type="password" className="form-control" name='password' value={this.state.password} onChange={this.handleChange} placeholder="......" />
+  </div>
 
-        <div className="card-body px-lg-5 pt-0">
-          <Login />
-        </div>
-    </div>
 
-        </div>
-      </div>
+    <div className="form-check">
+    <label className="form-check-label">
+      <input type="checkbox" className="form-check-input"/>
+      <small>Remember Me</small>
+    </label>
+    <button type="submit" className="btn btn-login float-right" style={{background: '#ff8900',color: '#fff', fontSize: '13px'}}>Login</button>
+  </div>
+
+</form>
+<div className="copy-text">Created with <i className="fa fa-heart"></i>by Origins</div>
+		</div>
+		 <div className="col-md-8 banner-sec">
+	</div>
+</div>
+</div>
       </section>
-    </div>
+      </div>
          );
     }
 }

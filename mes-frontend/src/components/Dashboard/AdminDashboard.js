@@ -24,12 +24,13 @@ import StaffTable from '../tables/StaffTable';
 import DepartmentTable from '../tables/DepartmentTable';
 import RoleTable from '../tables/RoleTable';
 import GradeTable from '../tables/GradeTable';
-import './Dashboard.css'
-import StaffForm from '../Forms/StaffForm'
-import DepartmentForm from '../Forms/DepartmentForm'
-import GradeForm from '../Forms/GradeForm'
-import RoleForm from '../Forms/RoleForm'
+import './Dashboard.css';
+import StaffForm from '../Forms/StaffForm';
+import DepartmentForm from '../Forms/DepartmentForm';
+import GradeForm from '../Forms/GradeForm';
+import RoleForm from '../Forms/RoleForm';
 import AdminServices from '../../services/AdminServices';
+import DeleteStaffModal from '../Forms/DeleteStaffModal';
 
 
 
@@ -116,6 +117,8 @@ export default function PersistentDrawerLeft(props) {
   const [open, setOpen] = React.useState(false);
   const [load, setLoad] = React.useState(true); //for page load
   const [staff, setStaff] = React.useState([]);
+  const [deleteModal, setDeleteModal] = React.useState(false);
+  const [deleteStaff, setDeleteStaff] = React.useState([]);
 
 
   React.useEffect(()=>{
@@ -141,6 +144,7 @@ export default function PersistentDrawerLeft(props) {
   const handleGetAllStaff = () => {
     adminServices.getAllStaff()
     .then(response => {
+      console.log(response.data);
       handleSetStaff(response.data);
     })
     .catch((errors) => {
@@ -149,7 +153,7 @@ export default function PersistentDrawerLeft(props) {
   };
   const handleSetStaff = (data) => {
     setStaff(data);
-  }
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -157,6 +161,43 @@ export default function PersistentDrawerLeft(props) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleDeleteStaff = (id) => {
+    findStaff(id);
+  };
+
+  const findStaff = (id) => {
+    staff.map((details, i) => {
+      if(details.pk === id){
+        const staffDetails = [details]
+        setDeleteStaff(staffDetails);
+        handleToggleDelModal();
+      }
+    });
+  };
+
+  const handleToggleDelModal = () => {
+      setDeleteModal(!deleteModal);
+  };
+
+  const handleDeleteStaffMember = () => {
+    adminServices.deleteUser(deleteStaff[0].pk).then(
+      response => {
+        console.log(response.data);
+        handleToggleDelModal();
+        removeDeletedStaff(deleteStaff[0].pk);
+      }
+    ).catch(errors => console.log(errors));
+  };
+
+  const removeDeletedStaff = (id) => {
+    const allStaff = staff.filter((details,i)=> {
+      if(details.pk !== id){
+        return details;
+      }
+    });
+    setStaff(allStaff);
   };
 
   return (
@@ -218,6 +259,7 @@ export default function PersistentDrawerLeft(props) {
               <ListItem button key={text}>
                 <ListItemIcon>{index % 2 === 0 ? <PowerSettingsNewIcon  /> : <PowerSettingsNewIcon />}</ListItemIcon>
                 <ListItemText primary={text} />                
+
               </ListItem>
             )
           )}
@@ -351,7 +393,10 @@ export default function PersistentDrawerLeft(props) {
         </div>
 
 
-        <StaffTable staff={staff} />
+        <StaffTable staff={staff} deleteStaff={handleDeleteStaff} />
+
+        <DeleteStaffModal deleteStaffMember={handleDeleteStaffMember} deleteStaff={deleteStaff}  modal={deleteModal} toggleDelModal={handleToggleDelModal} />
+
 
         <div className="row other">
           <div className="col-md-12">
