@@ -7,7 +7,7 @@ import DepartmentStaff from '../../services/Departments';
 const departmentService = new DepartmentStaff()
 
 function DepartmentTable(){
-  const [departments, setDepartmets] = React.useState([]);
+  const [departments, setDepartments] = React.useState([]);
 
   React.useEffect(()=>{
     handleGetDepartments();
@@ -16,7 +16,7 @@ function DepartmentTable(){
   const handleGetDepartments = () => {
     departmentService.allDepartments().then(
       response => {
-        setDepartmets(response.data);
+        setDepartments(response.data);
       }
     ).catch(errors => console.log(errors));
   };

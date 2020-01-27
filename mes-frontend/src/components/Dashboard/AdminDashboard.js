@@ -129,15 +129,16 @@ export default function PersistentDrawerLeft(props) {
   const handleAdminLogin = () => {
     userService.getUser()
     .then(response => {
-        if(response.data.system_role === 'super_admin'){ //change to !==
+        if(response.data.system_role !== 'super_admin'){ //change to !==
           window.location.href = '/dashboard';
         }else{
           // this.setState({staff: response.data});
           console.log(response.data);
+          setLoad(false);
         }
     })
     .catch(() =>{
-        // props.history.push('/');
+        props.history.push('/');
     })
   };
 
@@ -202,6 +203,8 @@ export default function PersistentDrawerLeft(props) {
 
   return (
     <div className={classes.root}>
+      {load ? '' : (
+      <div>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -410,6 +413,8 @@ export default function PersistentDrawerLeft(props) {
           </div> */}
         </div>
       </main>
+    </div>
+  )}
     </div>
   );
 }

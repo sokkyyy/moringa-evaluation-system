@@ -53,7 +53,7 @@ class MoringaStaff(models.Model):
     ''' Model for All Moringa Staff Members '''
     user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     job_grade = models.ForeignKey(JobGrade, on_delete=models.CASCADE)
-    department = models.ForeignKey(Department,on_delete=models.CASCADE)
+    department = models.ForeignKey(Department,on_delete=models.CASCADE, null=True)
     system_role = models.ForeignKey(Role,on_delete=models.CASCADE)
 
 class Organization(models.Model):
