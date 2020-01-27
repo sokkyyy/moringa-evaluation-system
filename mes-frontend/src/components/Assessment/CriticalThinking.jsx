@@ -18,11 +18,11 @@ class CriticalThinking extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <fieldset>
           <Form>
-            <h1 className="text-center head1">Critical Thinking</h1>
-            <p className="text-center">
+            <h1 className="head1">Critical Thinking</h1>
+            <p >
               The ability to use logic and data to analyze a situation, generate
               strategic options, and continuously reflect on past successes and
               failures to improve future outcomes.
@@ -144,11 +144,13 @@ class CriticalThinking extends Component {
             </div>
           </div>
           </Form>
+          <br/>
 
-          <div className="text-center">
+          <div >
             <Button onClick={this.back} className="previous">
               Back
             </Button>
+            <span> </span>
             <Button onClick={this.saveAndContinue} className="next">
               Continue
             </Button>

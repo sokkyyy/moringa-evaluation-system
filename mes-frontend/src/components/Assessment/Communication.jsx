@@ -16,11 +16,11 @@ class Communication extends Component {
   };
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <fieldset>
           <Form>
-            <h1 className="text-center head1">Interpersonal Communication</h1>
-            <p className="text-center">
+            <h1 className="head1">Interpersonal Communication</h1>
+            <p >
               The ability to communicate effectively - both verbally and in
               writing, build relationships and achieve desired outcomes by
               building investment, articulating and crafting a clear, engaging
@@ -109,10 +109,13 @@ class Communication extends Component {
             </div>
           </Form>
 
-          <div className="text-center">
+          <br/>
+
+          <div >
             <Button onClick={this.back} className="previous">
               Back
             </Button>
+            <span> </span>
             <Button onClick={this.saveAndContinue} className="next">
               Continue
             </Button>

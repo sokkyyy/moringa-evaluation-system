@@ -20,11 +20,11 @@ class BuildRelationship extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <fieldset>
           <Form>
-            <h1 className="text-center head1">Building and Managing Relationships</h1>
-            <p className="text-center">
+            <h1 className="head1">Building and Managing Relationships</h1>
+            <p>
               The ability to collaborate, support each other, and engage
               external stakeholders in beneficial ways to all. In addition to
               maintaining productivity and a collegiate environment by engaging
@@ -112,11 +112,12 @@ class BuildRelationship extends Component {
             </div>
           </div>
           </Form>
-
-          <div className="text-center">
+          <br/>
+          <div >
             <Button onClick={this.back} className="previous">
               Back
             </Button>
+            <span> </span>
             <Button onClick={this.saveAndContinue} className="next">
               Continue
             </Button>
