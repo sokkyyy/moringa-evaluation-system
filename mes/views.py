@@ -74,7 +74,12 @@ class UserList(APIView):
             user_staff = user_serializer.save()
             user_job_grade = job_grade_seializer.save()
             user_role = role_serializer.save()
-            user_department = Department.objects.get(pk=request.data.get('department'))
+            user_department = None
+            if request.data.get('department') is not None:
+                user_department = Department.objects.get(pk=request.data.get('department'))
+
+
+
             staff_reg = MoringaStaff(user = user_staff, job_grade = user_job_grade, system_role=user_role,department= user_department)
             staff_reg.save()
             return Response(user_serializer.data, status=status.HTTP_201_CREATED)
@@ -104,6 +109,24 @@ def all_departments(request):
     departments = Department.objects.all()
     serializers = DepartmentSerializer(departments, many=True)
     return Response(serializers.data)
+
+@api_view(['POST'])
+def add_departments(request):
+    '''API endpoint for POSTING Moringa Departments'''
+    manager = User.objects.get(pk=request.data.get('manager'))
+    man_staff = MoringaStaff.objects.get(user=manager)
+
+    line_manager = User.objects.get(pk=request.data.get('line_manager'))
+    line_staff = MoringaStaff.objects.get(user=line_manager)
+
+    name = request.data.get('department')
+    new_department = Department(name=name, manager=manager, line_manager=line_manager)
+    line_staff.department = new_department #NOT WORKING!!
+    man_staff.department = new_department #NOT WORKING!!
+    new_department.save()
+    line_staff.save()
+    man_staff.save()
+    return Response(status=status.HTTP_201_CREATED)
 
 
 @api_view(['GET'])
