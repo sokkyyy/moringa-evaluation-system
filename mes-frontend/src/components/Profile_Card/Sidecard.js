@@ -9,9 +9,13 @@ function Sidecard(props){
   const [edit, setEdit] = useState(false);
 
   const handleEdit = () => {
-    setEdit(!edit);
+    changeEdit()
     props.handlePicChange();
   };
+
+  const changeEdit = () => {
+    setEdit(!edit);
+  }
 
   return (
     <div className="card testimonial-card profile">
@@ -42,7 +46,7 @@ function Sidecard(props){
           <div>
             {edit ? (
               <div>
-                <EditProfile handleEdit={handleEdit} />
+                <EditProfile handleEdit={handleEdit} changeEdit={changeEdit} />
               </div>
             ) : ''}
           </div>

@@ -23,5 +23,11 @@ export default class UserService{
           }
       });
     }
+    changePassword(data){
+      const url = `${APIURL}password/change/`;
+      return axios.put(url, data, {
+          headers:{Authorization: authToken}
+      });
+    }
 
 }

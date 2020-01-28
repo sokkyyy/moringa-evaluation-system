@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view,permission_classes
 from rest_framework import status,permissions
 from .models import *
 from django.contrib.auth.models import User
-
+from django.contrib.auth.hashers import check_password,make_password
 from .serializers.departments import DepartmentSerializer, DepartmentNameSerializer
 from django.http import HttpResponseRedirect
 from rest_framework.views import APIView
@@ -153,6 +153,20 @@ def profile_pic(request):
     staff.save()
     return Response(status=status.HTTP_201_CREATED)
 
+@api_view(['PUT'])
+def change_password(request):
+    ''' API endpoint for changing password '''
+
+    confirm = request.data.get('confirm_password')
+    previous = request.user.password
+
+    if check_password(confirm, previous):
+        user = request.user
+        new_password = make_password(request.data.get('new_password'))
+        user.password = new_password
+        user.save()
+        return Response(status=status.HTTP_201_CREATED)
+    return Response(status=status.HTTP_400_BAD_REQUEST)
 
 class CompetencyResultsPost(APIView): #FOR SELF ASSESSMENT
     ''' API endpoint for Posting SELF Competency Results  '''

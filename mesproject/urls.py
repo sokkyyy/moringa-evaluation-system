@@ -43,6 +43,7 @@ urlpatterns = [
     re_path('^api/final/results/$',views.finalResults),
     re_path('^api/dept_names/$',views.dept_names),
     re_path('^api/profile_pic/$',views.profile_pic),
+    re_path('^api/password/change/$',views.change_password),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
