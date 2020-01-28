@@ -25,7 +25,7 @@ function Sidecard(props){
         <img src={imagelocation + props.staff.profile_pic} id="user-dp" alt="user-dp" heigh="80px" width="80px" />
       </div>
 
-      <div class="card-body">
+      <div class="card-body text-center">
         <h4 class="card-title text-center" style={{fontSize:17}}>{props.staff.user.first_name} {props.staff.user.last_name}</h4>
         <hr></hr>
 

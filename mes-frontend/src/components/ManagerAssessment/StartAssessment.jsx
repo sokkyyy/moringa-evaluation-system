@@ -10,14 +10,15 @@ class StartAssessment extends Component {
   styles = {
     marginTop: 30,
     paddingTop: 30,
-    paddingBottom: 30
+    paddingBottom: 30,
+    
   };
 
   render() {
     return (
-      <div className="text-center">
+      <div className="text-center" style={this.styles}>
         <Button onClick={this.saveAndContinue} className="next">
-          Start Assessment
+          Assess
         </Button>
       </div>
     );
