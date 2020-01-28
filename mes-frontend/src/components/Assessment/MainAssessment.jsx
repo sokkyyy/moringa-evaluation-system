@@ -23,7 +23,7 @@ class MainAssessment extends Component {
       staff: {},
       type: "self",
 
-      step: 1,
+      step: 0,
 
       organization: {
         planning: 0,
@@ -267,7 +267,7 @@ class MainAssessment extends Component {
       <div>
         <Navbar role={this.state.staff.system_role} />
 
-        <div className="card" style={this.styles}>
+        <div className="card1" style={this.styles}>
           {load ? "" : <div>{this.renderSwitch(step)}</div>}
         </div>
       </div>

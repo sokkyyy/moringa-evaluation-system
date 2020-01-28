@@ -1,17 +1,32 @@
-import React from 'react';
-import user from './user.svg'
+import React, { useState, useEffect } from 'react';
+import user from './user.svg';
+import EditProfile from './EditProfile';
+
+const imagelocation = 'http://localhost:8000';
+
 
 function Sidecard(props){
+  const [edit, setEdit] = useState(false);
+
+  const handleEdit = () => {
+    changeEdit()
+    props.handlePicChange();
+  };
+
+  const changeEdit = () => {
+    setEdit(!edit);
+  }
+
   return (
     <div className="card testimonial-card profile">
       <div className="card-up red lighten-1"></div>
 
       <div className="avatar mx-auto white">
-        <img src={user} id="user-dp" alt="user-dp" heigh="80px" width="80px" />
+        <img src={imagelocation + props.staff.profile_pic} id="user-dp" alt="user-dp" heigh="80px" width="80px" />
       </div>
 
-      <div class="card-body">
-        <h4 class="card-title" style={{fontSize:17}}>{props.staff.user.first_name} {props.staff.user.last_name}</h4>
+      <div class="card-body text-center">
+        <h4 class="card-title text-center" style={{fontSize:17}}>{props.staff.user.first_name} {props.staff.user.last_name}</h4>
         <hr></hr>
 
         <p>
@@ -26,9 +41,16 @@ function Sidecard(props){
           <i className="fas fa-location-arrow"></i>  Nairobi Campus
         </p>
 
-        <p>
-          <i className="fa fa-cog"></i> <a href="">Edit Profile</a>
-        </p>
+        <div>
+          <i className="fa fa-cog"></i> <i style={{color:'blue', cursor:'pointer'}} onClick={() => {setEdit(!edit)}}>Edit Profile</i>
+          <div>
+            {edit ? (
+              <div>
+                <EditProfile handleEdit={handleEdit} changeEdit={changeEdit} />
+              </div>
+            ) : ''}
+          </div>
+        </div>
       </div>
     </div>
   );

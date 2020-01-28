@@ -7,26 +7,9 @@ class NotificationsDiv extends Component {
       <div className="d-md-flex">
         <div className="overflow-auto p-3 mb-3 mb-md-0 mr-md-3">
           <div className="single-notification">
-            You have an Evaluation Scheduled for 23, January, 2020.
+            You have an Evaluation Scheduled for 2, February, 2020.
           </div>
-          <hr />
-          <div className="single-notification">
-            This is an example of using <code>.overflow-auto</code> on an
-            element with set width and height dimensions. By design, this
-            content will vertically scroll.
-          </div>
-          <hr />
-          <div className="single-notification">
-            This is an example of using <code>.overflow-auto</code> on an
-            element with set width and height dimensions. By design, this
-            content will vertically scroll.
-          </div>
-          <hr />
-          <div className="single-notification">
-            This is an example of using <code>.overflow-auto</code> on an
-            element with set width and height dimensions. By design, this
-            content will vertically scroll.
-          </div>
+          <hr />          
         </div>
       </div>
     );

@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view,permission_classes
 from rest_framework import status,permissions
 from .models import *
 from django.contrib.auth.models import User
-
+from django.contrib.auth.hashers import check_password,make_password
 from .serializers.departments import DepartmentSerializer, DepartmentNameSerializer
 from django.http import HttpResponseRedirect
 from rest_framework.views import APIView
@@ -52,11 +52,47 @@ class UserList(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format=None):
-        serializer = UserSerializerWithToken(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user = {
+            'first_name':request.data.get('first_name'),
+            'last_name':request.data.get('last_name'),
+            'username':request.data.get('username'),
+            'email':request.data.get('email'),
+            'password': 'moringastaff', #DEFAULT PASSWORD
+        }
+        jg = {
+            'grade':request.data.get('grade'),
+        }
+        rol = {
+            'role':request.data.get('role'),
+
+        }
+        job_grade_seializer = JobGradeSerializer(data=jg)
+        role_serializer =  RoleSerializer(data=rol)
+        user_serializer = UserSerializerWithToken(data=user)
+
+        if user_serializer.is_valid() and job_grade_seializer.is_valid() and role_serializer.is_valid():
+            user_staff = user_serializer.save()
+            user_job_grade = job_grade_seializer.save()
+            user_role = role_serializer.save()
+            user_department = None
+            if request.data.get('department') is not None:
+                user_department = Department.objects.get(pk=request.data.get('department'))
+
+
+
+            staff_reg = MoringaStaff(user = user_staff, job_grade = user_job_grade, system_role=user_role,department= user_department)
+            staff_reg.save()
+            return Response(user_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk, format=None):
+        '''Delete User'''
+        # REFACTOR TO DELETE ALL USER COMPETENCY TESTS LATER!!
+        user = User.objects.get(pk=pk)
+        staff = MoringaStaff.objects.get(user=user)
+        staff.delete()
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET'])
@@ -66,6 +102,32 @@ def departments(request):
     department = Department.objects.get(name=logged_in_staff.department.name)
     serializers = DepartmentSerializer(department)
     return Response(serializers.data)
+
+@api_view(['GET'])
+def all_departments(request):
+    '''API endpoint for Moringa Departments'''
+    departments = Department.objects.all()
+    serializers = DepartmentSerializer(departments, many=True)
+    return Response(serializers.data)
+
+@api_view(['POST'])
+def add_departments(request):
+    '''API endpoint for POSTING Moringa Departments'''
+    manager = User.objects.get(pk=request.data.get('manager'))
+    man_staff = MoringaStaff.objects.get(user=manager)
+
+    line_manager = User.objects.get(pk=request.data.get('line_manager'))
+    line_staff = MoringaStaff.objects.get(user=line_manager)
+
+    name = request.data.get('department')
+    new_department = Department(name=name, manager=manager, line_manager=line_manager)
+    line_staff.department = new_department #NOT WORKING!!
+    man_staff.department = new_department #NOT WORKING!!
+    new_department.save()
+    line_staff.save()
+    man_staff.save()
+    return Response(status=status.HTTP_201_CREATED)
+
 
 @api_view(['GET'])
 def competency_results(request):
@@ -83,8 +145,28 @@ def moringa_staff(request):
     serializers = MoringaStaffSerializer(all_staff, many=True)
     return Response(serializers.data)
 
+@api_view(['PUT'])
+def profile_pic(request):
+    ''' API endpoint for staff information '''
+    staff = MoringaStaff.objects.get(user=request.user)
+    staff.profile_pic = request.data.get('image')
+    staff.save()
+    return Response(status=status.HTTP_201_CREATED)
 
+@api_view(['PUT'])
+def change_password(request):
+    ''' API endpoint for changing password '''
 
+    confirm = request.data.get('confirm_password')
+    previous = request.user.password
+
+    if check_password(confirm, previous):
+        user = request.user
+        new_password = make_password(request.data.get('new_password'))
+        user.password = new_password
+        user.save()
+        return Response(status=status.HTTP_201_CREATED)
+    return Response(status=status.HTTP_400_BAD_REQUEST)
 
 class CompetencyResultsPost(APIView): #FOR SELF ASSESSMENT
     ''' API endpoint for Posting SELF Competency Results  '''

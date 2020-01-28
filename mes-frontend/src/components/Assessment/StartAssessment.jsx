@@ -17,7 +17,7 @@ class StartAssessment extends Component {
     return (
       <div className="text-center">
         <Button onClick={this.saveAndContinue} className="next">
-          Take Assessment
+          Start Assessment
         </Button>
       </div>
     );

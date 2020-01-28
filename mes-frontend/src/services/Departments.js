@@ -11,7 +11,7 @@ export default class DepartmentStaff {
     });
   }
 
-  
+
   getDeptNames(){
 
     const url = `${APIURL}dept_names/`;
@@ -19,5 +19,21 @@ export default class DepartmentStaff {
     return axios.get(url,{
       headers:{Authorization: authToken}
     });
+  }
+
+  allDepartments(){
+    const url = `${APIURL}all/departments/`;
+
+    return axios.get(url,{
+      headers:{Authorization: authToken}
+    });
+  }
+
+  addDepartment(data){
+    const url = `${APIURL}add/department/`;
+
+    return axios.post(url, data, {
+      headers:{Authorization: authToken}
+    })
   }
 }

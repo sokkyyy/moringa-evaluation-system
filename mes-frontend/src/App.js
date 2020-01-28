@@ -13,6 +13,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import Footer from './components/Footer/Footer';
 import history from './history';
 
+
 function App() {
   return (
 

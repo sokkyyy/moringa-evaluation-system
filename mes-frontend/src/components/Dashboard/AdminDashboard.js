@@ -24,12 +24,13 @@ import StaffTable from '../tables/StaffTable';
 import DepartmentTable from '../tables/DepartmentTable';
 import RoleTable from '../tables/RoleTable';
 import GradeTable from '../tables/GradeTable';
-import './Dashboard.css'
-import StaffForm from '../Forms/StaffForm'
-import DepartmentForm from '../Forms/DepartmentForm'
-import GradeForm from '../Forms/GradeForm'
-import RoleForm from '../Forms/RoleForm'
+import './Dashboard.css';
+import StaffForm from '../Forms/StaffForm';
+import DepartmentForm from '../Forms/DepartmentForm';
+import GradeForm from '../Forms/GradeForm';
+import RoleForm from '../Forms/RoleForm';
 import AdminServices from '../../services/AdminServices';
+import DeleteStaffModal from '../Forms/DeleteStaffModal';
 
 
 
@@ -44,7 +45,11 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
+  IconButton: {
+    color: 'white'
+  },
   appBar: {
+    color: "black",
     backgroundColor: "#689241",
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -61,6 +66,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: 'black'
   },
   hide: {
     display: 'none',
@@ -71,7 +77,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: 'grey',
+    backgroundColor: '#689241',
     color: 'white',
   },
   drawerHeader: {
@@ -83,12 +89,11 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(1),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -drawerWidth,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
@@ -111,6 +116,8 @@ export default function PersistentDrawerLeft(props) {
   const [open, setOpen] = React.useState(false);
   const [load, setLoad] = React.useState(true); //for page load
   const [staff, setStaff] = React.useState([]);
+  const [deleteModal, setDeleteModal] = React.useState(false);
+  const [deleteStaff, setDeleteStaff] = React.useState([]);
 
 
   React.useEffect(()=>{
@@ -121,21 +128,23 @@ export default function PersistentDrawerLeft(props) {
   const handleAdminLogin = () => {
     userService.getUser()
     .then(response => {
-        if(response.data.system_role === 'super_admin'){ //change to !==
+        if(response.data.system_role !== 'super_admin'){ //change to !==
           window.location.href = '/dashboard';
         }else{
           // this.setState({staff: response.data});
           console.log(response.data);
+          setLoad(false);
         }
     })
     .catch(() =>{
-        // props.history.push('/');
+        props.history.push('/');
     })
   };
 
   const handleGetAllStaff = () => {
     adminServices.getAllStaff()
     .then(response => {
+      console.log(response.data);
       handleSetStaff(response.data);
     })
     .catch((errors) => {
@@ -144,7 +153,7 @@ export default function PersistentDrawerLeft(props) {
   };
   const handleSetStaff = (data) => {
     setStaff(data);
-  }
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -154,8 +163,53 @@ export default function PersistentDrawerLeft(props) {
     setOpen(false);
   };
 
+  const handleDeleteStaff = (id) => {
+    findStaff(id);
+  };
+
+  const findStaff = (id) => {
+    staff.map((details, i) => {
+      if(details.pk === id){
+        const staffDetails = [details]
+        setDeleteStaff(staffDetails);
+        handleToggleDelModal();
+      }
+    });
+  };
+
+  const handleToggleDelModal = () => {
+      setDeleteModal(!deleteModal);
+  };
+
+  const handleDeleteStaffMember = () => {
+    adminServices.deleteUser(deleteStaff[0].pk).then(
+      response => {
+        console.log(response.data);
+        handleToggleDelModal();
+        removeDeletedStaff(deleteStaff[0].pk);
+      }
+    ).catch(errors => console.log(errors));
+  };
+
+  const removeDeletedStaff = (id) => {
+    const allStaff = staff.filter((details,i)=> {
+      if(details.pk !== id){
+        return details;
+      }
+    });
+    setStaff(allStaff);
+  };
+
+  const signOut = () => {
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    props.history.push('/');
+  }
+
   return (
     <div className={classes.root}>
+      {load ? '' : (
+      <div>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -173,8 +227,8 @@ export default function PersistentDrawerLeft(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Admin
+          <Typography  variant="h5" noWrap>
+            System Admin
           </Typography>
         </Toolbar>
       </AppBar>
@@ -190,9 +244,9 @@ export default function PersistentDrawerLeft(props) {
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
-              <ChevronLeftIcon color="action"/>
+              <ChevronLeftIcon />
             ) : (
-              <ChevronRightIcon color="action"/>
+              <ChevronRightIcon />
             )}
           </IconButton>
         </div>
@@ -210,9 +264,10 @@ export default function PersistentDrawerLeft(props) {
         <List>
         {["Sign Out"].map(
             (text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <PowerSettingsNewIcon  color="action"/> : <PowerSettingsNewIcon />}</ListItemIcon>
-                <ListItemText primary={text} />                
+              <ListItem button key={text} onClick={signOut}>
+                <ListItemIcon>{index % 2 === 0 ? <PowerSettingsNewIcon  /> : <PowerSettingsNewIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+
               </ListItem>
             )
           )}
@@ -346,7 +401,10 @@ export default function PersistentDrawerLeft(props) {
         </div>
 
 
-        <StaffTable staff={staff} />
+        <StaffTable staff={staff} deleteStaff={handleDeleteStaff} />
+
+        <DeleteStaffModal deleteStaffMember={handleDeleteStaffMember} deleteStaff={deleteStaff}  modal={deleteModal} toggleDelModal={handleToggleDelModal} />
+
 
         <div className="row other">
           <div className="col-md-12">
@@ -360,6 +418,8 @@ export default function PersistentDrawerLeft(props) {
           </div> */}
         </div>
       </main>
+    </div>
+  )}
     </div>
   );
 }

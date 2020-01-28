@@ -57,16 +57,40 @@ class MoringaStaffSerializer(serializers.ModelSerializer):
         return moringa_staff.job_grade.grade
 
     def get_department(self,moringa_staff):
-        dpt = {
-            'name':moringa_staff.department.name,
-            'manager':moringa_staff.department.manager.username,
-            'line_manager':moringa_staff.department.line_manager.username,
-        }
+        dpt = {}
+        if moringa_staff.department is not None and moringa_staff.department is not None:
+            dpt = {
+                'name':moringa_staff.department.name,
+                'manager':moringa_staff.department.manager.username ,
+                'line_manager':moringa_staff.department.line_manager.username,
+            }
+
+        else:
+            dpt = {
+                'name':'', #CHANGE NAME -->moringa_staff.department.name
+                'manager':'' ,
+                'line_manager':'',
+            }
         return dpt
+
 
     def get_system_role(self,moringa_staff):
         return moringa_staff.system_role.role
 
     class Meta:
         model = MoringaStaff
-        fields = ['pk','user','job_grade','department','system_role']
+        fields = ['pk','user','job_grade','department','system_role','profile_pic']
+
+class JobGradeSerializer(serializers.ModelSerializer):
+    '''API serializer for POSTING job grades for users on registration '''
+
+    class Meta:
+        model = JobGrade
+        fields = ['grade']
+
+class RoleSerializer(serializers.ModelSerializer):
+    '''API serializer for POSTING user roles on registration '''
+
+    class Meta:
+        model = Role
+        fields = ['role']
