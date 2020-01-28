@@ -22,7 +22,7 @@ function Sidecard(props){
       <div className="card-up red lighten-1"></div>
 
       <div className="avatar mx-auto white">
-        <img src={imagelocation + props.staff.profile_pic} id="user-dp" alt="user-dp" heigh="80px" width="80px" />
+        <img src={imagelocation + props.staff.profile_pic} className="rounded-circle" id="user-dp" alt="user-dp" height="90px" width="90px" />
       </div>
 
       <div class="card-body text-center">

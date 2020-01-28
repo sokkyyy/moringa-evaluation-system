@@ -22,7 +22,9 @@ body {
   padding : 50px 0;
   }
   .banner-sec{background:url(./assets/images/IMGL1200.JPG)  no-repeat left bottom; background-size:cover; height:550px; border-radius: 0 10px 10px 0; padding:0;}
-  .container{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+  .container{background:#fff; border-radius: 10px;
+     /* box-shadow:15px 20px 0px rgba(0,0,0,0.1); */
+    }
   .login-sec{padding: 50px 30px; position:relative;}
   .login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
   .login-sec .copy-text i{color:#ff8900;}
