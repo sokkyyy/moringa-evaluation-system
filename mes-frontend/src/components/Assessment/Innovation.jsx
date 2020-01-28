@@ -32,6 +32,18 @@ class Innovation extends Component {
             <div className="visions1">
               <h3>Vision Setting</h3>
               <h5>Set and communicate a clear vision for your work</h5>
+              <h5 className="d-none">
+                Set and communicate a clear vision for work that drives your
+                team
+              </h5>
+              <h5 className="d-none">
+                Set and communicate a clear vision for work that drives multiple
+                teams
+              </h5>
+              <h5 className="d-none">
+                Set and communicate a clear vision for work that drives the
+                institution
+              </h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
@@ -73,6 +85,15 @@ class Innovation extends Component {
             <div className="thinking1">
               <h3>Thinking Outside the Box</h3>
               <h5>Generate new ideas to improve your own performance</h5>
+              <h5 className="d-none">
+                Generate new ideas to improve your team's performance
+              </h5>
+              <h5 className="d-none">
+                Generate new ideas to improve multiple teams' performance
+              </h5>
+              <h5 className="d-none">
+                Generate new ideas to improve institutional performance
+              </h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
@@ -115,6 +136,18 @@ class Innovation extends Component {
               <h5>
                 Adjust your workstreams when changes arise in an efficient and
                 responsive manner
+              </h5>
+              <h5 className="d-none">
+                Adjust your workstreams when changes arise that drive your team
+                in an efficient and responsive manner
+              </h5>
+              <h5 className="d-none">
+                Adjust your workstreams when changes arise that drive multiple
+                teams in an efficient and responsive manner
+              </h5>
+              <h5 className="d-none">
+                Adjust your workstreams when changes arise that drive the
+                institution in an efficient and responsive manner
               </h5>
               <div className="custom-control custom-radio">
                 <label>
