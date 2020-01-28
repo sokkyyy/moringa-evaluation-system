@@ -1,8 +1,12 @@
 .manager-assessment {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
-
+.manager-assessment1{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
 .assessment-form {
   width: 800px;
 }

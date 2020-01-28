@@ -10,6 +10,7 @@ class Organization extends Component {
 
   saveAndContinue = e => {
     e.preventDefault();
+    console.log(e);
     this.props.nextStep();
   };
 
@@ -18,6 +19,7 @@ class Organization extends Component {
   }
   back = e => {
     e.preventDefault();
+
     this.props.prevStep();
   };
 
@@ -46,6 +48,7 @@ class Organization extends Component {
                       name="organization.planning"
                       value="1"
                       onChange={this.handleChange}
+                      checked={(this.props.org.planning === 1)}
                     />
                     Struggles to plan effectively and consistently
                   </label>
@@ -87,6 +90,7 @@ class Organization extends Component {
                       type="radio"
                       name="organization.execution"
                       value="1"
+                      checked={(this.props.org.execution === 1)}
                       onChange={this.handleChange}
                     />
                     Struggles to execute effectively and consistently
@@ -130,6 +134,7 @@ class Organization extends Component {
                       type="radio"
                       name="organization.prioritization"
                       value="1"
+                      checked={(this.props.org.prioritization === 1)}
                       onChange={this.handleChange}
                     />
                     Struggles to prioritize effectively and consistently

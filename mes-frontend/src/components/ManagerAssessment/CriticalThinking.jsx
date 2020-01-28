@@ -40,6 +40,7 @@ class CriticalThinking extends Component {
                     type="radio"
                     name="critical_thinking.data_compilation"
                     value="1"
+                    checked={(this.props.ct.data_compilation === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to compile data
@@ -61,7 +62,7 @@ class CriticalThinking extends Component {
                   <input
                     type="radio"
                     name="critical_thinking.data_compilation"
-                    value="2"
+                    value="3"
                     onChange={this.handleChange}
                   />
                   Excels at compiling data effectively and consistently
@@ -83,6 +84,7 @@ class CriticalThinking extends Component {
                     type="radio"
                     name="critical_thinking.data_analysis"
                     value="1"
+                    checked={(this.props.ct.data_analysis === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to analyze data
@@ -126,6 +128,7 @@ class CriticalThinking extends Component {
                     type="radio"
                     name="critical_thinking.problem_solving"
                     value="1"
+                    checked={(this.props.ct.problem_solving === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to identify the most strategic options
@@ -171,6 +174,7 @@ class CriticalThinking extends Component {
                     type="radio"
                     name="critical_thinking.continual_improvement"
                     value="1"
+                    checked={(this.props.ct.continual_improvement === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to reflect on lessons learned from successes and
