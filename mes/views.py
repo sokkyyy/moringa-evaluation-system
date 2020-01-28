@@ -221,6 +221,8 @@ class ManagerCompetencyResultsPost(APIView): #FOR MANAGER ASSESSMENT
             rel = serializers_relationships.save() # Relationships Instance
 
             user_assessed = User.objects.get(pk=request.data.get('assessed_user'))
+
+            
             staff = MoringaStaff.objects.get(user=user_assessed)
 
             # CHANGE THE 'type' to receive from request :'self','man','final'
