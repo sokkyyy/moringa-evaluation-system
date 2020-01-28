@@ -12,7 +12,7 @@ class Innovation extends Component {
     this.props.prevStep();
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.props.handleChange(event);
   };
 
@@ -29,85 +29,130 @@ class Innovation extends Component {
               change in a purposeful manner.
             </p>
 
-          <div className="visions1">
-            <h3>Vision Setting</h3>
-            <h5>Set and communicate a clear vision for your work</h5>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.vision_setting" value="1" onChange={this.handleChange} />
-                Struggles to set a clear vision for work
-              </label>
+            <div className="visions1">
+              <h3>Vision Setting</h3>
+              <h5>Set and communicate a clear vision for your work</h5>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.vision_setting"
+                    value="1"
+                    onChange={this.handleChange}
+                  />
+                  Struggles to set a clear vision for work
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.vision_setting"
+                    value="2"
+                    onChange={this.handleChange}
+                  />
+                  Sets a clear vision for work effectively and consistently
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.vision_setting"
+                    value="2"
+                    onChange={this.handleChange}
+                  />
+                  Excels at setting a clear vision for work effectively and
+                  consistently
+                </label>
+              </div>
             </div>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.vision_setting" value="2" onChange={this.handleChange} />
-                Sets a clear vision for work effectively and consistently
-              </label>
-            </div>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.vision_setting" value="2" onChange={this.handleChange} />
-                Excels at setting a clear vision for work effectively and
-                consistently
-              </label>
-            </div>
-          </div>
-        </Form>
-
-        <Form>
-          <div className="thinking1">
-            <h3>Thinking Outside the Box</h3>
-            <h5>Generate new ideas to improve your own performance</h5>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.thinking" value="1" onChange={this.handleChange} />
-                Struggles to generate new ideas
-              </label>
-            </div>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.thinking" value="2" onChange={this.handleChange} />
-                Generates new ideas effectively and consistently
-              </label>
-            </div>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.thinking" value="3" onChange={this.handleChange} />
-                Excels at generating new ideas effectively and consistently
-              </label>
-            </div>
-          </div>
-        </Form>
-
-        <Form>
-          <div className="adaptability1">
-            <h3>Adaptability</h3>
-            <h5>
-              Adjust your workstreams when changes arise in an efficient and
-              responsive manner
-            </h5>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.adaptability" value="1" onChange={this.handleChange} />
-                Struggles to adjust workstreams
-              </label>
-            </div>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.adaptability" value="2" onChange={this.handleChange} />
-                Adjusts workstreams effectively and consistently
-              </label>
-            </div>
-            <div className="custom-control custom-radio">
-              <label>
-                <input type="radio" name="innovation.adaptability" value="3" onChange={this.handleChange} />
-                Excels at adjusting workstreams effectively and consistently
-              </label>
-            </div>
-          </div>
           </Form>
 
-          <br/>
+          <Form>
+            <div className="thinking1">
+              <h3>Thinking Outside the Box</h3>
+              <h5>Generate new ideas to improve your own performance</h5>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.thinking"
+                    value="1"
+                    onChange={this.handleChange}
+                  />
+                  Struggles to generate new ideas
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.thinking"
+                    value="2"
+                    onChange={this.handleChange}
+                  />
+                  Generates new ideas effectively and consistently
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.thinking"
+                    value="3"
+                    onChange={this.handleChange}
+                  />
+                  Excels at generating new ideas effectively and consistently
+                </label>
+              </div>
+            </div>
+          </Form>
+
+          <Form>
+            <div className="adaptability1">
+              <h3>Adaptability</h3>
+              <h5>
+                Adjust your workstreams when changes arise in an efficient and
+                responsive manner
+              </h5>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.adaptability"
+                    value="1"
+                    onChange={this.handleChange}
+                  />
+                  Struggles to adjust workstreams
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.adaptability"
+                    value="2"
+                    onChange={this.handleChange}
+                  />
+                  Adjusts workstreams effectively and consistently
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="innovation.adaptability"
+                    value="3"
+                    onChange={this.handleChange}
+                  />
+                  Excels at adjusting workstreams effectively and consistently
+                </label>
+              </div>
+            </div>
+          </Form>
+
+          <br />
           <div>
             <Button onClick={this.back} className="previous">
               Back

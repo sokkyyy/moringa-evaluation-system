@@ -95,7 +95,7 @@ class CombinedLineGraph extends Component {
 
 
 			toolTip: {
-				shared: true,
+				// shared: true,
 				animationEnabled: true ,
 				cornerRadius: 5,
 			},

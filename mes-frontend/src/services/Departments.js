@@ -32,7 +32,7 @@ export default class DepartmentStaff {
   addDepartment(data){
     const url = `${APIURL}add/department/`;
 
-    return axios.post(url, data {
+    return axios.post(url, data ,{
       headers:{Authorization: authToken}
     })
   }

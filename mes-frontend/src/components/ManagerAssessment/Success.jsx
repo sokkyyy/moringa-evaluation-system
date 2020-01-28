@@ -10,8 +10,7 @@ class Success extends Component {
   render() {
     return (
       <div className="text-center" style={this.styles}>
-        <h4>Thank you for taking the Assessment.</h4>
-        <h3> You can view your total ratings in your dashboard</h3>
+        <h4>Thank you for assessing your employee.</h4>
       </div>
     );
   }
