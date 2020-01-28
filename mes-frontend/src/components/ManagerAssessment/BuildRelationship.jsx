@@ -30,7 +30,18 @@ class BuildRelationship extends Component {
               with others when inter-personal challenges arise.
             </p>
             <div className="teamwork1">
+              <h3>Teamwork</h3>              with others when inter-personal challenges arise.
+            </p>
+            <div className="teamwork1">
               <h3>Teamwork</h3>
+              <h5>Collaborates on key team activities when required</h5>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="relationships.team_work"
+                    value="1"
+                    checked={(this.props.rel.team_work === 1)}
               <h5>Collaborates on key team activities when required</h5>
               <div className="custom-control custom-radio">
                 <label>
@@ -80,8 +91,56 @@ class BuildRelationship extends Component {
                 <label>
                   <input
                     type="radio"
+                    name="relationships.team_work"
+
+                    value="1"
+                    checked={(this.props.rel.team_work === 1)}
+                    onChange={this.handleChange}
+                  />
+                  Struggles to collaborate on key team activities
+
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="relationships.team_work"
+                    value="2"
+                    onChange={this.handleChange}
+                  />
+                  Collaborates on key team activities effectively and
+                  consistently
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="relationships.team_work"
+                    value="3"
+                    onChange={this.handleChange}
+                  />
+                  Excels at collaborating effectively and consistently
+                </label>
+              </div>
+            </div>
+          </Form>
+
+          <Form>
+            <div className="stakeholder1">
+              <h3>Stakeholder Management</h3>
+              <h5>
+                Maximizes existing partnerships and networks to deliver or
+                enhance work outcomes
+              </h5>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
                     name="relationships.stakeholder_management"
                     value="1"
+                    checked={(this.props.rel.stakeholder_management === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to maximize partnerships and networks
@@ -96,6 +155,7 @@ class BuildRelationship extends Component {
                     onChange={this.handleChange}
                   />
                   Maximizes partnerships and networks effectively and
+
                   consistently
                 </label>
               </div>
@@ -127,6 +187,7 @@ class BuildRelationship extends Component {
                     type="radio"
                     name="relationships.conflict_management"
                     value="1"
+                    checked={(this.props.rel.conflict_management === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to move situations of conflict toward resolution

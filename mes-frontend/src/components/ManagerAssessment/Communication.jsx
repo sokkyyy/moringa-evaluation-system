@@ -36,6 +36,7 @@ class Communication extends Component {
                     type="radio"
                     name="interpersonal_communication.investment_building"
                     value="1"
+                    checked={(this.props.comm.investment_building === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to gain the buy-in from others
@@ -57,7 +58,7 @@ class Communication extends Component {
                   <input
                     type="radio"
                     name="interpersonal_communication.investment_building"
-                    value="2"
+                    value="3"
                     onChange={this.handleChange}
                   />
                   Excels at gaining buy-in from others effectively and
@@ -80,6 +81,7 @@ class Communication extends Component {
                     type="radio"
                     name="interpersonal_communication.effective_communication"
                     value="1"
+                    checked={(this.props.comm.effective_communication === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to develop content
@@ -123,6 +125,7 @@ class Communication extends Component {
                   <input
                     type="radio"
                     name="interpersonal_communication.delivery"
+                    checked={(this.props.comm.delivery === 1)}
                     value="1"
                     onChange={this.handleChange}
                   />

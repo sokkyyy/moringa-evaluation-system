@@ -7,12 +7,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-  
+
   @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
   .login-block{ /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #45482D, #689241);  /* Chrome 10-25, Safari 5.1-6 */
@@ -22,6 +22,7 @@ body {
   padding : 50px 0;
   }
   .banner-sec{background:url(./assets/images/IMGL1200.JPG)  no-repeat left bottom; background-size:cover; height:550px; border-radius: 0 10px 10px 0; padding:0;}
+
   .container{background:#fff; border-radius: 10px;
      /* box-shadow:15px 20px 0px rgba(0,0,0,0.1); */
     }
