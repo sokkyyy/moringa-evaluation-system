@@ -25,20 +25,20 @@ function Sidecard(props){
         <img src={imagelocation + props.staff.profile_pic} className="rounded-circle" id="user-dp" alt="user-dp" height="100px" width="100px" />
       </div>
 
-      <div class="card-body text-center">
+      <div class="card-body details">
         <h4 class="card-title text-center" style={{fontSize:17}}>{props.staff.user.first_name} {props.staff.user.last_name}</h4>
         <hr></hr>
 
         <p>
-          <i class="far fa-envelope"></i> {props.staff.user.email}
+          <strong>Email: </strong> {props.staff.user.email}
         </p>
 
         <p>
-          <i class="fas fa-user-tag"></i>  {props.staff.department.name}
+          <strong>Department: </strong> {props.staff.department.name}
         </p>
 
         <p>
-          <i className="fas fa-location-arrow"></i>  Nairobi Campus
+          <strong>Campus: </strong> Nairobi 
         </p>
 
         <div>
