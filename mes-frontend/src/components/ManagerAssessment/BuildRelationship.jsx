@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
 
-class CriticalThinking extends Component {
+class BuildRelationship extends Component {
   saveAndContinue = e => {
     e.preventDefault();
+    this.props.handleSubmit();
     this.props.nextStep();
   };
 
@@ -21,125 +22,36 @@ class CriticalThinking extends Component {
       <div className="container">
         <fieldset>
           <Form>
-            <h1 className="head1">Critical Thinking</h1>
+            <h1 className="head1">Building and Managing Relationships</h1>
             <p>
-              The ability to use logic and data to analyze a situation, generate
-              strategic options, and continuously reflect on past successes and
-              failures to improve future outcomes.
+              The ability to collaborate, support each other, and engage
+              external stakeholders in beneficial ways to all. In addition to
+              maintaining productivity and a collegiate environment by engaging
+              with others when inter-personal challenges arise.
             </p>
-
-            <div className="compilation1">
-              <h3>Data Compilation</h3>
-              <h5>
-                Compile data in situations where the problems have been
-                identified by others
-              </h5>
+            <div className="teamwork1">
+              <h3>Teamwork</h3>
+              <h5>Collaborates on key team activities when required</h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
                     type="radio"
-                    name="critical_thinking.data_compilation"
+                    name="relationships.team_work"
                     value="1"
                     onChange={this.handleChange}
                   />
-                  Struggles to compile data
+                  Struggles to collaborate on key team activities
                 </label>
               </div>
               <div className="custom-control custom-radio">
                 <label>
                   <input
                     type="radio"
-                    name="critical_thinking.data_compilation"
+                    name="relationships.team_work"
                     value="2"
                     onChange={this.handleChange}
                   />
-                  Compiles data effectively and consistently
-                </label>
-              </div>
-              <div className="custom-control custom-radio">
-                <label>
-                  <input
-                    type="radio"
-                    name="critical_thinking.data_compilation"
-                    value="2"
-                    onChange={this.handleChange}
-                  />
-                  Excels at compiling data effectively and consistently
-                </label>
-              </div>
-            </div>
-          </Form>
-
-          <Form>
-            <div className="analysis1">
-              <h3>Data Analysis</h3>
-              <h5>
-                Analyze data in situations where the problems have been
-                identified by others
-              </h5>
-              <div className="custom-control custom-radio">
-                <label>
-                  <input
-                    type="radio"
-                    name="critical_thinking.data_analysis"
-                    value="1"
-                    onChange={this.handleChange}
-                  />
-                  Struggles to analyze data
-                </label>
-              </div>
-              <div className="custom-control custom-radio">
-                <label>
-                  <input
-                    type="radio"
-                    name="critical_thinking.data_analysis"
-                    value="2"
-                    onChange={this.handleChange}
-                  />
-                  Analyzes data effectively and consistently
-                </label>
-              </div>
-              <div className="custom-control custom-radio">
-                <label>
-                  <input
-                    type="radio"
-                    name="critical_thinking.data_analysis"
-                    value="3"
-                    onChange={this.handleChange}
-                  />
-                  Excels at analyzing data effectively and consistently
-                </label>
-              </div>
-            </div>
-          </Form>
-
-          <Form>
-            <div className="solving1">
-              <h3>Problem Solving</h3>
-              <h5>
-                Identify the most strategic options to problems that have been
-                identified by others
-              </h5>
-              <div className="custom-control custom-radio">
-                <label>
-                  <input
-                    type="radio"
-                    name="critical_thinking.problem_solving"
-                    value="1"
-                    onChange={this.handleChange}
-                  />
-                  Struggles to identify the most strategic options
-                </label>
-              </div>
-              <div className="custom-control custom-radio">
-                <label>
-                  <input
-                    type="radio"
-                    name="critical_thinking.problem_solving"
-                    value="2"
-                    onChange={this.handleChange}
-                  />
-                  identifies the most strategic options effectively and
+                  Collaborates on key team activities effectively and
                   consistently
                 </label>
               </div>
@@ -147,64 +59,106 @@ class CriticalThinking extends Component {
                 <label>
                   <input
                     type="radio"
-                    name="critical_thinking.problem_solving"
-                    value="3"
+                    name="relationships.team_work"
+                    value="2"
                     onChange={this.handleChange}
                   />
-                  Excels at identifying the most strategic options effectively
-                  and consistently
+                  Excels at collaborating effectively and consistently
                 </label>
               </div>
             </div>
           </Form>
 
           <Form>
-            <div className="improvement1">
-              <h3>Continual Improvement</h3>
+            <div className="stakeholder1">
+              <h3>Stakeholder Management</h3>
               <h5>
-                Reflect on lessons learned from problems that have been
-                identified by others to improve future outcomes
+                Maximizes existing partnerships and networks to deliver or
+                enhance work outcomes
               </h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
                     type="radio"
-                    name="critical_thinking.continual_improvement"
+                    name="relationships.stakeholder_management"
                     value="1"
                     onChange={this.handleChange}
                   />
-                  Struggles to reflect on lessons learned from successes and
-                  failures
+                  Struggles to maximize partnerships and networks
                 </label>
               </div>
               <div className="custom-control custom-radio">
                 <label>
                   <input
                     type="radio"
-                    name="critical_thinking.continual_improvement"
+                    name="relationships.stakeholder_management"
                     value="2"
                     onChange={this.handleChange}
                   />
-                  Reflects on lessons learned from successes and failures
-                  effectively and consistently
+                  Maximizes partnerships and networks effectively and
+                  consistently
                 </label>
               </div>
               <div className="custom-control custom-radio">
                 <label>
                   <input
                     type="radio"
-                    name="critical_thinking.continual_improvement"
+                    name="relationships.stakeholder_management"
                     value="3"
                     onChange={this.handleChange}
                   />
-                  Excels at reflecting on lessons learned from successes and
-                  failures effectively and consistently
+                  Excels at maximizing partnerships and networks effectively and
+                  consistently
+                </label>
+              </div>
+            </div>
+          </Form>
+
+          <Form>
+            <div className="conflicts1">
+              <h3>Conflict Management</h3>
+              <h5>
+                Move situations of conflict toward resolution in work you
+                directly impact
+              </h5>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="relationships.conflict_management"
+                    value="1"
+                    onChange={this.handleChange}
+                  />
+                  Struggles to move situations of conflict toward resolution
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="relationships.conflict_management"
+                    value="2"
+                    onChange={this.handleChange}
+                  />
+                  Moves situations of conflict toward resolution effectively and
+                  consistently
+                </label>
+              </div>
+              <div className="custom-control custom-radio">
+                <label>
+                  <input
+                    type="radio"
+                    name="relationships.conflict_management"
+                    value="3"
+                    onChange={this.handleChange}
+                  />
+                  Excels at moving situations of conflict toward resolution
+                  effectively and consistently
                 </label>
               </div>
             </div>
           </Form>
           <br />
-
           <div>
             <Button onClick={this.back} className="previous">
               Back
@@ -214,12 +168,10 @@ class CriticalThinking extends Component {
               Continue
             </Button>
           </div>
-          <br />
-          <br />
         </fieldset>
       </div>
     );
   }
 }
 
-export default CriticalThinking;
+export default BuildRelationship;

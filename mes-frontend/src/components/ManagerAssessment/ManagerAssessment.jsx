@@ -118,7 +118,7 @@ class ManagerAssessment extends Component {
   };
 
   handleAssessUser = id => {
-    console.log(id);
+    console.log('assessed_user',id);
     this.setState({ assessed_user: id });
   };
 
@@ -183,7 +183,7 @@ class ManagerAssessment extends Component {
     this.setState({ relationships: relationships });
 
     console.log(this.state);
-    this.submitOrganization();
+    // this.submitOrganization();
   };
 
   submitOrganization = () => {

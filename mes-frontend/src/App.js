@@ -12,6 +12,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Footer from './components/Footer/Footer';
 import history from './history';
+import IndividualReports from './components/Reports/IndividualReports';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/assessment' exact component={MainAssessment} />
         <Route path='/manager/assessment' exact component={ManagerAssessment} />
         <Route path='/admin/dashboard' exact component={AdminDashboard} />
+        <Route path='/reports' exact component={IndividualReports} />
 
       </Switch>
 
