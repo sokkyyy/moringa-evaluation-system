@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     color: "black",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#689241",
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -89,12 +89,11 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(1),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -drawerWidth,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
@@ -201,6 +200,12 @@ export default function PersistentDrawerLeft(props) {
     setStaff(allStaff);
   };
 
+  const signOut = () => {
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    props.history.push('/');
+  }
+
   return (
     <div className={classes.root}>
       {load ? '' : (
@@ -259,9 +264,9 @@ export default function PersistentDrawerLeft(props) {
         <List>
         {["Sign Out"].map(
             (text, index) => (
-              <ListItem button key={text}>
+              <ListItem button key={text} onClick={signOut}>
                 <ListItemIcon>{index % 2 === 0 ? <PowerSettingsNewIcon  /> : <PowerSettingsNewIcon />}</ListItemIcon>
-                <ListItemText primary={text} />                
+                <ListItemText primary={text} />
 
               </ListItem>
             )
