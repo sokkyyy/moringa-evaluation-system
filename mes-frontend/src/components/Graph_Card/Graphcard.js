@@ -18,7 +18,7 @@ class GraphCard extends Component {
 
   componentDidMount(){
     competencyService.getUserAssessments().then(
-      response => {
+      response => { 
         console.log(response.data);
         this.setState({assessments: response.data});
         this.setState({load:false});
