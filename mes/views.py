@@ -221,8 +221,6 @@ class ManagerCompetencyResultsPost(APIView): #FOR MANAGER ASSESSMENT
             rel = serializers_relationships.save() # Relationships Instance
 
             user_assessed = User.objects.get(pk=request.data.get('assessed_user'))
-
-            
             staff = MoringaStaff.objects.get(user=user_assessed)
 
             # CHANGE THE 'type' to receive from request :'self','man','final'
@@ -251,3 +249,9 @@ def dept_names(request):
     dpts = Department.objects.all()
     serializers = DepartmentNameSerializer(dpts, many=True)
     return Response(serializers.data)
+
+@api_view(['POST'])
+def schedule_assessment(request):
+    '''API endpoint for scheduling assessments'''
+    print(request.user)
+    return Response(status=status.HTTP_201_CREATED)

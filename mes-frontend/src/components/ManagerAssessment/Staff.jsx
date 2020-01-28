@@ -29,7 +29,8 @@ export default class StaffInfo extends Component {
   render(){
 
     return(
-      <div>
+      <div style={{marginTop:'100'}}>
+        <p>Select the Staff you want to assess to Continue</p>
         {this.state.load ? '' : (
           <select className="browser-default custom-select">
             <option>Choose Staff:</option>
