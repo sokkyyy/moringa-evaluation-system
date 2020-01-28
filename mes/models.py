@@ -55,6 +55,7 @@ class MoringaStaff(models.Model):
     job_grade = models.ForeignKey(JobGrade, on_delete=models.CASCADE)
     department = models.ForeignKey(Department,on_delete=models.CASCADE, null=True)
     system_role = models.ForeignKey(Role,on_delete=models.CASCADE)
+    profile_pic = models.ImageField(upload_to='profile_pics/', default='profile_pics/user.svg')
 
 class Organization(models.Model):
     """Model for Organization Competency Ratings """
