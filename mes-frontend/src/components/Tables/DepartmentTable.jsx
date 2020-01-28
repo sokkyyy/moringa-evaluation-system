@@ -79,29 +79,26 @@ function DepartmentTable(){
     rows:rowData,
   };
     return (
+      <MDBCard narrow>
+        <MDBCardHeader className="green gradient-card-header d-flex justify-content-between">
+          <h4>Deparments</h4>
+        </MDBCardHeader>
 
+        <MDBCardBody cascade>
+          <MDBDataTable scrollY maxHeight="200px" striped small data={data} />
 
-            <MDBCard narrow>
-
-              <MDBCardHeader className="green gradient-card-header d-flex justify-content-between">
-                <h4>Deparments</h4>
-              </MDBCardHeader>
-
-              <MDBCardBody cascade>
-                <MDBDataTable
-                  scrollY
-                  maxHeight="200px"
-                  striped
-                  small
-                  data={data}
-                />
-
-                <MDBBtn rounded size="m" color="green" className="px-2" data-toggle="modal" data-target="#add-department">
-                  Add Department
-                </MDBBtn>
-              </MDBCardBody>
-            </MDBCard>
-
+          <MDBBtn
+            rounded
+            size="m"
+            color="green"
+            className="px-2"
+            data-toggle="modal"
+            data-target="#add-department"
+          >
+            Add Department
+          </MDBBtn>
+        </MDBCardBody>
+      </MDBCard>
     );
 }
 
