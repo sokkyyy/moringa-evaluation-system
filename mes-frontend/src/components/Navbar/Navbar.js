@@ -147,7 +147,7 @@ function Navbar(props){
             <div className="modal-content">
               <div className="modal-header bg-green">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  Add Department
+                  SCHEDULE ASSESSMENT
                 </h5>
                 <button
                   type="button"

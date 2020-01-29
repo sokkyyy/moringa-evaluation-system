@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
 import Clock from '../Clock/Clock'
+import Notifications from '../../services/Notifications';
+
+const notificationService = new Notifications()
 
 class CountdownTimer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       // deadline: new Date(),
-      deadline: 'Feb 2, 2020',
+      deadline: '',
       newDeadline: ''
-    }    
-  }  
+    }
+  }
+  componentDidMount(){
+    this.getAllUserNotifications();
+  }
+
+  getAllUserNotifications = () => {
+    notificationService.getUserNotifications().then(
+      response => {
+        this.getLatestDeadline(response.data);
+      }
+    ).catch(errors => console.log(errors));
+  }
+
+  getLatestDeadline = (notifications) => {
+    const latest = notifications[0];
+    this.setState({deadline: latest.deadline})
+  }
 
   changeDeadline() {
     this.setState({deadline: this.state.newDeadline})
   }
-  
-  render() { 
+
+  render() {
     return (
       <div className="timer">
         <div className="timer-title">
           {/* Countdown to {this.state.deadline} */}
-          <strong><h6>Evaluation Deadline</h6></strong> 
+          <strong><h6>Evaluation Deadline</h6></strong>
         </div>
 
         <br />
@@ -32,5 +51,5 @@ class CountdownTimer extends Component {
     );
   }
 }
- 
+
 export default CountdownTimer;

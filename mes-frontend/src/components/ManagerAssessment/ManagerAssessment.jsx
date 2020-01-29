@@ -197,7 +197,7 @@ class ManagerAssessment extends Component {
     this.setState({ relationships: relationships });
 
     console.log(this.state);
-    // this.submitOrganization();
+    this.submitOrganization();
   };
 
   submitOrganization = () => {
@@ -217,7 +217,7 @@ class ManagerAssessment extends Component {
       critical_thinking,
       relationships
     };
-    
+
     compService.manTest(testResults)
       .then(response => {
         console.log(response.data);

@@ -12,4 +12,17 @@ export default class Notifications {
     });
   }
 
+  getUserNotifications(){
+    const url = `${APIURL}user/notifications/`;
+
+    return axios.get(url,{
+      headers:{Authorization: authToken}
+    });
+  }
+  readNotification(data){
+    const url = `${APIURL}read/notification/`;
+    return axios.post(url, data, {
+      headers:{Authorization: authToken}
+    });
+  }
 }

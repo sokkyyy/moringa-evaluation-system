@@ -122,24 +122,9 @@ class CompetencyResults(models.Model):
     date_created = models.DateField(auto_now_add=True)
 
 
-# class Notification(models.Model):
-    # email = models.EmailField()
-    # staff_name = models.ForeignKey(User)
-    # """(Status choice)"""
-    # Active_Status = 1
-    # Inactive_Status = 0
-    # STATUS_CHOICES = (
-        # (Active_Status, 'Active'),
-        # (Inactive_Status, 'Inactive'),
-    # )
-    # status = models.IntegerField(choices=STATUS_CHOICES, default=Active_Status)
-    # """(type choice)"""
-    # Manager_meeting = 1
-    # No_meeting = 2
-    # Schedule_meeting = 0
-    # TYPE_CHOICES = (
-        # (Manager_meeting, '1'),
-        # (No_meeting, '2'),
-        # (Manager_meeting, '0'),
-    # )
-    # status = models.IntegerField(choices=STATUS_CHOICES, default=2)
+class Notification(models.Model):
+    sender = models.ForeignKey(MoringaStaff,on_delete=models.CASCADE)
+    receiver = models.ForeignKey(MoringaStaff,on_delete=models.CASCADE, related_name='staff_notification')
+    deadline = models.DateField()
+    status = models.CharField(max_length=20, default='unread')
+    date_created = models.DateField(auto_now_add=True)

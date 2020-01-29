@@ -64,6 +64,7 @@ class DepartmentSerializer(serializers.ModelSerializer):
                         staff_details = {
                             'id': staff.user.pk,
                             'username': staff.user.username,
+                            'full_name':staff.user.first_name + ' ' + staff.user.last_name,
                             'email':staff.user.email,
                             'job_grade': staff.job_grade.grade,
                             'role': staff.system_role.role,
@@ -73,6 +74,7 @@ class DepartmentSerializer(serializers.ModelSerializer):
                     staff_details = {
                         'id': staff.user.pk,
                         'username': staff.user.username,
+                        'full_name':staff.user.first_name + '' + staff.user.last_name,
                         'email':staff.user.email,
                         'job_grade': staff.job_grade.grade,
                         'role': staff.system_role.role,
