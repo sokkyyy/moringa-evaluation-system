@@ -9,6 +9,8 @@ from django.http import HttpResponseRedirect
 from rest_framework.views import APIView
 from .serializers.competencies import *
 from .serializers.moringa_staff import *
+from .serializers.notifications import *
+
 from rest_framework_jwt.serializers import JSONWebTokenSerializer
 from rest_framework_jwt.views import ObtainJSONWebToken
 from rest_framework_jwt.settings import api_settings
@@ -253,5 +255,25 @@ def dept_names(request):
 @api_view(['POST'])
 def schedule_assessment(request):
     '''API endpoint for scheduling assessments'''
-    print(request.user)
+    print(request.data)
+    receiver = request.data.get('receiver')
+    receiver_staff = MoringaStaff.objects.get(pk=receiver)
+    sender = MoringaStaff.objects.get(user=request.user)
+    deadline = request.data.get('deadline')
+    new_notification = Notification(sender=sender, receiver=receiver_staff,deadline=deadline)
+    new_notification.save()
+    return Response(status=status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+def user_notifications(request):
+    user = MoringaStaff.objects.get(user=request.user)
+    user_notifications = Notification.objects.filter(receiver=user).order_by('date_created')
+    serializers = NotificationsSerializer(user_notifications, many=True)
+    return Response(serializers.data)
+
+@api_view(['POST'])
+def read_notification(request):
+    notification = Notification.objects.get(pk=request.data.get('id'))
+    notification.status = 'read'
+    notification.save()
     return Response(status=status.HTTP_201_CREATED)
