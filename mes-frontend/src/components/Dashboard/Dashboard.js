@@ -36,7 +36,7 @@ class Dashboard extends Component {
           window.location.href = '/admin/dashboard';
         }else{
           this.setState({staff: response.data});
-          console.log(response.data);
+          console.log(response.data, 'rr');
           this.setState({load:false});
         }
     })
@@ -52,78 +52,74 @@ class Dashboard extends Component {
   render() {
 
     return (
-
-        <div>
-          {this.state.load ? (
-            " "
-          ) : (
+      <div>
+        {this.state.load ? (
+          " "
+        ) : (
+          <div>
             <div>
-              <div>
-                <Navbar role={this.state.staff.system_role} />
+              <Navbar role={this.state.staff.system_role} />
+            </div>
+
+            <div className="row container-fluid">
+              <div className="col-md-2">
+                <h4>Dashboard</h4>
+                <hr />
+                <Sidecard
+                  staff={this.state.staff}
+                  handlePicChange={this.handlePicChange}
+                />
               </div>
+              <div className="col-md-8">
 
-              <div className="row container-fluid">
-                <div className="col-md-2">
-                  <h4>Dashboard</h4>
-                  <hr />
-                  <Sidecard staff={this.state.staff} handlePicChange={this.handlePicChange} />
-                </div>
-                <div className="col-md-8">
-                  <GraphCard staff={this.state.staff.pk} />
+                <GraphCard staff={this.state.staff.pk} />
 
-                  <div
-                    className="modal fade"
-                    id="scheduleassessment"
-                    tabIndex="-1"
-                    role="dialog"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div className="modal-dialog" role="document">
-                      <div className="modal-content">
-                        <div className="modal-header bg-green">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                            Schedule Assessment
-                          </h5>
-                          <button
-                            type="button"
-                            className="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div className="modal-body">
-                          <ScheduleAssessmentForm />
-                        </div>
+                <div
+                  className="modal fade"
+                  id="scheduleassessment"
+                  tabIndex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                      <div className="modal-header bg-green">
+                        <h5 className="modal-title" id="exampleModalLabel">
+                          Schedule Assessment
+                        </h5>
+                        <button
+                          type="button"
+                          className="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div className="modal-body">
+                        <ScheduleAssessmentForm />
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="col-md-2 text-center notifications">
-                  <div className="timer">
-                    <CountdownTimer />
-                  </div>
-                  <br />
-                  <hr />
-                  <div className="notifications">
-                    <strong className="text-center">
-                      <h6>
-                        Notifications <i className="far fa-bell"></i>
-                      </h6>
-                    </strong>
-                    <br />
-                    <NotificationsDiv />
-                    <hr />
-                  </div>
+              <div className="col-md-2 text-center notifications">
+                <div className="timer">
+                  <CountdownTimer />
                 </div>
+                <br />
+                <hr />
+
+                <NotificationsDiv />
+
+
               </div>
             </div>
-          )}
-        </div>
-
+          </div>
+        )}
+      </div>
     );
   }
 }

@@ -99,31 +99,34 @@ export default class EditProfile extends Component {
 
     return (
       <Accordion>
-        {successPass ? (
-          <div className='successPass'>PASSWORD CHANGED</div>
-        ): ''}
+        {successPass ? <div className="successPass">PASSWORD CHANGED</div> : ""}
 
         {invalidPass ? (
-          <div className='invalidPass'>INVALID CREDENTIALS</div>
-        ): ''}
+          <div className="invalidPass">INVALID CREDENTIALS</div>
+        ) : (
+          ""
+        )}
 
         <Accordion.Title
           active={activeIndex === 1}
           index={1}
           onClick={this.handleClick}
         >
-          <Icon name='dropdown' />
+          <Icon name="dropdown" />
           Change Profile Picture
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
           <form onSubmit={this.handleImageSubmit}>
-            <input type="file"
-                    id="image"
-                    accept="image/png, image/jpeg"
-                    onChange={this.handleImageChange}
-                    required
+            <input
+              type="file"
+              id="image"
+              accept="image/png, image/jpeg"
+              onChange={this.handleImageChange}
+              required
             />
-          <button type="submit" class="btn btn-light-green">UPLOAD</button>
+            <button type="submit" class="btn btn-light-green">
+              UPLOAD
+            </button>
           </form>
         </Accordion.Content>
 
@@ -132,18 +135,29 @@ export default class EditProfile extends Component {
           index={2}
           onClick={this.handleClick}
         >
-          <Icon name='dropdown' />
+          <Icon name="dropdown" />
           Change Password
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
           <form onSubmit={this.handlePasswordSubmit}>
-            <input placeholder='Confirm Previous Password' name='confirm_password' onChange={this.handlePasswordChange} value={this.state.confirm_password} />
-            <input placeholder='New Password' name='new_password' onChange={this.handlePasswordChange} value={this.state.new_password} />
-            <button type="submit" class="btn btn-light-green">EDIT PASSWORD</button>
+            <input
+              placeholder="Confirm Previous Password"
+              name="confirm_password"
+              onChange={this.handlePasswordChange}
+              value={this.state.confirm_password}
+            />
+            <input
+              placeholder="New Password"
+              name="new_password"
+              onChange={this.handlePasswordChange}
+              value={this.state.new_password}
+            />
+            <button type="submit" class="btn btn-light-green">
+              EDIT PASSWORD
+            </button>
           </form>
         </Accordion.Content>
-
       </Accordion>
-    )
+    );
   }
 }

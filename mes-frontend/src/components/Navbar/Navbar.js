@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.png'
 import {Link} from 'react-router-dom';
+import ScheduleAssessmentForm from '../Forms/ScheduleAssessmentForm'
 
 
 function Navbar(props){
@@ -32,8 +33,6 @@ function Navbar(props){
           className="collapse navbar-collapse"
           id="navbarSupportedContent-333"
         >
-        
-
           <ul className="navbar-nav ml-auto nav-flex-icons">
             <li className="nav-item">
               <Link to="/dashboard" className="nav-link" href="#">
@@ -100,7 +99,11 @@ function Navbar(props){
                   ""
                 ) : (
                   <div>
-                    <a className="dropdown-item" href="#">
+                    <a
+                      data-toggle="modal"
+                      data-target="#schedule-assessment"
+                      className="dropdown-item"
+                    >
                       Schedule Assessment
                     </a>
                     <Link className="dropdown-item" to="/manager/assessment">
@@ -131,6 +134,38 @@ function Navbar(props){
           </button>
         </div>
       </nav>
+      <div className="container">
+        <div
+          className="modal fade"
+          id="schedule-assessment"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header bg-green">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  SCHEDULE ASSESSMENT
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <ScheduleAssessmentForm />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

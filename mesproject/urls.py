@@ -44,6 +44,9 @@ urlpatterns = [
     re_path('^api/dept_names/$',views.dept_names),
     re_path('^api/profile_pic/$',views.profile_pic),
     re_path('^api/password/change/$',views.change_password),
+    re_path('^api/schedule/assessment/$',views.schedule_assessment),
+    re_path('^api/user/notifications/$',views.user_notifications),
+    re_path('^api/read/notification/$',views.read_notification),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

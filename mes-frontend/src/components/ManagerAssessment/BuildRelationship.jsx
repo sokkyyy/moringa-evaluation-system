@@ -45,15 +45,18 @@ class BuildRelationship extends Component {
                 modeling collaborative behavior, and addressing harmful
                 competition quickly
               </h5>
+
               <div className="custom-control custom-radio">
                 <label>
                   <input
                     type="radio"
                     name="relationships.team_work"
                     value="1"
+                    checked={(this.props.rel.team_work === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to collaborate on key team activities
+
                 </label>
               </div>
               <div className="custom-control custom-radio">
@@ -100,6 +103,7 @@ class BuildRelationship extends Component {
               <h5 className="d-none">
                 Explores new partnerships and networks to deliver or enhance
                 work outcomes
+
               </h5>
               <div className="custom-control custom-radio">
                 <label>
@@ -107,6 +111,7 @@ class BuildRelationship extends Component {
                     type="radio"
                     name="relationships.stakeholder_management"
                     value="1"
+                    checked={(this.props.rel.stakeholder_management === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to maximize partnerships and networks
@@ -157,6 +162,7 @@ class BuildRelationship extends Component {
               <h5 className="d-none">
                 Move situations of conflict toward resolution in work that
                 impacts the institution
+
               </h5>
               <div className="custom-control custom-radio">
                 <label>
@@ -164,6 +170,7 @@ class BuildRelationship extends Component {
                     type="radio"
                     name="relationships.conflict_management"
                     value="1"
+                    checked={(this.props.rel.conflict_management === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to move situations of conflict toward resolution

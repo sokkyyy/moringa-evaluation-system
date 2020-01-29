@@ -16,6 +16,20 @@ import StartAssessment from "./StartAssessment";
 const userService = new UserService();
 const compService = new CompetencyService();
 
+
+
+function ShowStartAssessment(props){
+    if(props.assessed_user !== null){
+      return (
+        <StartAssessment
+          nextStep={props.nextStep}
+          handleChange={props.handleChange}
+        />
+      );
+    }else{
+      return '';
+    }
+}
 class ManagerAssessment extends Component {
   constructor(props) {
     super(props);
@@ -29,36 +43,36 @@ class ManagerAssessment extends Component {
       step: 0,
 
       organization: {
-        planning: 0,
-        execution: 0,
-        prioritization: 0,
-        score: 0
+        planning: 1,
+        execution: 1,
+        prioritization: 1,
+        score: 1,
       },
       innovation: {
-        vision_setting: 0,
-        thinking: 0,
-        adaptability: 0,
-        score: 0
+        vision_setting: 1,
+        thinking: 1,
+        adaptability: 1,
+        score: 1,
       },
       interpersonal_communication: {
-        investment_building: 0,
-        effective_communication: 0,
-        delivery: 0,
-        score: 0
+        investment_building: 1,
+        effective_communication: 1,
+        delivery: 1,
+        score: 1,
       },
 
       critical_thinking: {
-        data_compilation: 0,
-        data_analysis: 0,
-        problem_solving: 0,
-        continual_improvement: 0,
-        score: 0
+        data_compilation: 1,
+        data_analysis: 1,
+        problem_solving: 1,
+        continual_improvement: 1,
+        score: 1,
       },
       relationships: {
-        team_work: 0,
-        stakeholder_management: 0,
-        conflict_management: 0,
-        score: 0
+        team_work: 1,
+        stakeholder_management: 1,
+        conflict_management: 1,
+        score: 1,
       }
     };
   }
@@ -83,7 +97,7 @@ class ManagerAssessment extends Component {
         }
       })
       .catch(() => {
-        this.props.history.push("/login");
+        this.props.history.push("/");
       });
   }
 
@@ -118,7 +132,7 @@ class ManagerAssessment extends Component {
   };
 
   handleAssessUser = id => {
-    console.log(id);
+    console.log('assessed_user',id);
     this.setState({ assessed_user: id });
   };
 
@@ -203,27 +217,27 @@ class ManagerAssessment extends Component {
       critical_thinking,
       relationships
     };
-    compService
-      .manTest(testResults)
+
+    compService.manTest(testResults)
       .then(response => {
         console.log(response.data);
       })
       .catch(errors => console.log(errors));
   };
 
+
+
   renderSwitch(step) {
     switch (step) {
       case 0:
         return (
-          <StartAssessment
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-          />
+          <ShowStartAssessment nextStep={this.nextStep} handleChange={this.handleChange} assessed_user={this.state.assessed_user}  />
         );
 
       case 1:
         return (
           <Organization
+            org={this.state.organization}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
           />
@@ -231,6 +245,7 @@ class ManagerAssessment extends Component {
       case 2:
         return (
           <Innovation
+            inn={this.state.innovation}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
@@ -239,6 +254,7 @@ class ManagerAssessment extends Component {
       case 3:
         return (
           <Communication
+            comm={this.state.interpersonal_communication}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
@@ -247,6 +263,7 @@ class ManagerAssessment extends Component {
       case 4:
         return (
           <CriticalThinking
+            ct={this.state.critical_thinking}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
@@ -255,6 +272,7 @@ class ManagerAssessment extends Component {
       case 5:
         return (
           <BuildRelationship
+            rel={this.state.relationships}
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
@@ -277,7 +295,7 @@ class ManagerAssessment extends Component {
           {load ? (
             ""
           ) : (
-            <div className="manager-assessment text-center">
+            <div className="manager-assessment1">
               <div className="user-assessed" style={this.styles}>
                 <StaffInfo handleAssessUser={this.handleAssessUser} />
               </div>
@@ -286,8 +304,8 @@ class ManagerAssessment extends Component {
                 {this.renderSwitch(step)}
               </div>
 
-              
-              
+
+
             </div>
           )}
         </div>

@@ -50,6 +50,7 @@ class Innovation extends Component {
                     type="radio"
                     name="innovation.vision_setting"
                     value="1"
+                    checked={(this.props.inn.vision_setting === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to set a clear vision for work
@@ -100,6 +101,7 @@ class Innovation extends Component {
                     type="radio"
                     name="innovation.thinking"
                     value="1"
+                    checked={(this.props.inn.thinking === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to generate new ideas
@@ -155,6 +157,7 @@ class Innovation extends Component {
                     type="radio"
                     name="innovation.adaptability"
                     value="1"
+                    checked={(this.props.inn.adaptability === 1)}
                     onChange={this.handleChange}
                   />
                   Struggles to adjust workstreams
