@@ -32,6 +32,19 @@ class BuildRelationship extends Component {
             <div className="teamwork1">
               <h3>Teamwork</h3>
               <h5>Collaborates on key team activities when required</h5>
+              <h5 className="d-none">
+                Role models and encourages effective collaboration within your
+                team, addressing non-collaborative behavior quickly
+              </h5>
+              <h5 className="d-none">
+                Role models and encourages effective collaboration within
+                multiple teams, addressing non-collaborative behavior quickly
+              </h5>
+              <h5 className="d-none">
+                Creates a culture of collaboration within the institution, role
+                modeling collaborative behavior, and addressing harmful
+                competition quickly
+              </h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
@@ -75,6 +88,18 @@ class BuildRelationship extends Component {
               <h5>
                 Maximizes existing partnerships and networks to deliver or
                 enhance work outcomes
+              </h5>
+              <h5 className="d-none">
+                Builds partnerships and networks to deliver or enhance work
+                outcomes
+              </h5>
+              <h5 className="d-none">
+                Strengthens and deepens partnerships and networks to deliver or
+                enhance work outcomes
+              </h5>
+              <h5 className="d-none">
+                Explores new partnerships and networks to deliver or enhance
+                work outcomes
               </h5>
               <div className="custom-control custom-radio">
                 <label>
@@ -120,6 +145,18 @@ class BuildRelationship extends Component {
               <h5>
                 Move situations of conflict toward resolution in work you
                 directly impact
+              </h5>
+              <h5 className="d-none">
+                Move situations of conflict toward resolution in work that
+                impacts your team
+              </h5>
+              <h5 className="d-none">
+                Move situations of conflict toward resolution in work that
+                impacts multiple teams
+              </h5>
+              <h5 className="d-none">
+                Move situations of conflict toward resolution in work that
+                impacts the institution
               </h5>
               <div className="custom-control custom-radio">
                 <label>

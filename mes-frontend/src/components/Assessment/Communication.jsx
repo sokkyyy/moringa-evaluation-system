@@ -30,6 +30,9 @@ class Communication extends Component {
             <div className="investment1">
               <h3>Investment Building</h3>
               <h5>Gain buy-in from those whom you directly impact</h5>
+              <h5 className="d-none">Gain buy-in from your team</h5>
+              <h5 className="d-none">Gain buy-in from multiple teams</h5>
+              <h5 className="d-none">Gain buy-in from the institution</h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
@@ -74,6 +77,18 @@ class Communication extends Component {
                 Develop clear, concise, and error-free written and verbal
                 content for those who are familiar and aligned
               </h5>
+              <h5 className="d-none">
+                Develop clear, concise, and error-free written and verbal
+                content for those who are aligned but not yet familiar
+              </h5>
+              <h5 className="d-none">
+                Develop clear, concise, and error-free written and verbal
+                content for those who are familiar but not yet aligned
+              </h5>
+              <h5 className="d-none">
+                Develop clear, concise, and error-free written and verbal
+                content for those who are not yet familiar and yet not aligned
+              </h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
@@ -117,6 +132,21 @@ class Communication extends Component {
                 Deliver a message using the appropriate method, tone, and
                 structure of communication for those who are familiar and
                 aligned
+              </h5>
+              <h5 className="d-none">
+                Deliver a message using the appropriate method, tone, and
+                structure of communication for those who are aligned but not yet
+                familiar
+              </h5>
+              <h5 className="d-none">
+                Deliver a message using the appropriate method, tone, and
+                structure of communication for those who are familiar but not
+                yet aligned
+              </h5>
+              <h5 className="d-none">
+                Deliver a message using the appropriate method, tone, and
+                structure of communication for those who are not yet familiar
+                and yet not aligned
               </h5>
               <div className="custom-control custom-radio">
                 <label>

@@ -34,6 +34,17 @@ class CriticalThinking extends Component {
                 Compile data in situations where the problems have been
                 identified by others
               </h5>
+              <h5 className="d-none">
+                Compile data in situations where the problems are well-defined
+              </h5>
+              <h5 className="d-none">
+                Compile data in situations where the problems are less well-
+                defined
+              </h5>
+              <h5 className="d-none">
+                Compile data in situations where the problems are largely
+                ambiguous
+              </h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
@@ -77,6 +88,17 @@ class CriticalThinking extends Component {
                 Analyze data in situations where the problems have been
                 identified by others
               </h5>
+              <h5 className="d-none">
+                Analyze data in situations where the problems are well-defined
+              </h5>
+              <h5 className="d-none">
+                Analyze data in situations where the problems are less
+                well-defined
+              </h5>
+              <h5 className="d-none">
+                Analyze data in situations where the problems are largely
+                ambiguous
+              </h5>
               <div className="custom-control custom-radio">
                 <label>
                   <input
@@ -119,6 +141,18 @@ class CriticalThinking extends Component {
               <h5>
                 Identify the most strategic options to problems that have been
                 identified by others
+              </h5>
+              <h5 className="d-none">
+                Identify the most strategic options to problems that are
+                well-defined
+              </h5>
+              <h5 className="d-none">
+                Identify the most strategic options to problems that are less
+                well-defined
+              </h5>
+              <h5 className="d-none">
+                Identify the most strategic options to problems that are largely
+                ambiguous
               </h5>
               <div className="custom-control custom-radio">
                 <label>
@@ -164,6 +198,18 @@ class CriticalThinking extends Component {
               <h5>
                 Reflect on lessons learned from problems that have been
                 identified by others to improve future outcomes
+              </h5>
+              <h5 className="d-none">
+                Reflect on lessons learned from problems that are well-defined
+                to improve future outcomes
+              </h5>
+              <h5 className="d-none">
+                Reflect on lessons learned from problems that are less
+                well-defined to improve future outcomes
+              </h5>
+              <h5 className="d-none">
+                Reflect on lessons learned from problems that are largely
+                ambiguous to improve future outcomes
               </h5>
               <div className="custom-control custom-radio">
                 <label>
