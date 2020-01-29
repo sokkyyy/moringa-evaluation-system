@@ -36,7 +36,7 @@ class Dashboard extends Component {
           window.location.href = '/admin/dashboard';
         }else{
           this.setState({staff: response.data});
-          console.log(response.data);
+          console.log(response.data, 'rr');
           this.setState({load:false});
         }
     })
@@ -71,7 +71,7 @@ class Dashboard extends Component {
                 />
               </div>
               <div className="col-md-8">
-                
+
                 <GraphCard staff={this.state.staff.pk} />
 
                 <div
@@ -111,16 +111,10 @@ class Dashboard extends Component {
                 </div>
                 <br />
                 <hr />
-                <div className="notifications">
-                  <strong className="text-center">
-                    <h6>
-                      Notifications <i className="far fa-bell"></i>
-                    </h6>
-                  </strong>
-                  <br />
-                  <NotificationsDiv />
-                  <hr />
-                </div>
+
+                <NotificationsDiv />
+
+
               </div>
             </div>
           </div>

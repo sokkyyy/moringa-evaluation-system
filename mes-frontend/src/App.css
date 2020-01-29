@@ -9,19 +9,19 @@
 }
 
 @media (min-width: 1200px) {
-  
+
   .navbar{
     /* background-color: #45482D; */
     background-color: #689241;
     height: 63px;
   }
   .profile{
-    width: 215px;   
+    width: 215px;
   }
 }
 
 @media (max-width: 780px) {
-  
+
   .notifications{
     text-align: center;
   }
@@ -40,7 +40,7 @@
 }
 
 .container-fluid{
-  margin-top: 4px; 
+  margin-top: 4px;
 }
 
 
@@ -50,7 +50,7 @@
 }
 
 .col-md-2{
-  font-size: 11px;  
+  font-size: 11px;
   margin-bottom: 10px;
 }
 .card-body p{
@@ -68,11 +68,11 @@
 
 
 
-#signout-button{  
+#signout-button{
   background-color: #E87E02;
   color: #ffffff;
 
-}#signout-button:hover{  
+}#signout-button:hover{
   background-color: #FF8900;
 }
 
@@ -98,36 +98,58 @@
 
 .d-md-flex{
   width: 235px;
-  max-height: 300px; 
+  max-height: 300px;
   text-align: center;
 }
 
 .single-notification{
-  padding: 5px; 
+  padding: 5px;
   font-size: 12px;
 }
-
+.single-notification-unread{
+  padding: 5px;
+  font-size: 12px;
+  background-color: #689241;
+  color: #fff;
+}
+.single-notification-unread:hover{
+  background-color: #fff;
+  color: #45482D;
+  border-radius: 5px;
+}
 .gradient-card-header{
   background-color: #689241;
-  
+
   /* background-color: #45482D; */
 }
 
 .single-notification:hover{
   /* background-color: #689241; */
-  background-color: #45482D;
+  background-color: #689241;
   color: #fff;
   border-radius: 5px;
 
 }
 
+.notification_count {
+  text-align: center;
+  margin-left: 5px;
+  font-weight: bold;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+  color:#689241;
+  margin:5px;
+
+}
 .clock-days{
   display: inline;
   font-size: 20px;
 }
 .clock-hours{
   display: inline;
-  font-size: 20px;  
+  font-size: 20px;
 }
 
 .clock-minutes{

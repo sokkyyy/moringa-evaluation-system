@@ -217,7 +217,7 @@ class ManagerAssessment extends Component {
       critical_thinking,
       relationships
     };
-    
+
     compService.manTest(testResults)
       .then(response => {
         console.log(response.data);
