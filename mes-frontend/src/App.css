@@ -1,10 +1,10 @@
-.navbar{
+.navbar {
   background-color: #689241;
   /* background-color: #45482D; */
   /* height: 65px; */
 }
 
-#dash-navbar{
+#dash-navbar {
   height: 63px;
 }
 
@@ -21,19 +21,18 @@
 }
 
 @media (max-width: 780px) {
-
   .notifications{
     text-align: center;
   }
 }
 
-#logo{
+#logo {
   height: 40px;
   width: 80px;
   margin-bottom: 6px;
 }
 
-#app_name{
+#app_name {
   margin-top: 3px;
   font-size: 35px;
   font-weight: bold;
@@ -43,9 +42,7 @@
   margin-top: 4px;
 }
 
-
-
-#user-dp{
+#user-dp {
   margin-top: 10px;
 }
 
@@ -53,7 +50,7 @@
   font-size: 11px;
   margin-bottom: 10px;
 }
-.card-body p{
+.card-body p {
   font-size: 12px;
 }
 
@@ -76,10 +73,10 @@
   background-color: #FF8900;
 }
 
-.col-md-8{
+.col-md-8 {
   padding-left: 20px;
 }
-.gradient-card-header{
+.gradient-card-header {
   padding-top: 14px;
   background-color: #689241;
   /* background-color: #45482D; */
@@ -88,15 +85,15 @@
   text-align: center;
 }
 
-.notifications{
+.notifications {
   margin-top: 15px;
 }
 
-.notifications h6{
+.notifications h6 {
   font-weight: bold;
 }
 
-.d-md-flex{
+.d-md-flex {
   width: 235px;
   max-height: 300px;
   text-align: center;
@@ -123,12 +120,11 @@
   /* background-color: #45482D; */
 }
 
-.single-notification:hover{
+.single-notification:hover {
   /* background-color: #689241; */
   background-color: #689241;
   color: #fff;
   border-radius: 5px;
-
 }
 
 .notification_count {
@@ -147,26 +143,31 @@
   display: inline;
   font-size: 20px;
 }
-.clock-hours{
+.clock-hours {
   display: inline;
   font-size: 20px;
 }
 
-.clock-minutes{
+.clock-minutes {
   display: inline;
   font-size: 20px;
 }
 
-.clock-seconds{
+.clock-seconds {
   display: inline;
   font-size: 20px;
 }
 
-.admin-bar{
+.admin-bar {
   background-color: #689241;
-height: auto;
+  height: auto;
 }
 
-.modal{
+.modal {
   margin-top: 50px;
 }
+
+button.close {
+  color: #fff7cc;
+}
+

@@ -41,6 +41,17 @@ class Organization extends Component {
                 <h5>
                   Plan tasks effectively and consistently within a project
                 </h5>
+                <h5 className="d-none">
+                  Plan independent projects effectively and consistently
+                </h5>
+                <h5 className="d-none">
+                  Plan multiple, concurrent projects effectively and
+                  consistently
+                </h5>
+                <h5 className="d-none">
+                  Prioritizes a set of interrelated projects effectively and
+                  consistently
+                </h5>
                 <div className="custom-control custom-radio">
                   <label>
                     <input
@@ -69,7 +80,7 @@ class Organization extends Component {
                     <input
                       type="radio"
                       name="organization.planning"
-                      value="2"
+                      value="3"
                       onChange={this.handleChange}
                     />
                     Excels at planning effectively and consistently
@@ -83,6 +94,17 @@ class Organization extends Component {
                 <h3>Execution</h3>
                 <h5>
                   Executes tasks effectively and consistently within a project
+                </h5>
+                <h5 className="d-none">
+                  Execute independent projects effectively and consistently
+                </h5>
+                <h5 className="d-none">
+                  Execute multiple, concurrent projects effectively and
+                  consistently
+                </h5>
+                <h5 className="d-none">
+                  Prioritizes a set of interrelated projects effectively and
+                  consistently
                 </h5>
                 <div className="custom-control custom-radio">
                   <label>
@@ -127,6 +149,18 @@ class Organization extends Component {
                 <h5>
                   Prioritizes tasks effectively and consistently within a
                   project
+                </h5>
+                <h5 className="d-none">
+                  Prioritizes time effectively and consistently within
+                  independent projects
+                </h5>
+                <h5 className="d-none">
+                  Prioritizes multiple, concurrent projects effectively and
+                  consistently
+                </h5>
+                <h5 className="d-none">
+                  Prioritizes a set of interrelated projects effectively and
+                  consistently
                 </h5>
                 <div className="custom-control custom-radio">
                   <label>

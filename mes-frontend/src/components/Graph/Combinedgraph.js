@@ -100,13 +100,13 @@ class CombinedLineGraph extends Component {
 				cornerRadius: 5,
 			},
 			legend: {
+				fontWeight: "normal",
 				cursor: "pointer",
 				itemclick: this.toggleDataSeries,
 				verticalAlign: "bottom"
 			},
 			data: [
 				{
-
 				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
 				name: "Organization",
@@ -117,7 +117,7 @@ class CombinedLineGraph extends Component {
 			{
 				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
-				name: "Interpersonal Communication",
+				name: "Interpersonal Comm.",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints:ipPoints,
@@ -134,7 +134,7 @@ class CombinedLineGraph extends Component {
       {
 				toolTipContent: `<strong>{name}:</strong> {y}  ({score})`,
 				type: "column",
-				name: "Building & Managing Relations",
+				name: "Building & Manag. Relat.",
 				showInLegend: true,
 				yValueFormatString: "#,##0",
 				dataPoints: relDataPoints,
