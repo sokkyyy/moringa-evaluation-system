@@ -267,7 +267,7 @@ def schedule_assessment(request):
 @api_view(['GET'])
 def user_notifications(request):
     user = MoringaStaff.objects.get(user=request.user)
-    user_notifications = Notification.objects.filter(receiver=user).order_by('date_created')
+    user_notifications = Notification.objects.filter(receiver=user).order_by('-date_created')
     serializers = NotificationsSerializer(user_notifications, many=True)
     return Response(serializers.data)
 
