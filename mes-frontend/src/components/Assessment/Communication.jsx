@@ -60,7 +60,7 @@ class Communication extends Component {
                   <input
                     type="radio"
                     name="interpersonal_communication.investment_building"
-                    value="2"
+                    value="3"
                     onChange={this.handleChange}
                   />
                   Excels at gaining buy-in from others effectively and

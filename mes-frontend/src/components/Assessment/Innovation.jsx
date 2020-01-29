@@ -71,7 +71,7 @@ class Innovation extends Component {
                   <input
                     type="radio"
                     name="innovation.vision_setting"
-                    value="2"
+                    value="3"
                     onChange={this.handleChange}
                   />
                   Excels at setting a clear vision for work effectively and

@@ -73,7 +73,7 @@ class BuildRelationship extends Component {
                   <input
                     type="radio"
                     name="relationships.team_work"
-                    value="2"
+                    value="3"
                     onChange={this.handleChange}
                   />
                   Excels at collaborating effectively and consistently

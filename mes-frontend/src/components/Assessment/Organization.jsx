@@ -77,7 +77,7 @@ class Organization extends Component {
                     <input
                       type="radio"
                       name="organization.planning"
-                      value="2"
+                      value="3"
                       onChange={this.handleChange}
                     />
                     Excels at planning effectively and consistently

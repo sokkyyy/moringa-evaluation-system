@@ -72,7 +72,7 @@ class CriticalThinking extends Component {
                   <input
                     type="radio"
                     name="critical_thinking.data_compilation"
-                    value="2"
+                    value="3"
                     onChange={this.handleChange}
                   />
                   Excels at compiling data effectively and consistently
