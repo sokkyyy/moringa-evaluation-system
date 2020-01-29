@@ -77,8 +77,17 @@ class OrganizationReports extends Component {
             striped
             small
             data={data}
-          />
-          
+          />{" "}
+          <MDBBtn
+            rounded
+            size="m"
+            color="green"
+            className="px-2"
+            data-toggle="modal"
+            data-target="#add-staff"
+          >
+            Export
+          </MDBBtn>
         </MDBCardBody>
       </MDBCard>
     );

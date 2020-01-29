@@ -197,7 +197,7 @@ class ManagerAssessment extends Component {
     this.setState({ relationships: relationships });
 
     console.log(this.state);
-    // this.submitOrganization();
+    this.submitOrganization();
   };
 
   submitOrganization = () => {

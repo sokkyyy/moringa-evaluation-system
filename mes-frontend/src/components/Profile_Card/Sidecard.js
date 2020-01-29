@@ -42,7 +42,7 @@ function Sidecard(props){
         </p>
 
         <div>
-          <i className="fa fa-cog"></i> <i style={{color:'blue', cursor:'pointer'}} onClick={() => {setEdit(!edit)}}>Edit Profile</i>
+          <i className="fa fa-cog"></i> <i style={{color:'blue', cursor:'pointer'}} onClick={() => {setEdit(!edit)}} data-target="">Account Settings</i>
           <div>
             {edit ? (
               <div>

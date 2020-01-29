@@ -66,7 +66,7 @@ class InterpersonalReports extends Component {
     return (
       <MDBCard narrow>
         <MDBCardHeader className="green gradient-card-header d-flex justify-content-between">
-          <h4>Interpersonal effective_communication</h4>
+          <h4>Interpersonal Communication</h4>
         </MDBCardHeader>
 
         <MDBCardBody cascade>
@@ -78,7 +78,16 @@ class InterpersonalReports extends Component {
             small
             data={data}
           />
-          
+          <MDBBtn
+            rounded
+            size="m"
+            color="green"
+            className="px-2"
+            data-toggle="modal"
+            data-target="#add-staff"
+          >
+            Export
+          </MDBBtn>
         </MDBCardBody>
       </MDBCard>
     );

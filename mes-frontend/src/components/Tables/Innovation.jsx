@@ -78,7 +78,16 @@ class InnovationReports extends Component {
             small
             data={data}
           />
-          
+          <MDBBtn
+            rounded
+            size="m"
+            color="green"
+            className="px-2"
+            data-toggle="modal"
+            data-target="#add-staff"
+          >
+            Export
+          </MDBBtn>
         </MDBCardBody>
       </MDBCard>
     );

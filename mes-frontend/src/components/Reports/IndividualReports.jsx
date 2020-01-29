@@ -15,6 +15,9 @@ class IndividualReports extends Component {
 
         <div className="container-fluid other">
           <div className="row">
+            <div className="other">
+              
+            </div>
             <div className="col-md-6 other">
               <BuildingReports />
             </div>
