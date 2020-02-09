@@ -1,16 +1,16 @@
 
-// import Dashboard from './components/Dashboard/Dashboard';
-// import Home from './components/Home';
+import Dashboard from './components/Dashboard/Dashboard';
+import Home from './components/Home';
 import React from 'react';
 import './App.css';
 import MainAssessment from './components/Assessment/MainAssessment'; //SELF
-// import ManagerAssessment from './components/ManagerAssessment/ManagerAssessment'; //MANAGER
+import ManagerAssessment from './components/ManagerAssessment/ManagerAssessment'; //MANAGER
 
 
-// import AdminDashboard from './components/Dashboard/AdminDashboard';
+import AdminDashboard from './components/Dashboard/AdminDashboard';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-// import Landing from './components/Landing/Landing';
-// import Footer from './components/Footer/Footer';
+import Landing from './components/Landing/Landing';
+import Footer from './components/Footer/Footer';
 import history from './history';
 import IndividualReports from './components/Reports/IndividualReports';
 
