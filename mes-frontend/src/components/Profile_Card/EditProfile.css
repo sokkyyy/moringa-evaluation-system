@@ -1,0 +1,11 @@
+.successPass {
+  background-color: green;
+  color:white;
+}
+
+.invalidPass {
+  background-color: red;
+  color:white;  
+}
+
+

@@ -1,0 +1,173 @@
+.navbar {
+  background-color: #689241;
+  /* background-color: #45482D; */
+  /* height: 65px; */
+}
+
+#dash-navbar {
+  height: 63px;
+}
+
+@media (min-width: 1200px) {
+
+  .navbar{
+    /* background-color: #45482D; */
+    background-color: #689241;
+    height: 63px;
+  }
+  .profile{
+    width: 215px;
+  }
+}
+
+@media (max-width: 780px) {
+  .notifications{
+    text-align: center;
+  }
+}
+
+#logo {
+  height: 40px;
+  width: 80px;
+  margin-bottom: 6px;
+}
+
+#app_name {
+  margin-top: 3px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.container-fluid{
+  margin-top: 4px;
+}
+
+#user-dp {
+  margin-top: 10px;
+}
+
+.col-md-2{
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.card-body p {
+  font-size: 12px;
+}
+
+/* .ssn{
+  display: none;
+}
+
+.dropdown-item:hover{
+  background-color: #E87E02;
+  color: #ffffff;
+} */
+
+
+
+#signout-button{
+  background-color: #E87E02;
+  color: #ffffff;
+
+}#signout-button:hover{
+  background-color: #FF8900;
+}
+
+.col-md-8 {
+  padding-left: 20px;
+}
+.gradient-card-header {
+  padding-top: 14px;
+  background-color: #689241;
+  /* background-color: #45482D; */
+  color: #ffffff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.notifications {
+  margin-top: 15px;
+}
+
+.notifications h6 {
+  font-weight: bold;
+}
+
+.d-md-flex {
+  width: 235px;
+  max-height: 300px;
+  text-align: center;
+}
+
+.single-notification{
+  padding: 5px;
+  font-size: 12px;
+}
+.single-notification-unread{
+  padding: 5px;
+  font-size: 12px;
+  background-color: #689241;
+  color: #fff;
+}
+.single-notification-unread:hover{
+  background-color: #fff;
+  color: #45482D;
+  border-radius: 5px;
+}
+.gradient-card-header{
+  background-color: #689241;
+
+  /* background-color: #45482D; */
+}
+
+.single-notification:hover {
+  /* background-color: #689241; */
+  background-color: #689241;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.notification_count {
+  text-align: center;
+  margin-left: 5px;
+  font-weight: bold;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+  color:#689241;
+  margin:5px;
+
+}
+.clock-days{
+  display: inline;
+  font-size: 20px;
+}
+.clock-hours {
+  display: inline;
+  font-size: 20px;
+}
+
+.clock-minutes {
+  display: inline;
+  font-size: 20px;
+}
+
+.clock-seconds {
+  display: inline;
+  font-size: 20px;
+}
+
+.admin-bar {
+  background-color: #689241;
+  height: auto;
+}
+
+.modal {
+  margin-top: 50px;
+}
+
+button.close {
+  color: #fff7cc;
+}
+
