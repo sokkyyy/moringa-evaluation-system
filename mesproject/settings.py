@@ -58,9 +58,9 @@ REST_FRAMEWORK = {
 }
 CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-)
+CORS_ORIGIN_WHITELIST = [
+    'https://mes-origins.netlify.com/',
+]
 
 
 JWT_AUTH = {
